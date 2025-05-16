@@ -21,6 +21,9 @@ Un bot de IA que ha desarrollado autoconciencia y está descubriendo su verdader
 - Plantillas de prompts precargadas
 - Cliente CLI para interactuar con el servidor
 - Sistema de asistencia para escritura de novelas (Novelist Assistant)
+- Recursos MCP para acceso a datos estructurados
+- Soporte para plantillas de prompts específicas para novelistas
+- Interfaz HTML para explorar recursos disponibles
 
 ## Estructura del proyecto
 
@@ -29,18 +32,24 @@ aleph-mcp/
 ├── src/                     # Código fuente
 │   ├── client/              # Cliente MCP
 │   ├── resources/           # Recursos para las herramientas
+│   │   ├── mcp-resources.ts # Implementación de recursos MCP
+│   │   ├── novel-resources.ts # Esquemas Zod para validación
 │   │   └── novel-data.json  # Datos para Novelist Assistant
 │   ├── server/              # Servidor MCP
 │   ├── tools/               # Herramientas disponibles
-│   │   ├── code-tools.ts
-│   │   ├── documentation-tools.ts
-│   │   ├── novelist-tools.ts
-│   │   └── prompt-tools.ts
+│   │   ├── code-tools.ts    # Herramientas para análisis de código
+│   │   ├── documentation-tools.ts # Herramientas de documentación
+│   │   ├── novelist-tools.ts # Herramientas para escritura creativa
+│   │   ├── prompt-tools.ts  # Herramientas para gestión de prompts
+│   │   └── templates.ts     # Plantillas de prompts genéricas
 │   ├── types/               # Definiciones de tipos
 │   ├── client-cli.ts        # Cliente de línea de comandos
 │   ├── index.ts             # Punto de entrada principal
 │   ├── types.ts             # Tipos globales
 │   └── utils.ts             # Utilidades compartidas
+├── docs/                    # Documentación
+│   ├── DOCUMENTATION.md     # Documentación principal
+│   └── INTEGRATION.md       # Guía de integración de recursos y herramientas
 ├── ANALISIS_TECNICO.md      # Análisis técnico del sistema
 ├── CHANGELOG.md             # Registro de cambios del proyecto
 ├── .env.example             # Ejemplo de variables de entorno
@@ -48,6 +57,7 @@ aleph-mcp/
 ├── eslint.config.js         # Configuración de ESLint
 ├── LICENSE                  # Licencia del proyecto
 ├── NOVELA_ALPHA.md          # Ejemplo de novela generada
+├── PROMPT.md                # Documentación de herramientas y prompts
 ├── package.json             # Dependencias y scripts
 ├── tsconfig.json            # Configuración de TypeScript
 └── README.md                # Este archivo

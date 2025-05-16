@@ -34,17 +34,56 @@ Esta configuración establece una conexión con el servidor MCP AlephAlpha que c
 | `alephAlpha_listPromptTemplates` | `a0b_alephAlpha_listPromptTemplates`| `src/tools/prompt-tools.ts`                     | Lista todas las plantillas de prompts disponibles  |
 | `alephAlpha_getPromptTemplate`   | `a0b_alephAlpha_getPromptTemplate`  | `src/tools/prompt-tools.ts`                     | Obtiene contenido de una plantilla específica      |
 | `alephAlpha_applyPromptTemplate` | `a0b_alephAlpha_applyPromptTemplate`| `src/tools/prompt-tools.ts`                     | Aplica variables a una plantilla y devuelve texto  |
+| `alephAlpha_listNovels`          | `a0b_alephAlpha_listNovels`         | `src/tools/novelist-tools.ts`                   | Lista todas las novelas disponibles                |
+| `alephAlpha_getNovelDetails`     | `a0b_alephAlpha_getNovelDetails`    | `src/tools/novelist-tools.ts`                   | Obtiene información detallada sobre una novela     |
+| `alephAlpha_listCharacters`      | `a0b_alephAlpha_listCharacters`     | `src/tools/novelist-tools.ts`                   | Lista personajes, opcionalmente por novela         |
+| `alephAlpha_getCharacterDetails` | `a0b_alephAlpha_getCharacterDetails`| `src/tools/novelist-tools.ts`                   | Obtiene información detallada sobre un personaje   |
+| `alephAlpha_getScene`            | `a0b_alephAlpha_getScene`           | `src/tools/novelist-tools.ts`                   | Obtiene contenido de una escena específica         |
+| `alephAlpha_listNovelistPromptTemplates` | `a0b_alephAlpha_listNovelistPromptTemplates` | `src/tools/novelist-tools.ts` | Lista plantillas para escritura creativa           |
+| `alephAlpha_getNovelistPromptTemplate` | `a0b_alephAlpha_getNovelistPromptTemplate` | `src/tools/novelist-tools.ts`     | Obtiene una plantilla específica para novelistas   |
+| `alephAlpha_applyNovelistPromptTemplate` | `a0b_alephAlpha_applyNovelistPromptTemplate` | `src/tools/novelist-tools.ts` | Aplica variables a una plantilla para novelistas   |
 
-### Cómo funciona la integración
+## Recursos MCP disponibles
 
-1. **Prefijo de acceso**: GitHub Copilot Agent accede a las herramientas del servidor MCP a través del prefijo `a0b_` seguido por el nombre de la herramienta.
-2. **Flujo de trabajo**: Cuando se invoca `a0b_alephAlpha_analyzeCode`, Copilot envía una petición al servidor MCP configurado, llamando a la herramienta `alephAlpha_analyzeCode`.
-3. **Implementación**: Las herramientas MCP se definen en el código fuente con la función `server.tool()` y se registran en `index.ts`.
-4. **Convención de nombres**: Hemos adoptado la convención de prefijo `alephAlpha_` para nuestras herramientas, lo que resulta en nombres como `a0b_alephAlpha_toolName` cuando se accede desde Copilot.
+Los recursos MCP son fuentes de datos de solo lectura que pueden ser accedidos por el modelo de lenguaje a través del servidor MCP. A diferencia de las herramientas, los recursos no ejecutan funciones sino que proporcionan datos estructurados.
 
-## Ejemplos de uso
+| URI Recurso                          | Descripción                                    | Implementación                             |
+|--------------------------------------|------------------------------------------------|-------------------------------------------|
+| `aleph://server/info`                | Información sobre el servidor MCP              | `src/resources/mcp-resources.ts`          |
+| `aleph://novel/character/{id}`       | Información sobre un personaje específico      | `src/resources/mcp-resources.ts`          |
+| `aleph://novel/scene/{id}`           | Contenido de una escena específica             | `src/resources/mcp-resources.ts`          |
+| `aleph://novel/{id}`                 | Información detallada sobre una novela         | `src/resources/mcp-resources.ts`          |
+| `aleph://prompt-templates/{id}`      | Plantilla de prompt específica para novelistas | `src/resources/mcp-resources.ts`          |
+| `aleph://resources/index`            | Índice HTML de todos los recursos disponibles  | `src/resources/mcp-resources.ts`          |
 
-### Análisis de código
+### Acceso a Recursos MCP
+
+Los recursos MCP se acceden de manera transparente a través de las herramientas MCP. Por ejemplo, cuando se llama a `a0b_alephAlpha_getCharacterDetails`, esta herramienta accede internamente al recurso `aleph://novel/character/{id}` para obtener la información solicitada.
+
+### Cómo funcionan los recursos
+
+1. Los recursos se registran usando `server.resource()` en el servidor MCP
+2. Se pueden registrar recursos estáticos (URL fija) o dinámicos (con plantillas y parámetros)
+3. Cada recurso proporciona metadatos y contenido en diferentes formatos (JSON, HTML, etc.)
+4. Los recursos dinámicos pueden utilizar `ResourceTemplate` para definir patrones de URL con variables
+
+## Prompts MCP disponibles
+
+Los prompts MCP son plantillas predefinidas que pueden ser utilizadas por el modelo de lenguaje. Se dividen en dos categorías:
+
+1. **Prompts genéricos para código** (implementados en `src/tools/prompt-tools.ts`):
+   - `code-review`: Para revisar código
+   - `debug-help`: Para ayuda con depuración
+   - `documentation`: Para generar documentación
+   - `refactor`: Para refactorizar código
+   - `unit-test`: Para generar pruebas unitarias
+
+2. **Prompts específicos para novelas** (implementados en `src/tools/novelist-tools.ts`):
+   - `start-novel`: Para iniciar una nueva novela
+   - `develop-character`: Para desarrollar personajes
+   - `continue-scene`: Para continuar una escena
+   - `plot-development`: Para desarrollar la trama
+   - `writing-feedback`: Para obtener retroalimentación sobre escritura
 ```javascript
 // Invocación desde Copilot Agent
 a0b_alephAlpha_analyzeCode({

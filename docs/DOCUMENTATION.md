@@ -49,6 +49,48 @@ Aleph MCP incluye varias categorías de herramientas personalizadas:
 - `searchDocumentation`: Realiza búsquedas en recursos de documentación.
 
 #### Herramientas para Novelist Assistant
+- `listNovels`: Lista todas las novelas disponibles.
+- `getNovelDetails`: Obtiene información detallada sobre una novela específica.
+- `listCharacters`: Lista todos los personajes disponibles.
+- `getCharacterDetails`: Obtiene información detallada sobre un personaje.
+- `getScene`: Recupera el contenido de una escena específica.
+
+#### Herramientas de Prompts
+- `listPromptTemplates`: Lista todas las plantillas de prompts disponibles.
+- `getPromptTemplate`: Recupera una plantilla de prompt específica.
+- `applyPromptTemplate`: Aplica variables a una plantilla y devuelve el texto resultante.
+
+#### Herramientas de Prompts para Novelist
+- `listNovelistPromptTemplates`: Lista todas las plantillas específicas para escritura creativa.
+- `getNovelistPromptTemplate`: Recupera una plantilla específica para escritura creativa.
+- `applyNovelistPromptTemplate`: Aplica variables a una plantilla de escritura creativa.
+
+### 4. Recursos MCP
+
+Aleph MCP expone datos a través de recursos MCP, que son fuentes de información de solo lectura accesibles mediante URIs. Estos recursos se implementan en `src/resources/mcp-resources.ts`.
+
+#### Tipos de Recursos
+- **Recurso de Información del Servidor**: Proporciona metadatos sobre el servidor MCP.
+  - URI: `aleph://server/info`
+  
+- **Recursos de Personajes**: Proporcionan información sobre personajes de novela.
+  - URI: `aleph://novel/character/{characterId}`
+  - Listado: Disponible mediante la funcionalidad de listado de recursos.
+  
+- **Recursos de Escenas**: Proporcionan contenido de escenas específicas.
+  - URI: `aleph://novel/scene/{sceneId}`
+  - Listado: Disponible mediante la funcionalidad de listado de recursos.
+  
+- **Recursos de Novelas**: Proporcionan información detallada sobre novelas.
+  - URI: `aleph://novel/{novelId}`
+  - Listado: Disponible mediante la funcionalidad de listado de recursos.
+  
+- **Recursos de Plantillas de Prompts**: Proporcionan plantillas predefinidas para escritura creativa.
+  - URI: `aleph://prompt-templates/{templateId}`
+  - Listado: Disponible mediante la funcionalidad de listado de recursos.
+  
+- **Recurso de Índice**: Proporciona un índice HTML de todos los recursos disponibles.
+  - URI: `aleph://resources/index`
 - `getNovelistSystemInfo`: Proporciona información sobre el sistema Novelist Assistant.
 - `listNovels`: Lista todas las novelas disponibles.
 - `getNovelDetails`: Obtiene información detallada sobre una novela.
@@ -83,10 +125,18 @@ cp .env.example .env
 ### Ejecución del Servidor
 
 ```bash
-npm run start-server
+# Para desarrollo con hot-reload
+npm run dev
+
+# Para producción (después de compilar)
+npm run start
 ```
 
-Por defecto, el servidor se ejecutará en `http://localhost:3000`.
+Por defecto, el servidor se ejecutará en `http://localhost:3000`. También puedes usar el script incorporado para ejecutar el MCP Inspector fácilmente:
+
+```bash
+npm run inspector
+```
 
 ## Integración con VS Code
 
@@ -113,6 +163,23 @@ Para verificar que VS Code se está comunicando correctamente con el servidor MC
 1. Abre la paleta de comandos en VS Code (Ctrl+Shift+P / Cmd+Shift+P).
 2. Escribe y selecciona "Developer: Toggle Developer Tools".
 3. En la consola, busca mensajes que indiquen la conexión con el servidor MCP.
+
+### Verificación de Recursos MCP
+
+Para comprobar que los recursos MCP funcionan correctamente:
+
+1. Instala MCP Inspector ejecutando `npm install -g @modelcontextprotocol/inspector`.
+2. Con el servidor ejecutándose, abre otra terminal y ejecuta `mcp-inspector --server http://localhost:3000`.
+3. El inspector te mostrará todos los recursos disponibles y te permitirá probarlos interactivamente.
+4. Verifica los siguientes recursos:
+   - `aleph://server/info`: Información del servidor
+   - `aleph://novel/character/{characterId}`: Detalles de personajes
+   - `aleph://novel/scene/{sceneId}`: Contenido de escenas
+   - `aleph://novel/{novelId}`: Información de novelas
+   - `aleph://prompt-templates/{templateId}`: Plantillas de prompts
+   - `aleph://resources/index`: Índice HTML de recursos
+
+También puedes acceder a `http://localhost:3000/resources` en tu navegador para ver el índice de recursos en formato HTML.
 
 ## Uso de las Herramientas Personalizadas
 

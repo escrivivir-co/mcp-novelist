@@ -5,6 +5,7 @@ import { registerCodeTools } from "./tools/code-tools.js";
 import { registerDocumentationTools } from "./tools/documentation-tools.js";
 import { registerNovelistTools } from './tools/novelist-tools.js';
 import { registerMcpResources } from './resources/mcp-resources.js';
+import { registerMcpPrompts } from './resources/mcp-prompts.js';
 import dotenv from 'dotenv';
 import { randomUUID } from "crypto";
 import { createServer, Server as HttpServer } from "http";
@@ -81,17 +82,38 @@ function registerAllResources(): void {
 }
 
 /**
+ * Registra todos los prompts en el servidor
+ */
+function registerAllPrompts(): void {
+  logger.info("Registering prompts...");
+  
+  try {
+    // Registrar prompts
+    registerMcpPrompts(server);
+    
+    logger.info("All prompts registered successfully");
+  } catch (error) {
+    logger.error("Failed to register prompts:", error);
+    throw error;
+  }
+}
+
+/**
  * Inicia el servidor con el transporte indicado
  */
 async function startServer(): Promise<void> {
   try {
     logger.info(`Starting ${SERVER_NAME} v${SERVER_VERSION}...`);
-    
-    // Registrar todas las herramientas
+      // Registrar todas las herramientas
     registerAllTools();
     
     // Registrar todos los recursos
-    registerAllResources();    // Crear servidor HTTP
+    registerAllResources();
+    
+    // Registrar todos los prompts
+    registerAllPrompts();
+    
+    // Crear servidor HTTP
     httpServer = createServer();
     
     // Crear transporte HTTP streamable

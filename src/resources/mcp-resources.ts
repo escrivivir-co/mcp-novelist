@@ -176,8 +176,41 @@ export function registerMcpResources(server: McpServer): void {
       };
     }
   );
+  // 5. Recurso dinámico para plantillas de prompts
+  server.resource(
+    "prompt-template",
+    new ResourceTemplate("aleph://prompt-templates/{templateId}", {
+      list: async () => {
+        const templates = novelResourceLoader.getPromptTemplates();
+        const resourceList = templates.map(template => ({
+          name: template.name,
+          uri: `aleph://prompt-templates/${template.id}`,
+          description: template.description
+        }));
+        
+        return {
+          resources: resourceList
+        };
+      }
+    }),    async (uri, params) => {
+      const templateId = params.templateId as string;
+      const template = novelResourceLoader.getPromptTemplate(templateId);
+      
+      if (!template) {
+        throw new Error(`Prompt template with ID ${templateId} not found`);
+      }
+      
+      return {
+        contents: [{
+          uri: uri.href,
+          mimeType: "application/json",
+          text: JSON.stringify(template, null, 2)
+        }]
+      };
+    }
+  );
 
-  // 5. Recurso estático para lista de recursos en formato HTML
+  // 6. Recurso estático para lista de recursos en formato HTML
   server.resource(
     "resource-index",
     "aleph://resources/index",
@@ -185,6 +218,7 @@ export function registerMcpResources(server: McpServer): void {
       const characters = Object.values(novelResourceLoader.getCharacters());
       const scenes = Object.values(novelResourceLoader.getScenes());
       const novels = Object.values(novelResourceLoader.getNovels());
+      const promptTemplates = novelResourceLoader.getPromptTemplates();
       
       const html = `
         <!DOCTYPE html>
@@ -235,6 +269,16 @@ export function registerMcpResources(server: McpServer): void {
               <li class="resource">
                 <div class="uri">aleph://novel/${novel.id}</div>
                 <p>${novel.title} by ${novel.author}: ${novel.summary.substring(0, 100)}...</p>
+              </li>
+            `).join('')}
+          </ul>
+          
+          <h2>Prompt Templates (${promptTemplates.length})</h2>
+          <ul>
+            ${promptTemplates.map(template => `
+              <li class="resource">
+                <div class="uri">aleph://prompt-templates/${template.id}</div>
+                <p>${template.name}: ${template.description}</p>
               </li>
             `).join('')}
           </ul>
