@@ -98,11 +98,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para cargar los datos desde la API
     async function loadNovelData() {
         try {
-            const response = await fetch('api/novel-data.json');
+            console.log("Intentando cargar datos desde:", './api/novel-data.json');
+            const response = await fetch('./api/novel-data.json');
+            
             if (!response.ok) {
-                throw new Error('No se pudieron cargar los datos');
+                console.error('Error de respuesta:', response.status, response.statusText);
+                throw new Error(`No se pudieron cargar los datos. Estado: ${response.status}`);
             }
-            novelData = await response.json();
+            
+            // Obtener el texto de la respuesta para depuración
+            const responseText = await response.text();
+            console.log("Texto de respuesta:", responseText.substring(0, 100) + "...");
+            
+            try {
+                // Intentar analizar el texto como JSON
+                novelData = JSON.parse(responseText);
+                console.log("Datos JSON cargados correctamente:", novelData);
+            } catch (jsonError) {
+                console.error("Error al analizar JSON:", jsonError);
+                throw new Error(`Error al analizar JSON: ${jsonError.message}`);
+            }
             
             // Actualizar la fecha de última actualización
             const timestamp = new Date();
@@ -120,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             catalogGrid.innerHTML = `
                 <div class="error-container">
                     <div class="error-icon">⚠️</div>
-                    <div class="error-message">No se pudieron cargar los datos del servidor.</div>
+                    <div class="error-message">No se pudieron cargar los datos del servidor: ${error.message}</div>
                     <button class="retry-button" onclick="location.reload()">Reintentar</button>
                 </div>
             `;
@@ -186,20 +201,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Templates para las tarjetas
     function createNovelCard(novel) {
+        // Añadir verificación de propiedades
+        const description = novel.description || novel.summary || '';
+        const characterCount = novel.characters ? novel.characters.length : 0;
+        const chapterCount = novel.chapters ? novel.chapters.length : 0;
+        
         return `
             <div class="catalog-card" data-id="${novel.id}" data-type="novel">
                 <div class="card-header">
-                    <h3>${novel.name}</h3>
-                    <span class="card-badge">${novel.genre}</span>
+                    <h3>${novel.name || novel.title || 'Sin título'}</h3>
+                    <span class="card-badge">${novel.genre || 'General'}</span>
                 </div>
                 <div class="card-body">
-                    <p>${novel.description.substring(0, 150)}${novel.description.length > 150 ? '...' : ''}</p>
+                    <p>${description.substring(0, 150)}${description.length > 150 ? '...' : ''}</p>
                 </div>
                 <div class="card-footer">
-                    <span class="card-meta">${novel.chapters.length} capítulos</span>
-                    <span class="card-meta">${
-                        novel.characters.length
-                    } personajes</span>
+                    <span class="card-meta">${chapterCount} capítulos</span>
+                    <span class="card-meta">${characterCount} personajes</span>
                 </div>
             </div>
         `;

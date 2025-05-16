@@ -7,37 +7,44 @@
  * a una ubicación accesible para la web (docs/api)
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Rutas de los archivos
-const sourceFile = path.resolve(__dirname, '..', 'src', 'resources', 'novel-data.json');
-const targetDir = path.resolve(__dirname, '..', 'docs', 'api');
-const targetFile = path.resolve(targetDir, 'novel-data.json');
+// Obtener la ruta del directorio actual
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const projectRoot = path.join(__dirname, '..');
 
-// Asegurarse de que el directorio existe
+// Rutas de origen y destino
+const sourceFile = path.join(projectRoot, 'src', 'resources', 'novel-data.json');
+const targetDir = path.join(projectRoot, 'docs', 'api');
+const targetFile = path.join(targetDir, 'novel-data.json');
+
+// Asegurarse de que el directorio de destino existe
 if (!fs.existsSync(targetDir)) {
-    console.log(`Creando directorio: ${targetDir}`);
     fs.mkdirSync(targetDir, { recursive: true });
+    console.log(`Directorio creado: ${targetDir}`);
 }
 
+// Leer, transformar y escribir los datos
 try {
-    // Leer el archivo fuente
-    const data = fs.readFileSync(sourceFile, 'utf8');
+    const rawData = fs.readFileSync(sourceFile, 'utf8');
+    const sourceData = JSON.parse(rawData);
     
-    // Parsear el JSON para verificar que es válido
-    const jsonData = JSON.parse(data);
+    // Transformar los datos al formato esperado por el frontend
+    const transformedData = {
+        novels: Object.values(sourceData.resources.novels || {}),
+        characters: Object.values(sourceData.resources.characters || {}),
+        scenes: Object.values(sourceData.resources.scenes || {})
+    };
     
-    // Agregar información de timestamp
-    jsonData.lastUpdated = new Date().toISOString();
-    
-    // Escribir el archivo con el timestamp actualizado
-    fs.writeFileSync(targetFile, JSON.stringify(jsonData, null, 2));
-    
-    console.log(`✓ Datos actualizados exitosamente en: ${targetFile}`);
-    console.log(`✓ Timestamp: ${jsonData.lastUpdated}`);
+    // Escribir los datos transformados
+    fs.writeFileSync(targetFile, JSON.stringify(transformedData, null, 2), 'utf8');
+    console.log(`✅ Catálogo actualizado: ${sourceFile} → ${targetFile}`);
 } catch (error) {
-    console.error('❌ Error al actualizar datos:');
-    console.error(error);
+    console.error(`❌ Error al actualizar el catálogo: ${error.message}`);
     process.exit(1);
 }
+
+console.log('🚀 Catálogo web actualizado correctamente.');

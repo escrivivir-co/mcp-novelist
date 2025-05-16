@@ -437,4 +437,104 @@ document.addEventListener('DOMContentLoaded', function() {
         novelData = await fetchNovelData();
         renderCatalog(searchInput.value);
     }, 5 * 60 * 1000);
+    
+    // Nueva función renderView
+    function renderView() {
+        if (!novelData) {
+            console.error("novelData es null o undefined");
+            catalogGrid.innerHTML = `
+                <div class="error-container">
+                    <div class="error-icon">⚠️</div>
+                    <div class="error-message">No se pudieron cargar los datos (novelData es null)</div>
+                    <button class="retry-button" onclick="location.reload()">Reintentar</button>
+                </div>
+            `;
+            return;
+        }
+        
+        console.log("Datos cargados:", novelData);
+        
+        let items = [];
+        let template = '';
+        
+        // Depuración: mostrar qué propiedades están disponibles
+        console.log("Propiedades en novelData:", Object.keys(novelData));
+        
+        // Filtrar por término de búsqueda
+        const filterItems = (items) => {
+            if (!searchTerm) return items;
+            if (!items || !Array.isArray(items)) {
+                console.error("Items no es un array:", items);
+                return [];
+            }
+            return items.filter(item => 
+                (item.name?.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                 item.description?.toLowerCase().includes(searchTerm.toLowerCase()))
+            );
+        };
+        
+        // Determinar qué datos mostrar según la vista actual
+        switch (currentView) {
+            case 'novels':
+                if (!novelData.novels || !Array.isArray(novelData.novels)) {
+                    console.error("novelData.novels no es un array:", novelData.novels);
+                    items = [];
+                } else {
+                    items = filterItems(novelData.novels);
+                }
+                template = createNovelCard;
+                break;
+            case 'characters':
+                if (!novelData.characters || !Array.isArray(novelData.characters)) {
+                    console.error("novelData.characters no es un array:", novelData.characters);
+                    items = [];
+                } else {
+                    items = filterItems(novelData.characters);
+                }
+                template = createCharacterCard;
+                break;
+            case 'scenes':
+                if (!novelData.scenes || !Array.isArray(novelData.scenes)) {
+                    console.error("novelData.scenes no es un array:", novelData.scenes);
+                    items = [];
+                } else {
+                    items = filterItems(novelData.scenes);
+                }
+                template = createSceneCard;
+                break;
+        }
+        
+        console.log(`Vista actual: ${currentView}, Número de items: ${items.length}`);
+        
+        // Renderizar los items
+        if (items.length === 0) {
+            catalogGrid.innerHTML = `
+                <div class="no-results">
+                    <div class="no-results-icon">🔎</div>
+                    <div class="no-results-text">No se encontraron resultados para "${searchTerm}"</div>
+                </div>
+            `;
+        } else {
+            try {
+                catalogGrid.innerHTML = items.map(template).join('');
+                
+                // Añadir event listeners a las tarjetas
+                document.querySelectorAll('.catalog-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const id = e.currentTarget.dataset.id;
+                        const type = e.currentTarget.dataset.type;
+                        showDetails(id, type);
+                    });
+                });
+            } catch (error) {
+                console.error("Error al renderizar los items:", error);
+                catalogGrid.innerHTML = `
+                    <div class="error-container">
+                        <div class="error-icon">⚠️</div>
+                        <div class="error-message">Error al renderizar: ${error.message}</div>
+                    </div>
+                `;
+            }
+        }
+    }
 });

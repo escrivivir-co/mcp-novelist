@@ -181,6 +181,21 @@ Para comprobar que los recursos MCP funcionan correctamente:
 
 También puedes acceder a `http://localhost:3000/resources` en tu navegador para ver el índice de recursos en formato HTML.
 
+## Catálogo de Novelas
+
+Aleph MCP incluye un catálogo web interactivo para explorar novelas, personajes y escenas. Este catálogo está accesible desde:
+
+- [http://localhost:8080/novel-catalog.html](http://localhost:8080/novel-catalog.html) (cuando sirves la carpeta docs con un servidor local)
+- [https://tu-usuario.github.io/aleph-mcp/novel-catalog.html](https://tu-usuario.github.io/aleph-mcp/novel-catalog.html) (si has desplegado en GitHub Pages)
+
+### Actualización del Catálogo
+
+Para actualizar el catálogo web con los datos más recientes:
+
+```bash
+npm run update-catalog
+```
+
 ## Uso de las Herramientas Personalizadas
 
 Una vez configurado, puedes acceder a las herramientas personalizadas desde Copilot en VS Code. Por ejemplo:
