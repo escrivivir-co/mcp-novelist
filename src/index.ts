@@ -4,6 +4,7 @@ import { registerPromptTools } from "./tools/prompt-tools.js";
 import { registerCodeTools } from "./tools/code-tools.js";
 import { registerDocumentationTools } from "./tools/documentation-tools.js";
 import { registerNovelistTools } from './tools/novelist-tools.js';
+import { registerMcpResources } from './resources/mcp-resources.js';
 import dotenv from 'dotenv';
 import { randomUUID } from "crypto";
 import { createServer, Server as HttpServer } from "http";
@@ -63,6 +64,23 @@ function registerAllTools(): void {
 }
 
 /**
+ * Registra todos los recursos en el servidor
+ */
+function registerAllResources(): void {
+  logger.info("Registering resources...");
+  
+  try {
+    // Registrar recursos
+    registerMcpResources(server);
+    
+    logger.info("All resources registered successfully");
+  } catch (error) {
+    logger.error("Failed to register resources:", error);
+    throw error;
+  }
+}
+
+/**
  * Inicia el servidor con el transporte indicado
  */
 async function startServer(): Promise<void> {
@@ -72,18 +90,21 @@ async function startServer(): Promise<void> {
     // Registrar todas las herramientas
     registerAllTools();
     
-    // Crear servidor HTTP
+    // Registrar todos los recursos
+    registerAllResources();    // Crear servidor HTTP
     httpServer = createServer();
     
-    // Crear transporte HTTP
+    // Crear transporte HTTP streamable
     const transport = new StreamableHTTPServerTransport({
       sessionIdGenerator: () => randomUUID(),
-      enableJsonResponse: false
+      enableJsonResponse: true
     });
     
     // Configurar el servidor HTTP para manejar las solicitudes MCP
     httpServer.on('request', async (req: IncomingMessage, res: ServerResponse) => {
       try {
+        // Usar transporte HTTP streamable para todos los clientes
+        logger.debug('Using Streamable HTTP transport for client request');
         await transport.handleRequest(req, res);
       } catch (error) {
         logger.error('Error handling HTTP request:', error);
