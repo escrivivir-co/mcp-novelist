@@ -1,6 +1,9 @@
 # mcp-novelist
 Como la app Novelist pero via MCP y modelos del lenguaje (Ideal para IDEs)
 
+[modelcontextprotocol.io/introduction](https://modelcontextprotocol.io/introduction).
+
+Este repositorio se modeliza según [modelcontextprotocol.io/tutorials/building-mcp-with-llms](https://modelcontextprotocol.io/tutorials/building-mcp-with-llms). Usa [llms-full.txt](./llms-full.txt) y [llms-full_sdk_ts.txt](./llms-full_sdk_ts.txt) para inicializar una conversación (con Claude seguro, ¿y los otros?)
 
 # Aleph MCP
 
