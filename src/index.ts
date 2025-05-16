@@ -1,3 +1,4 @@
+// Importar módulos necesarios
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { registerPromptTools } from "./tools/prompt-tools.js";
@@ -10,6 +11,14 @@ import dotenv from 'dotenv';
 import { randomUUID } from "crypto";
 import { createServer, Server as HttpServer } from "http";
 import { IncomingMessage, ServerResponse } from "http";
+import { execSync } from 'child_process';
+import { join } from 'path';
+import { fileURLToPath } from 'url';
+
+// Obtener la ruta del directorio actual
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = join(__filename, '..');
+const projectRoot = join(__dirname, '..');
 
 // Cargar variables de entorno
 dotenv.config();
@@ -99,12 +108,27 @@ function registerAllPrompts(): void {
 }
 
 /**
+ * Actualiza el catálogo de novelas para la web
+ */
+function updateNovelCatalog(): void {
+  try {
+    logger.info("Actualizando catálogo de novelas para la web...");
+    const scriptPath = join(projectRoot, 'scripts', 'update-catalog.js');
+    execSync(`node ${scriptPath}`, { stdio: 'inherit' });
+    logger.info("Catálogo de novelas actualizado correctamente");
+  } catch (error) {
+    logger.error("Error al actualizar el catálogo de novelas:", error);
+  }
+}
+
+/**
  * Inicia el servidor con el transporte indicado
  */
 async function startServer(): Promise<void> {
   try {
     logger.info(`Starting ${SERVER_NAME} v${SERVER_VERSION}...`);
-      // Registrar todas las herramientas
+    
+    // Registrar todas las herramientas
     registerAllTools();
     
     // Registrar todos los recursos
@@ -112,6 +136,9 @@ async function startServer(): Promise<void> {
     
     // Registrar todos los prompts
     registerAllPrompts();
+    
+    // Actualizar el catálogo de novelas para la web
+    updateNovelCatalog();
     
     // Crear servidor HTTP
     httpServer = createServer();

@@ -25,6 +25,8 @@
     "version:minor": "npm version minor -m \"chore(release): %s\" && npm run update-changelog",
     "version:major": "npm version major -m \"chore(release): %s\" && npm run update-changelog",
     "update-changelog": "node scripts/update-changelog.js",
+    "update-catalog": "node scripts/update-catalog.js",
+    "manage-catalog": "node scripts/manage-catalog.js",
     "precommit": "npm run lint && npm run format && npm test"
   },
   "dependencies": {

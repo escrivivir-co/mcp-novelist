@@ -116,12 +116,14 @@ export function registerMcpResources(server: McpServer): void {
       };
     }
   );
-
   // 4. Recurso dinámico para novelas completas
   server.resource(
     "novel",
     new ResourceTemplate("aleph://novel/{novelId}", {
       list: async () => {
+        // Actualizar el catálogo web cuando se lista las novelas
+        novelResourceLoader.updateCatalogForWeb();
+        
         const novels = novelResourceLoader.getNovels();
         const resourceList = Object.keys(novels).map(id => ({
           name: novels[id].title,

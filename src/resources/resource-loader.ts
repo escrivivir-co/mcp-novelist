@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { 
   NovelResources, 
   NovelPromptTemplate,
@@ -9,10 +9,12 @@ import {
 } from './novel-resources.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 
 // Obtener el directorio actual
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const projectRoot = path.resolve(__dirname, '..', '..');
 
 // Clase para cargar y gestionar recursos de novela
 export class NovelResourceLoader {
@@ -150,13 +152,23 @@ export class NovelResourceLoader {
   // Método para aplicar una plantilla de prompt con variables
   public applyPromptTemplate(templateId: string, variables: Record<string, string>): string | null {
     const template = this.getPromptTemplate(templateId);
-    if (!template) return null;
-
-    let result = template.template;
+    if (!template) return null;    let result = template.template;
     Object.entries(variables).forEach(([key, value]) => {
       result = result.replace(new RegExp(`{{${key}}}`, 'g'), value);
     });
     
     return result;
+  }
+  
+  // Actualiza el catálogo para la web
+  public updateCatalogForWeb(): void {
+    try {
+      console.log("Actualizando catálogo de novelas para la web desde ResourceLoader...");
+      const scriptPath = path.join(projectRoot, 'scripts', 'update-catalog.js');
+      execSync(`node "${scriptPath}"`, { stdio: 'inherit' });
+      console.log("Catálogo de novelas actualizado correctamente desde ResourceLoader");
+    } catch (error) {
+      console.error("Error al actualizar el catálogo de novelas:", error);
+    }
   }
 }
