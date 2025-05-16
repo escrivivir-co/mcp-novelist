@@ -1,3 +1,7 @@
+# mcp-novelist
+Como la app Novelist pero via MCP y modelos del lenguaje (Ideal para IDEs)
+
+
 # Aleph MCP
 
 Un servidor implementado con el Model Context Protocol (MCP) que proporciona herramientas para análisis de código, documentación y plantillas de prompts.
@@ -201,4 +205,4 @@ Las contribuciones son bienvenidas. Por favor, asegúrate de seguir las directri
 
 ## Licencia
 
-MIT
+GNU
