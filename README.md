@@ -1,3 +1,8 @@
+# Disclaimer, warning
+
+PROYECTO DEMO - FASE DE BOCETO - EXPERIMENTAL- ATREZZO - GENERADO CON MAN-IN-THE-LOOP - NO USAR EN PRODUCCIÓN
+
+
 # mcp-novelist
 Como la app Novelist pero via MCP y modelos del lenguaje (Ideal para IDEs). Ver [WebSplash](https://escrivivir-co.github.io/mcp-novelist).
 
