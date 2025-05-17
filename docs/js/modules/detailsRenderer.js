@@ -3,7 +3,7 @@
  */
 
 import { CONSTANTS } from './constants.js';
-
+import { novelData } from '../catalog.js';
 /**
  * Crea el HTML para los detalles de una novela
  * @param {Object} novel - La novela a mostrar
@@ -35,7 +35,7 @@ export function createNovelDetails(novel, novelData) {
             <div class="detail-characters">`;
         
         novel.characters.forEach(charId => {
-            const character = novelData.characters.find(c => c.id === charId);
+            const character = novelData.content.characters.find(c => c.id === charId);
             if (character) {
                 detailContent += `
                     <div class="detail-character-card" data-id="${character.id}" data-type="character">
@@ -82,7 +82,7 @@ export function createNovelDetails(novel, novelData) {
                     console.log(`DEBUG - Buscando escena: ${sceneId}`);
                     
                     // Buscar la escena en el catálogo completo
-                    const scene = novelData.scenes.find(s => s.id === sceneId);
+                    const scene = novelData.content.scenes.find(s => s.id === sceneId);
                     
                     if (scene) {
                         detailContent += `
@@ -164,7 +164,7 @@ export function createCharacterDetails(character, novelData) {
         <div class="detail-section">
             <h3>Aparece en</h3>
             <div class="appears-in-list">
-                ${(novelData.novels || [])
+                ${(novelData.content.novels || [])
                     .filter(novel => novel.characters && novel.characters.includes(character.id))
                     .map(novel => `
                         <div class="appears-in-item" data-id="${novel.id}" data-type="novel">
@@ -199,7 +199,7 @@ export function createSceneDetails(scene, novelData) {
             <h3>Personajes presentes</h3>
             <div class="present-characters">
                 ${(scene.characters || []).map(charId => {
-                    const char = novelData.characters.find(c => c.id === charId);
+                    const char = novelData.content.characters.find(c => c.id === charId);
                     return char ? `
                         <span class="character-badge" data-id="${char.id}" data-type="character">
                             ${char.name}
@@ -263,7 +263,7 @@ export function generateChapterScenes(chapter, novelData) {
     chapter.scenes.forEach(sceneId => {
         console.log(`Buscando escena con ID: ${sceneId}`);
         
-        const scene = novelData.scenes.find(s => s.id === sceneId);
+        const scene = novelData.content.scenes.find(s => s.id === sceneId);
         
         if (scene) {
             console.log(`Escena encontrada:`, scene);
@@ -289,4 +289,30 @@ export function generateChapterScenes(chapter, novelData) {
  */
 function formatDate(date) {
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+}
+
+/**
+ * Muestra los detalles de un personaje
+ */
+export function showCharacterDetails(character) {
+    const modalContent = document.getElementById('modal-content');
+    if (!modalContent) return;
+    
+    modalContent.innerHTML = createCharacterDetails(character, novelData);
+    
+    // Mostrar modal
+    document.getElementById('modal').style.display = 'block';
+}
+
+/**
+ * Muestra los detalles de una escena
+ */
+export function showSceneDetails(scene) {
+    const modalContent = document.getElementById('modal-content');
+    if (!modalContent) return;
+    
+    modalContent.innerHTML = createSceneDetails(scene, novelData);
+    
+    // Mostrar modal
+    document.getElementById('modal').style.display = 'block';
 }

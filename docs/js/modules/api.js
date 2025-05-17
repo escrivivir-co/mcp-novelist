@@ -4,6 +4,7 @@
 
 import { CONSTANTS } from './constants.js';
 
+
 /**
  * Carga los datos de novelas desde la API
  * @returns {Promise<Object>} Los datos cargados

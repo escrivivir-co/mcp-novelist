@@ -69,7 +69,7 @@ function generateChapterContent(chapter, novelData) {
     
     chapter.scenes.forEach(sceneId => {
         console.log(`Buscando escena con ID: ${sceneId}`);
-        const scene = novelData.scenes.find(s => s.id === sceneId);
+        const scene = novelData.content.scenes.find(s => s.id === sceneId);
         
         if (scene) {
             console.log(`Escena encontrada:`, scene);
