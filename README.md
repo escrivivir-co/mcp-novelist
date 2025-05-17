@@ -21,9 +21,11 @@ Un bot de IA que ha desarrollado autoconciencia y está descubriendo su verdader
 - Plantillas de prompts precargadas
 - Cliente CLI para interactuar con el servidor
 - Sistema de asistencia para escritura de novelas (Novelist Assistant)
+- Sistema de persistencia automática para todos los recursos
 - Recursos MCP para acceso a datos estructurados
 - Soporte para plantillas de prompts específicas para novelistas
 - Interfaz HTML para explorar recursos disponibles
+- Archivo HINT.md para inicialización rápida de agentes AI
 
 ## Estructura del proyecto
 
@@ -131,6 +133,27 @@ Permiten buscar y recuperar documentación técnica.
 
 ### Herramientas de novela (Novelist Assistant)
 Facilitan la creación y gestión de novelas, personajes y escenas.
+
+### Sistema de Persistencia
+El sistema incluye un mecanismo de persistencia automática que:
+- Guarda automáticamente todos los cambios realizados a novelas, personajes, escenas y capítulos
+- Mantiene los cambios incluso después de reiniciar el servidor
+- Ofrece herramientas MCP específicas para gestionar la persistencia:
+  - `alephAlpha_saveCurrentState`: Guarda manualmente el estado actual de todos los recursos
+  - `alephAlpha_configureAutoSave`: Permite habilitar/deshabilitar el guardado automático
+
+## Documentación Rápida para Agentes AI
+
+El proyecto incluye un archivo [HINT.md](./HINT.md) que proporciona información esencial para que los agentes AI (como GitHub Copilot) puedan entender rápidamente la estructura y capacidades del sistema. Este archivo incluye:
+
+- Descripción general del sistema Novelist Assistant
+- Estructura de los recursos (novelas, personajes, escenas, capítulos)
+- Lista de herramientas MCP disponibles
+- Información sobre el sistema de persistencia
+- Flujo de trabajo recomendado
+- Mejores prácticas
+
+Al inicializar una conversación con un modelo de lenguaje o agente AI, puede ser útil compartir este archivo para proporcionar contexto inmediato sobre el sistema.
 
 ## Novelist Assistant
 

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import { 
   NovelResources, 
   NovelPromptTemplate,
@@ -7,6 +7,7 @@ import {
   ChapterSchema,
   NovelSchema
 } from './novel-resources.js';
+import { PersistenceManager } from './persistence-manager.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -21,6 +22,7 @@ export class NovelResourceLoader {
   private resources: NovelResources;
   private promptTemplates: NovelPromptTemplate[];
   private static instance: NovelResourceLoader;
+  private persistenceManager: PersistenceManager;
 
   private constructor() {
     this.resources = {
@@ -30,6 +32,7 @@ export class NovelResourceLoader {
       novels: {}
     };
     this.promptTemplates = [];
+    this.persistenceManager = PersistenceManager.getInstance();
     this.loadFromFile();
   }
 
@@ -107,7 +110,6 @@ export class NovelResourceLoader {
       console.error('Error loading novel resources:', error);
     }
   }
-
   // Métodos para acceder a los recursos
   public getCharacters(): Record<string, any> {
     return this.resources.characters;
@@ -147,6 +149,114 @@ export class NovelResourceLoader {
 
   public getPromptTemplate(id: string): NovelPromptTemplate | null {
     return this.promptTemplates.find(template => template.id === id) || null;
+  }
+
+  // Métodos para crear y actualizar recursos con persistencia
+  public createCharacter(character: any): string {
+    try {
+      const validatedCharacter = CharacterSchema.parse(character);
+      this.resources.characters[character.id] = validatedCharacter;
+      
+      // Guardar en archivo si el autoguardado está activado
+      if (this.persistenceManager.isAutoSaveEnabled()) {
+        this.persistenceManager.saveResource('character', character.id, validatedCharacter);
+      }
+      
+      return character.id;
+    } catch (error) {
+      console.error('Error creating character:', error);
+      throw error;
+    }
+  }
+
+  public createScene(scene: any): string {
+    try {
+      const validatedScene = SceneSchema.parse(scene);
+      this.resources.scenes[scene.id] = validatedScene;
+      
+      // Guardar en archivo si el autoguardado está activado
+      if (this.persistenceManager.isAutoSaveEnabled()) {
+        this.persistenceManager.saveResource('scene', scene.id, validatedScene);
+      }
+      
+      return scene.id;
+    } catch (error) {
+      console.error('Error creating scene:', error);
+      throw error;
+    }
+  }
+
+  public createChapter(chapter: any): string {
+    try {
+      const validatedChapter = ChapterSchema.parse(chapter);
+      this.resources.chapters[chapter.id] = validatedChapter;
+      
+      // Guardar en archivo si el autoguardado está activado
+      if (this.persistenceManager.isAutoSaveEnabled()) {
+        this.persistenceManager.saveResource('chapter', chapter.id, validatedChapter);
+      }
+      
+      return chapter.id;
+    } catch (error) {
+      console.error('Error creating chapter:', error);
+      throw error;
+    }
+  }
+
+  public updateNovel(novel: any): boolean {
+    try {
+      const validatedNovel = NovelSchema.parse(novel);
+      this.resources.novels[novel.id] = validatedNovel;
+      
+      // Guardar en archivo si el autoguardado está activado
+      if (this.persistenceManager.isAutoSaveEnabled()) {
+        this.persistenceManager.saveResource('novel', novel.id, validatedNovel);
+      }
+      
+      return true;
+    } catch (error) {
+      console.error('Error updating novel:', error);
+      return false;
+    }
+  }
+
+  public updateScene(scene: any): boolean {
+    try {
+      const validatedScene = SceneSchema.parse(scene);
+      this.resources.scenes[scene.id] = validatedScene;
+      
+      // Guardar en archivo si el autoguardado está activado
+      if (this.persistenceManager.isAutoSaveEnabled()) {
+        this.persistenceManager.saveResource('scene', scene.id, validatedScene);
+      }
+      
+      return true;
+    } catch (error) {
+      console.error('Error updating scene:', error);
+      return false;
+    }
+  }
+
+  public updateChapter(chapter: any): boolean {
+    try {
+      const validatedChapter = ChapterSchema.parse(chapter);
+      this.resources.chapters[chapter.id] = validatedChapter;
+      
+      // Guardar en archivo si el autoguardado está activado
+      if (this.persistenceManager.isAutoSaveEnabled()) {
+        this.persistenceManager.saveResource('chapter', chapter.id, validatedChapter);
+      }
+      
+      return true;
+    } catch (error) {
+      console.error('Error updating chapter:', error);
+      return false;
+    }
+  }
+
+  // Guardar todos los recursos en el archivo JSON
+  public saveAllResources(): boolean {
+    return this.persistenceManager.saveResources(this.resources, this.promptTemplates);
   }
 
   // Método para aplicar una plantilla de prompt con variables

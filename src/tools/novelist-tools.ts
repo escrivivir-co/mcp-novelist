@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { NovelResourceLoader } from '../resources/resource-loader.js';
+import { PersistenceManager } from '../resources/persistence-manager.js';
 
 export function registerNovelistTools(server: McpServer) {
   // Obtener instancia del cargador de recursos
@@ -333,8 +334,7 @@ export function registerNovelistTools(server: McpServer) {
             "2. Crear o seleccionar una novela existente",
             "3. Explorar o crear personajes usando alephAlpha_listCharacters y alephAlpha_getCharacterDetails",
             "4. Trabajar en escenas específicas con alephAlpha_getScene",
-            "5. Utilizar plantillas de prompts para diferentes tareas de escritura mediante alephAlpha_applyNovelistPromptTemplate"
-          ]
+            "5. Utilizar plantillas de prompts para diferentes tareas de escritura mediante alephAlpha_applyNovelistPromptTemplate"          ]
         },
 
         bestPractices: [
@@ -349,6 +349,65 @@ export function registerNovelistTools(server: McpServer) {
       return {
         content: [{ type: "text", text: JSON.stringify(systemInfo, null, 2) }],
         description: "Información sobre el sistema de asistente para novelistas"
+      };
+    }
+  );
+
+  // Herramienta: Gestionar persistencia
+  server.tool(
+    'alephAlpha_saveCurrentState',
+    'Persists the current state of all novels, chapters, scenes and characters to disk',
+    {},
+    async () => {
+      const resourceLoader = NovelResourceLoader.getInstance();
+      const success = resourceLoader.saveAllResources();
+
+      if (success) {
+        // Actualizar también el catálogo web
+        resourceLoader.updateCatalogForWeb();
+        
+        return {
+          content: [
+            { 
+              type: 'text', 
+              text: 'All novel resources have been successfully saved to disk and the web catalog has been updated.' 
+            }
+          ],
+          description: 'State successfully persisted'
+        };
+      } else {
+        return {
+          content: [
+            { 
+              type: 'text', 
+              text: 'Failed to save resources to disk. Check the server logs for more information.' 
+            }
+          ],
+          description: 'Error persisting state'
+        };
+      }
+    }
+  );
+
+  // Herramienta: Configurar autoguardado
+  server.tool(
+    'alephAlpha_configureAutoSave',
+    'Enables or disables automatic saving of changes to disk',
+    {
+      enabled: z.boolean().describe('Whether to enable or disable auto-save')
+    },
+    async ({ enabled }) => {
+      const persistenceManager = PersistenceManager.getInstance();
+      persistenceManager.setAutoSave(enabled);
+      
+      return {
+        content: [
+          { 
+            type: 'text', 
+            text: `Auto-save has been ${enabled ? 'enabled' : 'disabled'}.${enabled ? ' Changes will be automatically persisted to disk.' : ' You will need to manually save changes using alephAlpha_saveCurrentState.'}` 
+          }
+        ],
+        description: `Auto-save ${enabled ? 'enabled' : 'disabled'}`
       };
     }
   );

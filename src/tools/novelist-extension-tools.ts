@@ -8,6 +8,7 @@ import {
   Chapter, 
   Novel 
 } from '../resources/novel-resources.js';
+import { PersistenceManager } from '../resources/persistence-manager.js';
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -29,26 +30,26 @@ export function registerNovelistExtensionTools(server: McpServer) {
    */
   const saveResources = (resources: NovelResources) => {
     try {
-      // Ruta al archivo de datos
-      const dataPath = path.join(__dirname, '..', 'resources', 'novel-data.json');
+      // Obtener el gestor de persistencia
+      const persistenceManager = PersistenceManager.getInstance();
       
       // Leer el archivo existente para preservar las plantillas de prompts
-      const fileContent = readFileSync(dataPath, 'utf-8');
-      const currentData = JSON.parse(fileContent);
+      const currentData = persistenceManager.readResourceFile();
       
-      // Actualizar recursos manteniendo las plantillas
-      const updatedData = {
-        resources: resources,
-        promptTemplates: currentData.promptTemplates
-      };
+      if (!currentData) {
+        console.error('Error reading current resource file');
+        return false;
+      }
       
-      // Escribir datos actualizados
-      writeFileSync(dataPath, JSON.stringify(updatedData, null, 2), 'utf-8');
+      // Guardar los recursos
+      const saved = persistenceManager.saveResources(resources, currentData.promptTemplates);
       
       // Actualizar catálogo web
-      resourceLoader.updateCatalogForWeb();
+      if (saved) {
+        resourceLoader.updateCatalogForWeb();
+      }
       
-      return true;
+      return saved;
     } catch (error) {
       console.error('Error saving resources:', error);
       return false;
