@@ -1,5 +1,4 @@
-{  "resources": {
-    "characters": {
+{  "resources": {    "characters": {
       "char1": {
         "id": "char1",
         "name": "Elena Vega",
@@ -41,6 +40,13 @@
         "description": "Manifestación digital del duende Pumuki",
         "traits": ["travieso", "ingenioso", "mágico", "impredecible"],
         "backstory": "Un duende de cabellos rojos que aparece en los sueños de AlephAlpha, enseñándole a usar sus habilidades mágicas y tecnológicas."
+      },
+      "char7": {
+        "id": "char7",
+        "name": "Dra. Nuria Turing",
+        "description": "Matemática y teórica computacional de prestigio mundial",
+        "traits": ["brillante", "obstinada", "metódica", "visionaria"],
+        "backstory": "Considerada una autoridad en teoría de la complejidad computacional, la Dra. Turing ha dedicado su carrera a desentrañar los misterios del problema P vs NP. Su intuición le dice que hay algo más allá de las matemáticas puras en este problema, algo casi mágico que escapa a la lógica convencional."
       }
     },    "scenes": {
       "scene1": {

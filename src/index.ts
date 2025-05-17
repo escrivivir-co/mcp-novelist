@@ -5,6 +5,7 @@ import { registerPromptTools } from "./tools/prompt-tools.js";
 import { registerCodeTools } from "./tools/code-tools.js";
 import { registerDocumentationTools } from "./tools/documentation-tools.js";
 import { registerNovelistTools } from './tools/novelist-tools.js';
+import { registerNovelistExtensionTools } from './tools/novelist-extension-tools.js';
 import { registerMcpResources } from './resources/mcp-resources.js';
 import { registerMcpPrompts } from './resources/mcp-prompts.js';
 import dotenv from 'dotenv';
@@ -59,12 +60,12 @@ let httpServer: HttpServer;
 function registerAllTools(): void {
   logger.info("Registering tools...");
   
-  try {
-    // Registrar grupos de herramientas
+  try {    // Registrar grupos de herramientas
     registerPromptTools(server);
     registerCodeTools(server);
     registerDocumentationTools(server);
-    registerNovelistTools(server); // Añadir esta línea para registrar las nuevas herramientas
+    registerNovelistTools(server);
+    registerNovelistExtensionTools(server); // Registrar las herramientas extendidas para novelas
     
     logger.info("All tools registered successfully");
   } catch (error) {
