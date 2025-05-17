@@ -15,9 +15,16 @@
         "char2"
       ],
       "chapters": [
-        "chap1"
+        {
+          "id": "chap1",
+          "title": "Capítulo 1",
+          "description": "",
+          "scenes": []
+        }
       ],
-      "setting": "Perú contemporáneo, con expediciones en sitios arqueológicos remotos"
+      "setting": "Perú contemporáneo, con expediciones en sitios arqueológicos remotos",
+      "name": "El Secreto de los Antiguos",
+      "description": "Una arqueóloga descubre un artefacto antiguo que desata una serie de eventos misteriosos, obligándola a resolver un enigma milenario antes de que caiga en las manos equivocadas."
     }
   ],
   "characters": [
@@ -31,7 +38,9 @@
         "desconfiada",
         "resiliente"
       ],
-      "backstory": "Creció en una pequeña ciudad costera. Perdió a sus padres en circunstancias misteriosas cuando tenía 18 años, lo que la impulsó a estudiar arqueología para descubrir la verdad."
+      "backstory": "Creció en una pequeña ciudad costera. Perdió a sus padres en circunstancias misteriosas cuando tenía 18 años, lo que la impulsó a estudiar arqueología para descubrir la verdad.",
+      "role": "Personaje",
+      "background": ""
     },
     {
       "id": "char2",
@@ -43,7 +52,9 @@
         "protector",
         "reservado"
       ],
-      "backstory": "Sirvió 10 años en fuerzas especiales. Una misión fallida lo llevó a abandonar el ejército y buscar una vida menos complicada como guía en expediciones arqueológicas."
+      "backstory": "Sirvió 10 años en fuerzas especiales. Una misión fallida lo llevó a abandonar el ejército y buscar una vida menos complicada como guía en expediciones arqueológicas.",
+      "role": "Personaje",
+      "background": ""
     }
   ],
   "scenes": [

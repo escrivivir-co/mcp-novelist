@@ -268,27 +268,30 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'novel':
                 item = novelData.novels.find(n => n.id === id);
                 if (item) {
+                    // Verificar si chapters existe y es un array, si no, usar un array vacío
+                    const chapters = item.chapters || [];
+                    
                     detailsHTML = `
                         <div class="detail-header">
-                            <h2>${item.name}</h2>
+                            <h2>${item.title || item.name}</h2>
                             <div class="detail-meta">
-                                <span class="detail-badge">${item.genre}</span>
+                                <span class="detail-badge">${item.genre || 'Sin género'}</span>
                                 <span class="detail-date">Creada: ${new Date().toLocaleDateString()}</span>
                             </div>
                         </div>
                         <div class="detail-section">
                             <h3>Descripción</h3>
-                            <p>${item.description}</p>
+                            <p>${item.description || 'Sin descripción disponible'}</p>
                         </div>
                         <div class="detail-section">
                             <h3>Personajes</h3>
                             <div class="detail-characters">
-                                ${item.characters.map(charId => {
+                                ${(item.characters || []).map(charId => {
                                     const char = novelData.characters.find(c => c.id === charId);
                                     return char ? `
                                         <div class="detail-character-card" data-id="${char.id}" data-type="character">
                                             <h4>${char.name}</h4>
-                                            <p>${char.description.substring(0, 100)}...</p>
+                                            <p>${char.description ? char.description.substring(0, 100) + '...' : 'Sin descripción'}</p>
                                         </div>
                                     ` : '';
                                 }).join('')}
@@ -297,23 +300,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="detail-section">
                             <h3>Capítulos</h3>
                             <div class="chapters-accordion">
-                                ${item.chapters.map(chapter => {
+                                ${chapters.map(chapter => {
                                     return `
                                         <div class="chapter-item">
                                             <div class="chapter-header">
-                                                <h4>${chapter.title}</h4>
+                                                <h4>${chapter.title || 'Sin título'}</h4>
                                                 <span class="chapter-toggle">+</span>
                                             </div>
                                             <div class="chapter-content">
-                                                <p>${chapter.description}</p>
+                                                <p>${chapter.description || 'Sin descripción'}</p>
                                                 <h5>Escenas:</h5>
                                                 <ul class="scene-list">
-                                                    ${chapter.scenes.map(sceneId => {
+                                                    ${(chapter.scenes || []).map(sceneId => {
                                                         const scene = novelData.scenes.find(s => s.id === sceneId);
                                                         return scene ? `
                                                             <li>
                                                                 <a href="#" class="scene-link" data-id="${scene.id}" data-type="scene">
-                                                                    ${scene.title}
+                                                                    ${scene.title || 'Escena sin título'}
                                                                 </a>
                                                             </li>
                                                         ` : '';
@@ -323,6 +326,29 @@ document.addEventListener('DOMContentLoaded', () => {
                                         </div>
                                     `;
                                 }).join('')}
+                            </div>
+                        </div>
+                        <div class="detail-section reading-section">
+                            <h3>Leer Novela</h3>
+                            <div class="reading-controls">
+                                <button id="toggle-reading-mode" class="reading-button">
+                                    <span class="icon">📖</span> Modo Lectura
+                                </button>
+                                <select id="chapter-selector" class="chapter-selector">
+                                    <option value="all">Novela Completa</option>
+                                    ${chapters.map((chapter, index) => 
+                                        `<option value="${index}">Capítulo ${index+1}: ${chapter.title || 'Sin título'}</option>`
+                                    ).join('')}
+                                </select>
+                            </div>
+                            <div id="reading-container" class="reading-container">
+                                <div class="reading-header">
+                                    <h2>${item.title || item.name}</h2>
+                                    <p class="reading-meta">Género: ${item.genre || 'Sin categoría'}</p>
+                                </div>
+                                <div id="reading-content" class="reading-content">
+                                    ${generateNovelContent(item)}
+                                </div>
                             </div>
                         </div>
                     `;
@@ -437,7 +463,87 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
+            
+            // Configurar el modo de lectura
+            if (type === 'novel') {
+                const toggleReadingBtn = document.getElementById('toggle-reading-mode');
+                const chapterSelector = document.getElementById('chapter-selector');
+                const readingContainer = document.getElementById('reading-container');
+                
+                if (toggleReadingBtn) {
+                    toggleReadingBtn.addEventListener('click', () => {
+                        document.body.classList.toggle('reading-mode');
+                        
+                        if (document.body.classList.contains('reading-mode')) {
+                            toggleReadingBtn.innerHTML = '<span class="icon">🔍</span> Modo Normal';
+                        } else {
+                            toggleReadingBtn.innerHTML = '<span class="icon">📖</span> Modo Lectura';
+                        }
+                    });
+                }
+                
+                if (chapterSelector) {
+                    chapterSelector.addEventListener('change', (e) => {
+                        const selectedValue = e.target.value;
+                        const readingContent = document.getElementById('reading-content');
+                        
+                        if (selectedValue === 'all') {
+                            readingContent.innerHTML = generateNovelContent(item);
+                        } else {
+                            const chapterIndex = parseInt(selectedValue);
+                            const chapter = item.chapters[chapterIndex];
+                            readingContent.innerHTML = generateChapterContent(chapter, novelData);
+                        }
+                    });
+                }
+            }
         }
+    }
+    
+    // Función para generar el contenido de toda la novela
+    function generateNovelContent(novel) {
+        if (!novel) return '<p>No hay contenido disponible.</p>';
+        
+        const chapters = novel.chapters || [];
+        
+        return `
+            <div class="novel-introduction">
+                <p>${novel.description || 'No hay descripción disponible.'}</p>
+            </div>
+            ${chapters.length > 0 ? chapters.map((chapter, index) => `
+                <div class="novel-chapter">
+                    <h3>Capítulo ${index+1}: ${chapter.title || 'Sin título'}</h3>
+                    <p class="chapter-description">${chapter.description || 'Sin descripción'}</p>
+                    ${generateChapterContent(chapter, novelData)}
+                </div>
+            `).join('') : '<p>Esta novela no tiene capítulos todavía.</p>'}
+        `;
+    }
+
+    // Función para generar el contenido de un capítulo
+    function generateChapterContent(chapter, novelData) {
+        if (!chapter || !chapter.scenes || !chapter.scenes.length) 
+            return '<p>No hay escenas disponibles para este capítulo.</p>';
+        
+        return `
+            ${chapter.scenes.map(sceneId => {
+                const scene = novelData.scenes.find(s => s.id === sceneId);
+                
+                if (!scene) return '<p>Escena no encontrada.</p>';
+                
+                return `
+                    <div class="novel-scene">
+                        <h4>${scene.title || 'Escena sin título'}</h4>
+                        <p class="scene-setting">${scene.setting || 'Sin ambientación definida'}</p>
+                        <div class="scene-text">${
+                            scene.content ? 
+                            scene.content.replace(/\n/g, '<br>') : 
+                            'No hay contenido disponible para esta escena.'
+                        }</div>
+                    </div>
+                `;
+            }).join('')}
+        `;
     }
     
     // Event listeners
