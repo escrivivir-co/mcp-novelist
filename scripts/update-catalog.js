@@ -43,16 +43,29 @@ if (!fs.existsSync(targetDir)) {
 try {
     const rawData = fs.readFileSync(sourceFile, 'utf8');
     const sourceData = JSON.parse(rawData);
-    
-    // Para depuración
+      // Para depuración
     console.log('Estructura de sourceData:', Object.keys(sourceData));
     if (sourceData.resources) {
         console.log('Estructura de resources:', Object.keys(sourceData.resources));
     }
     
     // Validar datos
-    const validationMessages = validateNovelData(sourceData);
-    validationMessages.forEach(message => console.log(message));
+    const validation = validateNovelData(sourceData);
+    
+    // Mostrar resultados de la validación
+    validation.messages.forEach(message => console.log(message));
+    
+    // Si hay errores críticos, detener el proceso
+    if (!validation.isValid) {
+        console.error('⛔ Se detectaron errores críticos en los datos. Corríjalos antes de continuar.');
+        console.error('   Revise los mensajes de error anteriores para más detalles.');
+        process.exit(1);
+    }
+    
+    // Si hay advertencias, mostrar un aviso pero continuar
+    if (validation.warnings.length > 0) {
+        console.warn('⚠️ Se detectaron advertencias en los datos. Revise los mensajes para mejorar la calidad del catálogo.');
+    }
     
     // Procesar datos para formato web
     const webData = processNovelDataForWeb(sourceData);

@@ -68,9 +68,9 @@ export function createNovelDetails(novel, novelData) {
                 <div class="chapter-item">
                     <div class="chapter-header">
                         <h4>${chapterTitle}</h4>
-                        <span class="chapter-toggle">−</span>
+                        <span class="chapter-toggle">+</span>
                     </div>
-                    <div class="chapter-content" style="max-height: 95px;">
+                    <div class="chapter-content" style="max-height: 0px;">
                         <p>${chapter.description || chapter.summary || 'Sin descripción'}</p>
                         <h5>Escenas:</h5>
                         <ul class="scene-list">
@@ -184,33 +184,56 @@ export function createCharacterDetails(character, novelData) {
  * @returns {string} HTML con los detalles
  */
 export function createSceneDetails(scene, novelData) {
+    if (!scene) return '<p>No se encontraron detalles de la escena</p>';
+
+    // Buscar a qué novela y capítulo pertenece esta escena
+    let novelTitle = 'Novela desconocida';
+    let chapterTitle = 'Capítulo desconocido';
+    
+    // Buscar la novela y capítulo en los datos
+    if (novelData && novelData.content) {
+        // Buscar en cada novela
+        for (const novel of novelData.content.novels || []) {
+            // Buscar en cada capítulo de la novela
+            for (const chapter of novel.chapters || []) {
+                if (chapter.scenes && chapter.scenes.includes(scene.id)) {
+                    novelTitle = novel.title || 'Sin título';
+                    chapterTitle = chapter.title || 'Sin título';
+                    break;
+                }
+            }
+        }
+    }
+
+    // Generar el HTML
     return `
-        <div class="detail-header">
+        <div class="scene-details">
             <h2>${scene.title || 'Escena sin título'}</h2>
-            <div class="detail-meta">
-                <span class="detail-badge">Escena</span>
+            <p><strong>Novela:</strong> ${novelTitle}</p>
+            <p><strong>Capítulo:</strong> ${chapterTitle}</p>
+            <p><strong>Ambientación:</strong> ${scene.setting || 'No especificada'}</p>
+            
+            <div class="scene-content">
+                <h3>Contenido</h3>
+                <div class="scene-text">
+                    ${scene.content ? scene.content.replace(/\n/g, '<br>') : 
+                      scene.summary ? scene.summary : 'No hay contenido disponible para esta escena'}
+                </div>
             </div>
-        </div>
-        <div class="detail-section">
-            <h3>Ambientación</h3>
-            <p>${scene.setting || 'Sin ambientación definida'}</p>
-        </div>
-        <div class="detail-section">
-            <h3>Personajes presentes</h3>
-            <div class="present-characters">
-                ${(scene.characters || []).map(charId => {
-                    const char = novelData.content.characters.find(c => c.id === charId);
-                    return char ? `
-                        <span class="character-badge" data-id="${char.id}" data-type="character">
-                            ${char.name}
-                        </span>
-                    ` : '';
-                }).join('') || '<p>No hay personajes en esta escena</p>'}
-            </div>
-        </div>
-        <div class="detail-section">
-            <h3>Contenido</h3>
-            <div class="scene-content">${(scene.content || 'Sin contenido').replace(/\n/g, '<br>')}</div>
+            
+            ${scene.characters && scene.characters.length > 0 ? `
+                <div class="scene-characters">
+                    <h3>Personajes presentes</h3>
+                    <ul>
+                        ${scene.characters.map(charId => {
+                            const character = novelData.content.characters.find(c => c.id === charId);
+                            return character ? 
+                                `<li><strong>${character.name}</strong> - ${character.description || 'Sin descripción'}</li>` : 
+                                `<li>Personaje ID: ${charId} (no encontrado)</li>`;
+                        }).join('')}
+                    </ul>
+                </div>
+            ` : ''}
         </div>
     `;
 }
@@ -293,26 +316,50 @@ function formatDate(date) {
 
 /**
  * Muestra los detalles de un personaje
+ * @param {Object} character - Datos del personaje
+ * @param {Object} novelData - Datos completos del catálogo
  */
-export function showCharacterDetails(character) {
+export function showCharacterDetails(character, novelData) {
     const modalContent = document.getElementById('modal-content');
-    if (!modalContent) return;
-    
+    if (!modalContent) {
+        console.error('No se encontró el elemento modal-content');
+        return;
+    }
+
+    // Generar el HTML para los detalles del personaje
     modalContent.innerHTML = createCharacterDetails(character, novelData);
+
+    // Mostrar el modal - Asegurarse de usar el ID correcto del modal
+    const modal = document.getElementById('detail-modal');
+    if (!modal) {
+        console.error('No se encontró el elemento detail-modal');
+        return;
+    }
     
-    // Mostrar modal
-    document.getElementById('modal').style.display = 'block';
+    modal.style.display = 'block';
 }
 
 /**
  * Muestra los detalles de una escena
+ * @param {Object} scene - Datos de la escena
+ * @param {Object} novelData - Datos completos del catálogo
  */
-export function showSceneDetails(scene) {
+export function showSceneDetails(scene, novelData) {
     const modalContent = document.getElementById('modal-content');
-    if (!modalContent) return;
-    
+    if (!modalContent) {
+        console.error('No se encontró el elemento modal-content');
+        return;
+    }
+
+    // Generar el HTML para los detalles de la escena
     modalContent.innerHTML = createSceneDetails(scene, novelData);
+
+    // Mostrar el modal - Asegurarse de usar el ID correcto del modal
+    const modal = document.getElementById('detail-modal');
+    if (!modal) {
+        console.error('No se encontró el elemento detail-modal');
+        return;
+    }
     
-    // Mostrar modal
-    document.getElementById('modal').style.display = 'block';
+    modal.style.display = 'block';
 }

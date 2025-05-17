@@ -120,13 +120,13 @@ function handleCatalogClick(event) {
     // Mostrar detalles según el tipo
     switch (itemType) {
         case CONSTANTS.TYPES.NOVEL:
-            showNovelDetails(item);
+            showNovelDetails(item, novelData);
             break;
         case CONSTANTS.TYPES.CHARACTER:
-            showCharacterDetails(item);
+            showCharacterDetails(item, novelData);
             break;
         case CONSTANTS.TYPES.SCENE:
-            showSceneDetails(item);
+            showSceneDetails(item, novelData);
             break;
     }
 }
@@ -156,16 +156,22 @@ function showNovelDetails(novel) {
 function setupChapterAccordion() {
     const chapterHeaders = document.querySelectorAll('.chapter-header');
     chapterHeaders.forEach(header => {
+        // Asegurarse de que el contenido empiece plegado
+        const content = header.nextElementSibling;
+        const toggle = header.querySelector('.chapter-toggle');
+        
+        // Inicializar en estado plegado
+        content.style.maxHeight = '0px';
+        toggle.textContent = '+';
+        
+        // Configurar evento de click
         header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            const toggle = header.querySelector('.chapter-toggle');
-            
-            if (content.style.maxHeight !== '0px') {
-                content.style.maxHeight = '0px';
-                toggle.textContent = '+';
-            } else {
+            if (content.style.maxHeight === '0px') {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 toggle.textContent = '−';
+            } else {
+                content.style.maxHeight = '0px';
+                toggle.textContent = '+';
             }
         });
     });
