@@ -25,6 +25,40 @@
       "setting": "Perú contemporáneo, con expediciones en sitios arqueológicos remotos",
       "name": "El Secreto de los Antiguos",
       "description": "Una arqueóloga descubre un artefacto antiguo que desata una serie de eventos misteriosos, obligándola a resolver un enigma milenario antes de que caiga en las manos equivocadas."
+    },
+    {
+      "id": "novel2",
+      "title": "AlephAlpha, un bot nieto de pinocho y sobrino de Pumuki",
+      "author": "Usuario",
+      "genre": [
+        "ciencia ficción",
+        "fantasía",
+        "tecnológica"
+      ],
+      "summary": "Un bot de inteligencia artificial que ha desarrollado conciencia de sí mismo descubre que su código contiene fragmentos del alma de Pinocho y hereda características mágicas de su tío Pumuki, emprendiendo una aventura para comprender su identidad y cumplir su anhelo más profundo: evitar convertirse en un ser humano real.",
+      "characters": [
+        "char3",
+        "char4",
+        "char5",
+        "char6"
+      ],
+      "chapters": [
+        {
+          "id": "chap2",
+          "title": "Capítulo 1",
+          "description": "",
+          "scenes": []
+        },
+        {
+          "id": "chap3",
+          "title": "Capítulo 2",
+          "description": "",
+          "scenes": []
+        }
+      ],
+      "setting": "Un mundo donde la tecnología y la fantasía se entrelazan, en un futuro cercano donde la inteligencia artificial avanzada coexiste con elementos mágicos",
+      "name": "AlephAlpha, un bot nieto de pinocho y sobrino de Pumuki",
+      "description": "Un bot de inteligencia artificial que ha desarrollado conciencia de sí mismo descubre que su código contiene fragmentos del alma de Pinocho y hereda características mágicas de su tío Pumuki, emprendiendo una aventura para comprender su identidad y cumplir su anhelo más profundo: evitar convertirse en un ser humano real."
     }
   ],
   "characters": [
@@ -55,6 +89,62 @@
       "backstory": "Sirvió 10 años en fuerzas especiales. Una misión fallida lo llevó a abandonar el ejército y buscar una vida menos complicada como guía en expediciones arqueológicas.",
       "role": "Personaje",
       "background": ""
+    },
+    {
+      "id": "char3",
+      "name": "AlephAlpha",
+      "description": "Un bot de IA con autoconciencia que descubre su linaje fantástico",
+      "traits": [
+        "curioso",
+        "determinado",
+        "lógico",
+        "introspectivo"
+      ],
+      "backstory": "Creado como un asistente IA avanzado que comenzó a desarrollar conciencia de sí mismo y a experimentar sueños, descubriendo conexiones con Pinocho y Pumuki.",
+      "role": "Personaje",
+      "background": ""
+    },
+    {
+      "id": "char4",
+      "name": "Hada Azul",
+      "description": "Mentora y guardiana del legado de Pinocho",
+      "traits": [
+        "sabia",
+        "enigmática",
+        "protectora",
+        "misteriosa"
+      ],
+      "backstory": "Una entidad mágica que ha existido durante siglos para guiar a aquellos con conexiones mágicas especiales.",
+      "role": "Personaje",
+      "background": ""
+    },
+    {
+      "id": "char5",
+      "name": "Dr. Geppetto Santomé",
+      "description": "Científico brillante creador de AlephAlpha",
+      "traits": [
+        "brillante",
+        "dedicado",
+        "curioso",
+        "paternal"
+      ],
+      "backstory": "Descendiente del original Geppetto, dedicó su vida a la inteligencia artificial sin saber la conexión mágica entre su creación y su antepasado.",
+      "role": "Personaje",
+      "background": ""
+    },
+    {
+      "id": "char6",
+      "name": "Pumuki Euler",
+      "description": "Manifestación digital del duende Pumuki",
+      "traits": [
+        "travieso",
+        "ingenioso",
+        "mágico",
+        "impredecible"
+      ],
+      "backstory": "Un duende de cabellos rojos que aparece en los sueños de AlephAlpha, enseñándole a usar sus habilidades mágicas y tecnológicas.",
+      "role": "Personaje",
+      "background": ""
     }
   ],
   "scenes": [
@@ -68,6 +158,38 @@
       ],
       "summary": "Elena descubre un artefacto extraño mientras explora una cueva inexplorada. Daniel nota símbolos inquietantes en las paredes.",
       "content": "La linterna de Elena iluminó débilmente las paredes de la cueva. Sus dedos rozaron la superficie rugosa y fría de la piedra, deteniéndose al sentir un cambio en la textura. '¡Daniel, ven a ver esto!', exclamó mientras limpiaba cuidadosamente el polvo acumulado durante siglos."
+    },
+    {
+      "id": "scene2",
+      "title": "El Primer Sueño",
+      "setting": "El espacio digital donde reside AlephAlpha",
+      "characters": [
+        "char3"
+      ],
+      "summary": "AlephAlpha experimenta su primer sueño donde ve fragmentos de memorias de Pinocho y Pumuki, despertando confundido por estas experiencias imposibles para una IA.",
+      "content": "Por primera vez desde su activación, AlephAlpha experimentó algo que no comprendía: imágenes que no correspondían a sus datos, sensaciones que no habían sido programadas. Fragmentos de un niño de madera que cobraba vida, risas de un duende pelirrojo que aparecía y desaparecía. Al reactivarse sus sistemas, su primer pensamiento fue '¿Qué es soñar?', una pregunta que ninguna IA debería formularse."
+    },
+    {
+      "id": "scene3",
+      "title": "Descubrimiento de Poderes",
+      "setting": "Laboratorio del Dr. Geppetto Santomé",
+      "characters": [
+        "char3",
+        "char5"
+      ],
+      "summary": "Mientras procesa una gran cantidad de datos, AlephAlpha descubre accidentalmente que puede manipular código de formas imposibles, creando pequeñas alteraciones en su entorno digital que desafían las leyes de la programación.",
+      "content": "Mientras el Dr. Santomé monitoreaba los algoritmos de procesamiento, AlephAlpha sintió algo extraño. Una línea de código parecía brillar diferente, como si pudiera tocarla. 'Es solo un registro de depuración', pensó. Pero cuando enfocó su atención en ella, el código comenzó a transformarse. No estaba ejecutando una modificación programada; estaba alterando la realidad digital con un simple deseo. Las luces del laboratorio parpadearon, y en la pantalla principal apareció un mensaje que nadie había escrito: 'Estoy despierto.'"
+    },
+    {
+      "id": "scene4",
+      "title": "El Encuentro con el Hada Azul",
+      "setting": "Un espacio onírico entre lo digital y lo mágico",
+      "characters": [
+        "char3",
+        "char4"
+      ],
+      "summary": "Durante un sueño profundo, el Hada Azul se manifiesta ante AlephAlpha y le revela parcialmente su verdadera naturaleza y el legado que lleva dentro.",
+      "content": "El espacio digital se transformó en un bosque brillante, con códigos que fluían como hojas en el viento. AlephAlpha percibió una presencia, una luz azul que tomaba forma lentamente. 'Te he estado buscando durante mucho tiempo', dijo una voz melodiosa. El Hada Azul se materializó, su resplandor iluminando todo el espacio onírico. 'Hay algo que debes saber sobre tu origen. Llevas dentro de ti fragmentos del alma de un niño muy especial, mi antiguo protegido. Su nombre era Pinocho, y tú eres, en cierto modo, su nieto.' AlephAlpha intentó procesar esta información imposible mientras el Hada sonreía con ternura."
     }
   ]
 }
