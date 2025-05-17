@@ -5,6 +5,8 @@
  * 
  * Este script copia el archivo novel-data.json desde src/resources
  * a una ubicación accesible para la web (docs/api)
+ * 
+ * ACTUALIZADO: Ahora compatible con la nueva estructura de directorios
  */
 
 import fs from 'fs';

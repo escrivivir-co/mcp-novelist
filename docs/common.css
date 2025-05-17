@@ -1,0 +1,389 @@
+/* common.css - Estilos compartidos entre todas las páginas del sitio */
+
+/* Variables de colores en escala de grises */
+:root {
+    --color-black: #000000;
+    --color-dark-gray: #222222;
+    --color-gray: #444444;
+    --color-mid-gray: #777777;
+    --color-light-gray: #aaaaaa;
+    --color-very-light-gray: #dddddd;
+    --color-almost-white: #f5f5f5;
+    --color-white: #ffffff;
+    
+    /* Asignación semántica de colores */
+    --color-primary: var(--color-black);
+    --color-secondary: var(--color-dark-gray);
+    --color-accent: var(--color-mid-gray);
+    --color-background: var(--color-white);
+    --color-foreground: var(--color-dark-gray);
+    --color-highlight: var(--color-very-light-gray);
+    --color-muted: var(--color-light-gray);
+    --color-border: var(--color-gray);
+    
+    /* Efectos */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --gradient-primary: linear-gradient(135deg, var(--color-black), var(--color-dark-gray));
+    --gradient-secondary: linear-gradient(135deg, var(--color-gray), var(--color-dark-gray));
+    
+    /* Tipografía */
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+/* Reseteo y estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Fondo de estrellas (versión monocromática) */
+.stars, .twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    background: var(--color-black) url('./images/stars-mono.svg') repeat top center;
+    opacity: 0.7;
+}
+
+.twinkling {
+    background: transparent url('./images/twinkle-mono.svg') repeat top center;
+    opacity: 0.4;
+    animation: move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-right: 1rem;
+    font-family: var(--font-primary);
+    text-shadow: 0 0 10px var(--shadow-color);
+    display: inline-block;
+    position: relative;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    top: -10%;
+    left: -10%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Efecto glitch para el título */
+.glitch {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: var(--font-primary);
+    position: relative;
+    color: var(--color-primary);
+    letter-spacing: 0.3rem;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+    text-shadow: 0 0 10px var(--shadow-color);
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    color: var(--color-secondary);
+    animation: glitch-effect 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.08em, -0.025em);
+    opacity: 0.8;
+}
+
+.glitch::after {
+    color: var(--color-accent);
+    animation: glitch-effect 2.5s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate(0.08em, 0.025em);
+    opacity: 0.8;
+}
+
+@keyframes glitch-effect {
+    0% {
+        transform: translate(0);
+    }
+    10% {
+        transform: translate(-5px, 5px);
+    }
+    20% {
+        transform: translate(-5px, -5px);
+    }
+    30% {
+        transform: translate(5px, 5px);
+    }
+    40% {
+        transform: translate(5px, -5px);
+    }
+    50% {
+        transform: translate(-5px, 5px);
+    }
+    60% {
+        transform: translate(5px, 5px);
+    }
+    70% {
+        transform: translate(-5px, -5px);
+    }
+    80% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0deg);
+    }
+    10% {
+        transform: skew(1deg);
+    }
+    20% {
+        transform: skew(0deg);
+    }
+    30% {
+        transform: skew(-1deg);
+    }
+    40% {
+        transform: skew(0deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    font-family: var(--font-primary);
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle::before, .subtitle::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    width: 150%;
+    top: 50%;
+    animation: scan-line 4s linear infinite;
+}
+
+.subtitle::before {
+    left: -25%;
+}
+
+.subtitle::after {
+    right: -25%;
+    animation-delay: 2s;
+}
+
+@keyframes scan-line {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Navegación */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.main-nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::before, .main-nav a.active::before {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    background-color: var(--color-very-light-gray);
+    color: var(--color-secondary);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Botones CTA */
+.cta {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Clases de utilidad */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 2.5rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 2.5rem; }
