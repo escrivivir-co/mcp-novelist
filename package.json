@@ -4,6 +4,10 @@
   "description": "A TypeScript implementation of the Model Context Protocol (MCP) for AI applications.",
   "main": "dist/index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/escrivivir-co/mcp-novelist"
+  },
   "scripts": {
     "MCP_SERVER": "npm start",
     "inspector": "mcp-inspector",
