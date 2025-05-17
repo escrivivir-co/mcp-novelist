@@ -109,7 +109,7 @@ Aleph MCP expone datos a través de recursos MCP, que son fuentes de informació
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/aleph-mcp.git
+git clone https://github.com/escrivivir-co/mcp-novelist.git
 
 # Entrar al directorio
 cd aleph-mcp
@@ -256,7 +256,7 @@ registerTool(myCustomTool);
 
 ## Recursos Adicionales
 
-- [Repositorio de GitHub](https://github.com/tu-usuario/aleph-mcp)
+- [Repositorio de GitHub](https://github.com/escrivivir-co/mcp-novelist)
 - [Guía de Contribución](CONTRIBUTING.md)
 - [Código de Conducta](CODE_OF_CONDUCT.md)
 - [Licencia](LICENSE)
