@@ -117,8 +117,13 @@ npm run start</code></pre>
                         <h3>Conecta VS Code con el Servidor MCP</h3>
                         <p>Edita la configuración de VS Code para apuntar al servidor MCP local.</p>
                         <div class="mini-code-block">
-                            <pre><code>"github.copilot.advanced": {
-    "model": "mcp://localhost:3000"
+                            <pre><code>"github.copilot.advanced":{
+  "servers": {
+    "AlephAlpha": {
+      "type": "http",
+      "url": "http://localhost:3000",
+    }
+  }
 }</code></pre>
                         </div>
                     </div>
