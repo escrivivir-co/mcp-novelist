@@ -1,5 +1,5 @@
 # mcp-novelist
-Como la app Novelist pero via MCP y modelos del lenguaje (Ideal para IDEs)
+Como la app Novelist pero via MCP y modelos del lenguaje (Ideal para IDEs). Ver [WebSplash](https://escrivivir-co.github.io/mcp-novelist).
 
 [modelcontextprotocol.io/introduction](https://modelcontextprotocol.io/introduction).
 
