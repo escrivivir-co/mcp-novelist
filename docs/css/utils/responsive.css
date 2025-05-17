@@ -1,0 +1,26 @@
+/* responsive.css - Estilos responsivos para diferentes tamaños de pantalla */
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .detail-characters,
+    .appears-in-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .reading-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

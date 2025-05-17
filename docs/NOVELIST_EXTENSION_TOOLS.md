@@ -19,6 +19,7 @@ Estas herramientas están definidas en `src/tools/novelist-extension-tools.ts` y
 | `alephAlpha_updateScene` | Actualiza una escena existente | `sceneId`, `title`, `setting`, `characters`, `summary`, `content` |
 | `alephAlpha_createChapterWithScenes` | Crea un capítulo completo con múltiples escenas | `novelId`, `chapterTitle`, `chapterSummary`, `sceneDescriptions` |
 | `alephAlpha_createPvsNPChapter` | Crea un capítulo específico sobre P vs NP para AlephAlpha | `novelId` |
+| `alephAlpha_deleteChapter` | Elimina un capítulo existente | `chapterId`, `novelId`, `deleteScenes` |
 
 ## Ejemplos de Uso
 
@@ -79,6 +80,18 @@ Esta herramienta genera automáticamente un capítulo completo sobre el problema
 }
 ```
 
+### Eliminar un Capítulo Existente
+
+```javascript
+{
+  "chapterId": "chap5",
+  "novelId": "novel2",
+  "deleteScenes": true
+}
+```
+
+Esta herramienta permite eliminar un capítulo existente de una novela. Si se establece `deleteScenes` en `true`, también eliminará las escenas asociadas al capítulo, siempre y cuando no estén siendo utilizadas por otros capítulos.
+
 ## Implementación Técnica
 
 Las herramientas de extensión para novelistas están implementadas utilizando el framework MCP y siguen estos principios:
@@ -101,6 +114,7 @@ Para obtener los mejores resultados al trabajar en una novela:
 4. Organizar las escenas en capítulos con `alephAlpha_createChapter`
 5. Actualizar escenas según sea necesario con `alephAlpha_updateScene`
 6. Para la novela "AlephAlpha", utilizar `alephAlpha_createPvsNPChapter` para añadir el capítulo especial sobre P vs NP
+7. Eliminar capítulos redundantes o no deseados con `alephAlpha_deleteChapter`
 
 ---
 

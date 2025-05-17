@@ -1,0 +1,140 @@
+/* reading-mode.css - Estilos para el modo de lectura */
+
+/* Modo lectura */
+.reading-section {
+    position: relative;
+}
+
+.reading-controls {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.chapter-selector {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: var(--font-secondary);
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.reading-container {
+    background-color: var(--color-white);
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.reading-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-highlight);
+}
+
+.reading-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-primary);
+}
+
+.reading-meta {
+    color: var(--color-accent);
+    margin: 0;
+}
+
+.reading-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    line-height: 1.6;
+    color: var(--color-secondary);
+}
+
+.novel-introduction {
+    margin-bottom: 3rem;
+    font-style: italic;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.novel-chapter {
+    margin-bottom: 3rem;
+}
+
+.novel-chapter h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-highlight);
+}
+
+.chapter-description {
+    margin: 0 0 2rem 0;
+    font-style: italic;
+    color: var(--color-accent);
+    text-align: center;
+}
+
+.novel-scene {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-highlight);
+}
+
+.novel-scene:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.novel-scene h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+}
+
+.scene-setting {
+    margin: 0 0 1.5rem 0;
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+.scene-text {
+    line-height: 1.8;
+    color: var(--color-secondary);
+}
+
+/* Modo lectura a pantalla completa */
+body.reading-mode .modal-content {
+    max-width: 800px;
+    padding: 30px;
+}
+
+body.reading-mode .reading-container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: none;
+}
+
+body.reading-mode .detail-section:not(.reading-section),
+body.reading-mode .detail-header {
+    display: none;
+}
+
+body.reading-mode .reading-section h3 {
+    display: none;
+}
+
+body.reading-mode .close-modal {
+    z-index: 1001;
+}

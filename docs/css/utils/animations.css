@@ -1,0 +1,29 @@
+/* animations.css - Animaciones utilizadas en el catálogo */
+
+/* Animación del spinner de carga */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--color-highlight);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de aparición del modal */
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

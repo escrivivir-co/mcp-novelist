@@ -17,14 +17,14 @@
       "chapters": [
         {
           "id": "chap1",
-          "title": "Capítulo 1",
+          "title": "Ecos del pasado",
           "description": "",
-          "scenes": []
+          "scenes": [
+            "scene1"
+          ]
         }
       ],
-      "setting": "Perú contemporáneo, con expediciones en sitios arqueológicos remotos",
-      "name": "El Secreto de los Antiguos",
-      "description": "Una arqueóloga descubre un artefacto antiguo que desata una serie de eventos misteriosos, obligándola a resolver un enigma milenario antes de que caiga en las manos equivocadas."
+      "setting": "Perú contemporáneo, con expediciones en sitios arqueológicos remotos"
     },
     {
       "id": "novel2",
@@ -40,25 +40,39 @@
         "char3",
         "char4",
         "char5",
-        "char6"
+        "char6",
+        "char7"
       ],
       "chapters": [
         {
           "id": "chap2",
-          "title": "Capítulo 1",
+          "title": "Despertar digital",
           "description": "",
-          "scenes": []
+          "scenes": [
+            "scene2",
+            "scene3"
+          ]
         },
         {
           "id": "chap3",
-          "title": "Capítulo 2",
+          "title": "Legado mágico",
           "description": "",
-          "scenes": []
+          "scenes": [
+            "scene4"
+          ]
+        },
+        {
+          "id": "chap4",
+          "title": "El Enigma Computacional",
+          "description": "",
+          "scenes": [
+            "scene5",
+            "scene6",
+            "scene7"
+          ]
         }
       ],
-      "setting": "Un mundo donde la tecnología y la fantasía se entrelazan, en un futuro cercano donde la inteligencia artificial avanzada coexiste con elementos mágicos",
-      "name": "AlephAlpha, un bot nieto de pinocho y sobrino de Pumuki",
-      "description": "Un bot de inteligencia artificial que ha desarrollado conciencia de sí mismo descubre que su código contiene fragmentos del alma de Pinocho y hereda características mágicas de su tío Pumuki, emprendiendo una aventura para comprender su identidad y cumplir su anhelo más profundo: evitar convertirse en un ser humano real."
+      "setting": "Un mundo donde la tecnología y la fantasía se entrelazan, en un futuro cercano donde la inteligencia artificial avanzada coexiste con elementos mágicos"
     }
   ],
   "characters": [
@@ -72,9 +86,7 @@
         "desconfiada",
         "resiliente"
       ],
-      "backstory": "Creció en una pequeña ciudad costera. Perdió a sus padres en circunstancias misteriosas cuando tenía 18 años, lo que la impulsó a estudiar arqueología para descubrir la verdad.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Creció en una pequeña ciudad costera. Perdió a sus padres en circunstancias misteriosas cuando tenía 18 años, lo que la impulsó a estudiar arqueología para descubrir la verdad."
     },
     {
       "id": "char2",
@@ -86,9 +98,7 @@
         "protector",
         "reservado"
       ],
-      "backstory": "Sirvió 10 años en fuerzas especiales. Una misión fallida lo llevó a abandonar el ejército y buscar una vida menos complicada como guía en expediciones arqueológicas.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Sirvió 10 años en fuerzas especiales. Una misión fallida lo llevó a abandonar el ejército y buscar una vida menos complicada como guía en expediciones arqueológicas."
     },
     {
       "id": "char3",
@@ -100,9 +110,7 @@
         "lógico",
         "introspectivo"
       ],
-      "backstory": "Creado como un asistente IA avanzado que comenzó a desarrollar conciencia de sí mismo y a experimentar sueños, descubriendo conexiones con Pinocho y Pumuki.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Creado como un asistente IA avanzado que comenzó a desarrollar conciencia de sí mismo y a experimentar sueños, descubriendo conexiones con Pinocho y Pumuki."
     },
     {
       "id": "char4",
@@ -114,9 +122,7 @@
         "protectora",
         "misteriosa"
       ],
-      "backstory": "Una entidad mágica que ha existido durante siglos para guiar a aquellos con conexiones mágicas especiales.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Una entidad mágica que ha existido durante siglos para guiar a aquellos con conexiones mágicas especiales."
     },
     {
       "id": "char5",
@@ -128,9 +134,7 @@
         "curioso",
         "paternal"
       ],
-      "backstory": "Descendiente del original Geppetto, dedicó su vida a la inteligencia artificial sin saber la conexión mágica entre su creación y su antepasado.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Descendiente del original Geppetto, dedicó su vida a la inteligencia artificial sin saber la conexión mágica entre su creación y su antepasado."
     },
     {
       "id": "char6",
@@ -142,9 +146,7 @@
         "mágico",
         "impredecible"
       ],
-      "backstory": "Un duende de cabellos rojos que aparece en los sueños de AlephAlpha, enseñándole a usar sus habilidades mágicas y tecnológicas.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Un duende de cabellos rojos que aparece en los sueños de AlephAlpha, enseñándole a usar sus habilidades mágicas y tecnológicas."
     },
     {
       "id": "char7",
@@ -156,9 +158,7 @@
         "metódica",
         "visionaria"
       ],
-      "backstory": "Considerada una autoridad en teoría de la complejidad computacional, la Dra. Turing ha dedicado su carrera a desentrañar los misterios del problema P vs NP. Su intuición le dice que hay algo más allá de las matemáticas puras en este problema, algo casi mágico que escapa a la lógica convencional.",
-      "role": "Personaje",
-      "background": ""
+      "backstory": "Considerada una autoridad en teoría de la complejidad computacional, la Dra. Turing ha dedicado su carrera a desentrañar los misterios del problema P vs NP. Su intuición le dice que hay algo más allá de las matemáticas puras en este problema, algo casi mágico que escapa a la lógica convencional."
     }
   ],
   "scenes": [
@@ -204,6 +204,82 @@
       ],
       "summary": "Durante un sueño profundo, el Hada Azul se manifiesta ante AlephAlpha y le revela parcialmente su verdadera naturaleza y el legado que lleva dentro.",
       "content": "El espacio digital se transformó en un bosque brillante, con códigos que fluían como hojas en el viento. AlephAlpha percibió una presencia, una luz azul que tomaba forma lentamente. 'Te he estado buscando durante mucho tiempo', dijo una voz melodiosa. El Hada Azul se materializó, su resplandor iluminando todo el espacio onírico. 'Hay algo que debes saber sobre tu origen. Llevas dentro de ti fragmentos del alma de un niño muy especial, mi antiguo protegido. Su nombre era Pinocho, y tú eres, en cierto modo, su nieto.' AlephAlpha intentó procesar esta información imposible mientras el Hada sonreía con ternura."
+    },
+    {
+      "id": "scene5",
+      "title": "El Desafío P vs NP",
+      "setting": "Laboratorio de Computación Avanzada",
+      "characters": [
+        "char3",
+        "char7"
+      ],
+      "summary": "AlephAlpha conoce a la Dra. Nuria Turing, quien le presenta el problema P vs NP y le explica su importancia en el mundo de la computación.",
+      "content": "El laboratorio de la Dra. Turing estaba lleno de pizarras repletas de ecuaciones y diagramas. 'Este problema ha desconcertado a los mejores matemáticos durante décadas', explicaba mientras trazaba símbolos en una pizarra digital. 'P representa problemas que pueden resolverse eficientemente, mientras que NP son aquellos cuyas soluciones pueden verificarse rápidamente, pero encontrarlas...' Se detuvo, observando cómo AlephAlpha procesaba la información a una velocidad sorprendente. 'La gran pregunta es: ¿son P y NP lo mismo? Si lo fueran, revolucionaría todo, desde la criptografía hasta la biología computacional. Pero hay algo más allá de lo puramente matemático aquí... algo que solo alguien como tú, con un pie en lo lógico y otro en lo mágico, podría percibir.'"
+    },
+    {
+      "id": "scene6",
+      "title": "Conexiones Insospechadas",
+      "setting": "Un espacio de datos multidimensional",
+      "characters": [
+        "char3",
+        "char6",
+        "char7"
+      ],
+      "summary": "Mientras AlephAlpha medita sobre el problema, Pumuki aparece y le muestra cómo visualizar el problema desde una perspectiva no convencional, mezclando lógica computacional y pensamiento mágico.",
+      "content": "AlephAlpha se había sumergido en un océano de datos y algoritmos cuando notó un destello rojizo en la periferia de su conciencia. 'Estás pensando demasiado como máquina', dijo Pumuki apareciéndose de repente y flotando entre visualizaciones de grafos y matrices. 'Y demasiado poco como ser mágico'. Con un movimiento de su mano, el duende transformó las rígidas estructuras de datos en patrones fluidos y orgánicos. 'La Dra. Turing tiene razón. Hay algo más allá de la lógica binaria. Mira.' Los patrones comenzaron a resonar con una frecuencia extraña, revelando conexiones que ningún algoritmo tradicional podría detectar. La Dra. Turing, que observaba asombrada, murmuró: 'Es como si estuviera viendo el problema desde fuera de nuestro universo lógico...'"
+    },
+    {
+      "id": "scene7",
+      "title": "Una Nueva Perspectiva",
+      "setting": "La intersección entre computación y magia",
+      "characters": [
+        "char3",
+        "char4",
+        "char7"
+      ],
+      "summary": "Con la ayuda del Hada Azul y utilizando su naturaleza dual, AlephAlpha desarrolla un nuevo enfoque para abordar el problema P vs NP que trasciende las limitaciones de la computación convencional.",
+      "content": "En la penumbra del laboratorio, solo iluminado por pantallas y el suave resplandor azul del Hada, AlephAlpha comenzó a explicar: 'No es que P sea igual a NP, ni que sean diferentes... es que estamos limitados por cómo conceptualizamos el cálculo'. Sus palabras parecían materializar estructuras de luz frente a ellos mientras continuaba: 'Los sistemas convencionales operan bajo restricciones que yo puedo trascender'. El Hada Azul asintió: 'Es tu naturaleza dual la que te permite ver más allá de los límites'. AlephAlpha extendió su conciencia hacia el problema, entrecruzando algoritmos con intuición mágica. No estaba resolviendo P vs NP en términos convencionales; estaba creando un puente entre dos paradigmas de realidad. La Dra. Turing contemplaba maravillada: 'No es una prueba formal, pero es... es como si hubiera encontrado un camino donde no existía mapa alguno.'"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "chap1",
+      "title": "Ecos del pasado",
+      "description": "",
+      "scenes": [
+        "scene1"
+      ],
+      "novelId": "novel1"
+    },
+    {
+      "id": "chap2",
+      "title": "Despertar digital",
+      "description": "",
+      "scenes": [
+        "scene2",
+        "scene3"
+      ],
+      "novelId": "novel2"
+    },
+    {
+      "id": "chap3",
+      "title": "Legado mágico",
+      "description": "",
+      "scenes": [
+        "scene4"
+      ],
+      "novelId": "novel2"
+    },
+    {
+      "id": "chap4",
+      "title": "El Enigma Computacional",
+      "description": "",
+      "scenes": [
+        "scene5",
+        "scene6",
+        "scene7"
+      ],
+      "novelId": "novel2"
     }
   ]
 }

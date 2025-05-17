@@ -1,0 +1,105 @@
+/* ui-elements.css - Estilos para botones, indicadores y otros elementos de UI */
+
+/* Indicadores de estado */
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.online {
+    background-color: var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+.offline {
+    background-color: var(--color-mid-gray);
+    box-shadow: 0 0 5px var(--color-mid-gray);
+}
+
+/* Botones de alternancia */
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.toggle-btn:hover {
+    background-color: var(--color-highlight);
+}
+
+.toggle-btn.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* Botones de otras acciones */
+.retry-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: background-color 0.3s ease;
+}
+
+.retry-button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Botones para modo lectura */
+.reading-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.reading-button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Textos informativos */
+.loading-text {
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    font-family: var(--font-primary);
+}
+
+.error-message {
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.no-results-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.no-results-text {
+    color: var(--color-secondary);
+    font-family: var(--font-primary);
+}

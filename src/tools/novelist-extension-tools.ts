@@ -815,4 +815,104 @@ AlephAlpha hizo una pausa. "Creo que la respuesta es... ambigua. En el mundo pur
       };
     }
   );
+
+  /**
+   * Herramienta: Eliminar un capítulo existente
+   */
+  server.tool(
+    'alephAlpha_deleteChapter',
+    'Deletes an existing chapter from a novel',
+    {
+      chapterId: z.string().describe('ID of the chapter to delete'),
+      novelId: z.string().describe('ID of the novel that contains the chapter'),
+      deleteScenes: z.boolean().optional().describe('Whether to also delete the scenes that belong to this chapter (false by default)')
+    },
+    async ({ chapterId, novelId, deleteScenes = false }) => {
+      // Verificar que el capítulo existe
+      const existingChapter = resourceLoader.getChapter(chapterId);
+      if (!existingChapter) {
+        return {
+          content: [{ type: 'text', text: `Chapter with ID ${chapterId} not found.` }],
+          description: 'Error: Chapter not found'
+        };
+      }
+      
+      // Verificar que la novela existe
+      const novel = resourceLoader.getNovel(novelId);
+      if (!novel) {
+        return {
+          content: [{ type: 'text', text: `Novel with ID ${novelId} not found.` }],
+          description: 'Error: Novel not found'
+        };
+      }
+      
+      // Verificar que el capítulo pertenece a la novela
+      if (!novel.chapters.includes(chapterId)) {
+        return {
+          content: [{ 
+            type: 'text', 
+            text: `Chapter ${chapterId} does not belong to novel ${novelId}.` 
+          }],
+          description: 'Error: Chapter does not belong to the specified novel'
+        };
+      }
+      
+      // Obtener recursos actuales
+      const resources = {
+        characters: resourceLoader.getCharacters(),
+        scenes: resourceLoader.getScenes(),
+        chapters: resourceLoader.getChapters(),
+        novels: resourceLoader.getNovels()
+      };
+      
+      // Guardar la lista de escenas del capítulo para potencialmente eliminarlas
+      const scenesToDelete = [...existingChapter.scenes];
+        // Eliminar el capítulo de la novela
+      resources.novels[novelId].chapters = novel.chapters.filter((id: string) => id !== chapterId);
+      
+      // Eliminar el capítulo del registro de capítulos
+      delete resources.chapters[chapterId];
+      
+      // Si se indicó, eliminar también las escenas del capítulo
+      if (deleteScenes && scenesToDelete.length > 0) {
+        // Verificar si las escenas son utilizadas por otros capítulos
+        const otherChapters = Object.values(resources.chapters).filter(c => c.id !== chapterId);
+        
+        // Para cada escena del capítulo a eliminar
+        for (const sceneId of scenesToDelete) {          // Verificar si la escena es utilizada por otros capítulos
+          const isUsedElsewhere = otherChapters.some((chapter: Chapter) => 
+            chapter.scenes.includes(sceneId)
+          );
+          
+          // Si la escena no es utilizada en otros capítulos, eliminarla
+          if (!isUsedElsewhere) {
+            delete resources.scenes[sceneId];
+          }
+        }
+      }
+      
+      // Guardar cambios
+      const saved = saveResources(resources);
+      if (!saved) {
+        return {
+          content: [{ type: 'text', text: 'Error deleting the chapter.' }],
+          description: 'Error: Failed to delete chapter'
+        };
+      }
+      
+      return {
+        content: [{ 
+          type: 'text', 
+          text: JSON.stringify({
+            message: 'Chapter deleted successfully',
+            chapterId,
+            deletedScenes: deleteScenes ? scenesToDelete.filter(
+              sceneId => !resources.scenes[sceneId]
+            ) : []
+          }, null, 2) 
+        }],
+        description: 'Chapter deleted successfully'
+      };
+    }
+  );
 }
