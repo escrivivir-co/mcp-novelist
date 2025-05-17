@@ -1,3 +1,7 @@
+# Disclaimer, warning
+
+PROYECTO DEMO - FASE DE BOCETO - EXPERIMENTAL- ATREZZO - GENERADO CON MAN-IN-THE-LOOP - NO USAR EN PRODUCCIÓN
+
 # AlephAlpha MCP Tools - Guía de integración con GitHub Copilot
 
 ## Contexto
