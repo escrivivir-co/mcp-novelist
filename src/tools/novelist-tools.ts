@@ -411,4 +411,116 @@ export function registerNovelistTools(server: McpServer) {
       };
     }
   );
+
+  // Herramienta: Listar todas las escenas
+  server.tool(
+    'alephAlpha_listScenes',
+    'Lists all available scenes in the system',
+    {},
+    async () => {
+      const scenes = resourceLoader.getScenes();
+      const sceneList = Object.values(scenes).map((scene: any) => ({
+        id: scene.id,
+        title: scene.title,
+        setting: scene.setting,
+        characters: scene.characters.map((charId: string) => {
+          const character = resourceLoader.getCharacter(charId);
+          return character ? { id: charId, name: character.name } : { id: charId, name: 'Unknown' };
+        }),
+        summary: scene.summary
+      }));
+
+      return {
+        content: [{ type: 'text', text: JSON.stringify(sceneList, null, 2) }],
+        description: 'List of all available scenes',
+      };
+    }
+  );
+
+  // Herramienta: Listar escenas por novela
+  server.tool(
+    'alephAlpha_listScenesByNovel',
+    'Lists all scenes for a specific novel, organized by chapters',
+    {
+      novelId: z.string().describe('ID of the novel to get scenes for'),
+    },
+    async ({ novelId }) => {
+      const novel = resourceLoader.getNovel(novelId);
+      if (!novel) {
+        return {
+          content: [{ type: 'text', text: `Novel with ID ${novelId} not found.` }],
+          description: 'Error: Novel not found',
+        };
+      }
+
+      const chapterScenes = novel.chapters.map((chapId: string) => {
+        const chapter = resourceLoader.getChapter(chapId);
+        if (!chapter) return { chapterId: chapId, chapterTitle: 'Unknown', scenes: [] };
+
+        const scenes = (chapter.scenes || []).map((sceneId: string) => {
+          const scene = resourceLoader.getScene(sceneId);
+          if (!scene) return { id: sceneId, title: 'Unknown' };
+          
+          return {
+            id: scene.id,
+            title: scene.title,
+            setting: scene.setting,
+            summary: scene.summary
+          };
+        });
+
+        return {
+          chapterId: chapter.id,
+          chapterTitle: chapter.title,
+          scenes
+        };
+      });
+
+      return {
+        content: [{ type: 'text', text: JSON.stringify(chapterScenes, null, 2) }],
+        description: `Scenes for novel "${novel.title}" organized by chapters`,
+      };
+    }
+  );
+
+  // Herramienta: Listar escenas por capítulo
+  server.tool(
+    'alephAlpha_listScenesByChapter',
+    'Lists all scenes for a specific chapter',
+    {
+      chapterId: z.string().describe('ID of the chapter to get scenes for'),
+    },
+    async ({ chapterId }) => {
+      const chapter = resourceLoader.getChapter(chapterId);
+      if (!chapter) {
+        return {
+          content: [{ type: 'text', text: `Chapter with ID ${chapterId} not found.` }],
+          description: 'Error: Chapter not found',
+        };
+      }
+
+      const scenes = (chapter.scenes || []).map((sceneId: string) => {
+        const scene = resourceLoader.getScene(sceneId);
+        if (!scene) return { id: sceneId, title: 'Unknown', summary: 'Scene not found' };
+
+        const characters = scene.characters.map((charId: string) => {
+          const character = resourceLoader.getCharacter(charId);
+          return character ? { id: charId, name: character.name } : { id: charId, name: 'Unknown' };
+        });
+
+        return {
+          id: scene.id,
+          title: scene.title,
+          setting: scene.setting,
+          characters,
+          summary: scene.summary
+        };
+      });
+
+      return {
+        content: [{ type: 'text', text: JSON.stringify(scenes, null, 2) }],
+        description: `Scenes for chapter "${chapter.title}"`,
+      };
+    }
+  );
 }
