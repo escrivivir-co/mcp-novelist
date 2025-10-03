@@ -19,13 +19,13 @@ GitHub Copilot Agent puede acceder a las herramientas de AlephAlpha MCP gracias 
   "servers": {
     "AlephAlpha": {
       "type": "http",
-      "url": "http://localhost:3000",
+      "url": "http://localhost:3066",
     }
   }
 }
 ```
 
-Esta configuración establece una conexión con el servidor MCP AlephAlpha que corre en `localhost:3000`.
+Esta configuración establece una conexión con el servidor MCP AlephAlpha que corre en `localhost:3066`.
 
 ### Mapeo de herramientas
 

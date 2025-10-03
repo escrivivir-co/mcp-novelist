@@ -1,10 +1,10 @@
-import cluster from "cluster";
-import { createServer } from "http";
-import { setupMaster, setupWorker } from "@socket.io/sticky";
-import { createAdapter, setupPrimary } from "@socket.io/cluster-adapter";
-import { Server } from "socket.io";
-import { instrument } from "../../dist/index.js";
-import { cpus } from "os";
+import cluster from 'cluster';
+import { createServer } from 'http';
+import { setupMaster, setupWorker } from '@socket.io/sticky';
+import { createAdapter, setupPrimary } from '@socket.io/cluster-adapter';
+import { Server } from 'socket.io';
+import { instrument } from '../../dist/index.js';
+import { cpus } from 'os';
 
 if (cluster.isPrimary) {
   console.log(`Master ${process.pid} is running`);
@@ -12,19 +12,19 @@ if (cluster.isPrimary) {
   const httpServer = createServer();
 
   setupMaster(httpServer, {
-    loadBalancingMethod: "least-connection",
+    loadBalancingMethod: 'least-connection',
   });
 
   setupPrimary();
 
-  httpServer.listen(3000);
+  httpServer.listen(3066);
 
   for (let i = 0; i < cpus().length; i++) {
     console.log(`Forking worker ${i}`);
     cluster.fork();
   }
 
-  cluster.on("exit", (worker) => {
+  cluster.on('exit', (worker) => {
     console.log(`Worker ${worker.process.pid} died`);
     cluster.fork();
   });
@@ -35,7 +35,7 @@ if (cluster.isPrimary) {
 
   const io = new Server(httpServer, {
     cors: {
-      origin: ["https://admin.socket.io", "http://localhost:8080"],
+      origin: ['https://admin.socket.io', 'http://localhost:8080'],
       credentials: true,
     },
   });

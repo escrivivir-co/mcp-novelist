@@ -28,7 +28,7 @@ dotenv.config();
 const SERVER_NAME = process.env.MCP_SERVER_NAME || "AlephCodeAgent";
 const SERVER_VERSION = process.env.MCP_SERVER_VERSION || "1.0.0";
 const LOG_LEVEL = process.env.LOG_LEVEL || "info";
-const HTTP_PORT = parseInt(process.env.MCP_HTTP_PORT || "3000");
+const HTTP_PORT = parseInt(process.env.MCP_HTTP_PORT || "3066");
 const HTTP_HOST = process.env.MCP_HTTP_HOST || "localhost";
 
 // Configurar logger básico

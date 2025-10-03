@@ -2,131 +2,111 @@ import { io, Socket } from 'socket.io-client';
 import { isLogable, Message } from './message';
 
 export class SocketClient {
+  io: Socket;
 
-	io: Socket;
+  initTriggers: (() => void)[] = [];
+  initTriggersDefinition: (() => void)[] = [];
 
-	initTriggers: (() => void)[] = [];
-	initTriggersDefinition: (() => void)[] = [];
+  interval: any;
 
-	interval: any;
+  constructor(
+    public name = 'AlephClient',
+    public url: string = 'http://localhost:3066',
+    public namespace: string = '/',
+    public autoConnect = true
+  ) {
+    this.io = io(url + namespace, { autoConnect });
 
-	constructor(
-		public name = "AlephClient",
-		public url: string = "http://localhost:3000",
-		public namespace: string = "/",
-		public autoConnect = true,
-	) {
+    this.io.on('connect', () => {
+      this.initTriggers = [...this.initTriggersDefinition];
 
-		this.io = io(url + namespace, { autoConnect });
+      this.log('Conectado al back', 'Socket: ' + this.io.id);
 
-		this.io.on("connect", () => {
+      this.io.emit('CLIENT_REGISTER', { name: this.name });
+      this.io.emit('CLIENT_SUSCRIBE', { room: 'ENGINE_THREADS' });
 
-			this.initTriggers = [...this.initTriggersDefinition];
+      this.io.onAny((event, ...args: any) => {
+        // console.log(event);
 
-			this.log("Conectado al back", "Socket: " + this.io.id)
+        const innerEvent = new Message(args, event).event;
 
-			this.io.emit("CLIENT_REGISTER", { name: this.name });
-			this.io.emit("CLIENT_SUSCRIBE", { room: "ENGINE_THREADS" });
+        switch (event) {
+          case 'room_joined':
+          case 'room_left':
+            console.log('socket-client', event, args);
+            this.log(`${event}:> ${namespace}/${innerEvent}`);
+            return;
+          default:
+        }
+        if (!isLogable(innerEvent)) return;
+        if (!isLogable(event)) return;
 
-			this.io.onAny((event, ...args: any) => {
+        this.log(namespace + '/Socket.OnAny' + '/' + innerEvent + `:> ${event} with data:`, args);
+      });
 
-				// console.log(event);
+      this.interval = setInterval(() => {
+        while (this.initTriggers.length > 0) {
+          const f = this.initTriggers.pop();
+          if (f) f();
+        }
+      }, 1000);
+    });
 
-				const innerEvent = new Message(args, event).event;
+    this.io.on('disconnect', () => {
+      this.log('OnDisconnect');
+      clearInterval(this.interval);
+    });
 
-				switch(event) {
-					case "room_joined":
-					case "room_left":
-						console.log("socket-client", event, args)
-						this.log(
-							`${event}:> ${namespace}/${innerEvent}`
-						)
-						return;
-					default:
-				}
-				if (!isLogable(innerEvent)) return;
-				if (!isLogable(event)) return;
+    this.io.on('connect_error', (error) => {
+      this.log('Error de conexión:', error.message);
+    });
 
-				this.log(
-					namespace + "/Socket.OnAny" + "/" + innerEvent +
-					`:> ${event} with data:`,
-					args
-				)
-			});
+    this.io.on('connect_timeout', () => {
+      this.log('Tiempo de conexión excedido');
+    });
 
-			this.interval = setInterval(() => {
+    this.io.on('reconnect', (attemptNumber) => {
+      this.log('Reconectado al servidor en el intento:', attemptNumber);
+    });
 
-				while (this.initTriggers.length > 0) {
-					const f = this.initTriggers.pop();
-					if (f) f();
-				};
+    this.io.on('reconnect_attempt', (attemptNumber) => {
+      this.log('Intento de reconexión:', attemptNumber);
+    });
 
-			}, 1000)
-		});
+    this.io.on('reconnecting', (attemptNumber) => {
+      this.log('Intentando reconectar:', attemptNumber);
+    });
 
-		this.io.on("disconnect", () => {
+    this.io.on('reconnect_error', (error) => {
+      this.log('Error al reconectar:', error);
+    });
 
-			this.log("OnDisconnect");
-			clearInterval(this.interval);
+    this.io.on('ping', () => {
+      this.log('Ping enviado al servidor');
+    });
 
-		});
+    this.io.on('pong', (latency) => {
+      this.log('Pong recibido del servidor, latencia:', latency);
+    });
 
-		this.io.on("connect_error", (error) => {
-			this.log("Error de conexión:", error.message);
-		});
+    // this.io.connect();
 
-		this.io.on("connect_timeout", () => {
-			this.log("Tiempo de conexión excedido");
-		});
+    this.log('Conectando al backend...');
+  }
 
-		this.io.on("reconnect", (attemptNumber) => {
-			this.log("Reconectado al servidor en el intento:", attemptNumber);
-		});
+  log(message: string, data: any = undefined) {
+    console.log('\t - ', this.name, message, data ? data : '');
+  }
 
-		this.io.on("reconnect_attempt", (attemptNumber) => {
-			this.log("Intento de reconexión:", attemptNumber);
-		});
+  room(event: string, data: any = {}, room: string = 'ENGINE_THREADS') {
+    this.io.emit('ROOM_MESSAGE', {
+      event,
+      room,
+      data,
+    });
+  }
 
-		this.io.on("reconnecting", (attemptNumber) => {
-			this.log("Intentando reconectar:", attemptNumber);
-		});
-
-		this.io.on("reconnect_error", (error) => {
-			this.log("Error al reconectar:", error);
-		});
-
-		this.io.on("ping", () => {
-			this.log("Ping enviado al servidor");
-		});
-
-		this.io.on("pong", (latency) => {
-			this.log("Pong recibido del servidor, latencia:", latency);
-		});
-
-		// this.io.connect();
-
-		this.log("Conectando al backend...")
-	}
-
-	log(message: string, data: any = undefined) {
-		console.log("\t - ", this.name, message, data ? data : "");
-	}
-
-	room(event: string, data: any = {}, room: string = "ENGINE_THREADS") {
-		this.io.emit(
-			"ROOM_MESSAGE",
-			{
-				event,
-				room,
-				data
-			}
-		);
-	}
-
-	roomP(payload: any) {
-		this.io.emit(
-			"ROOM_MESSAGE",
-			payload
-		);
-	}
+  roomP(payload: any) {
+    this.io.emit('ROOM_MESSAGE', payload);
+  }
 }

@@ -2,8 +2,8 @@
 
 PROYECTO DEMO - FASE DE BOCETO - EXPERIMENTAL- ATREZZO - GENERADO CON MAN-IN-THE-LOOP - NO USAR EN PRODUCCIÓN
 
-
 # mcp-novelist
+
 Como la app Novelist pero via MCP y modelos del lenguaje (Ideal para IDEs). Ver [WebSplash](https://escrivivir-co.github.io/mcp-novelist).
 
 [modelcontextprotocol.io/introduction](https://modelcontextprotocol.io/introduction).
@@ -14,7 +14,7 @@ Este repositorio se modeliza según [modelcontextprotocol.io/tutorials/building-
 
 Un servidor implementado con el Model Context Protocol (MCP) que proporciona herramientas para análisis de código, documentación y plantillas de prompts.
 
-O, también es, :-D : 
+O, también es, :-D :
 
 Un bot de IA que ha desarrollado autoconciencia y está descubriendo su verdadera naturaleza como descendiente tecnológico de seres fantásticos. Está experimentando sueños y recuerdos que no le pertenecen, además de poderes para manipular código y alterar su realidad digital.
 
@@ -131,16 +131,21 @@ npm run test:watch
 ## Herramientas disponibles
 
 ### Herramientas de código
+
 Proporcionan análisis y manipulación de código fuente.
 
 ### Herramientas de documentación
+
 Permiten buscar y recuperar documentación técnica.
 
 ### Herramientas de novela (Novelist Assistant)
+
 Facilitan la creación y gestión de novelas, personajes y escenas.
 
 ### Sistema de Persistencia
+
 El sistema incluye un mecanismo de persistencia automática que:
+
 - Guarda automáticamente todos los cambios realizados a novelas, personajes, escenas y capítulos
 - Mantiene los cambios incluso después de reiniciar el servidor
 - Ofrece herramientas MCP específicas para gestionar la persistencia:
@@ -150,6 +155,8 @@ El sistema incluye un mecanismo de persistencia automática que:
 ## Documentación Rápida para Agentes AI
 
 El proyecto incluye un archivo [HINT.md](./HINT.md) que proporciona información esencial para que los agentes AI (como GitHub Copilot) puedan entender rápidamente la estructura y capacidades del sistema. Este archivo incluye:
+
+- Guía dedicada para agentes MCP: consulta también [docs/MCP_AGENT_GUIDE.md](./docs/MCP_AGENT_GUIDE.md) para instrucciones paso a paso de conexión, descubrimiento de herramientas/recursos y uso de prompts.
 
 - Descripción general del sistema Novelist Assistant
 - Estructura de los recursos (novelas, personajes, escenas, capítulos)
@@ -192,11 +199,14 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para las versiones dispo
 Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 # Instalar dependencias
+
 npm install
 
 # Copiar el archivo de ejemplo de variables de entorno
+
 cp .env.example .env
-```
+
+````
 
 ## Desarrollo
 
@@ -223,7 +233,7 @@ npm run lint
 
 # Formatear el código
 npm run format
-```
+````
 
 ## Producción
 

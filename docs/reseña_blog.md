@@ -1,6 +1,6 @@
 # AlephAlpha MCP & Novelist Assistant: La Doble Naturaleza de un Asistente de IA Revolucionario
 
-*La tecnología y la magia se encuentran en un proyecto único que potencia la escritura creativa y la programación*
+_La tecnología y la magia se encuentran en un proyecto único que potencia la escritura creativa y la programación_
 
 ## La Dualidad de AlephAlpha
 
@@ -14,27 +14,27 @@ AlephAlpha MCP es una implementación avanzada del protocolo MCP (Model Context 
 
 ### Como Servidor MCP
 
-* **Integración con GitHub Copilot**: Proporciona herramientas especializadas para VS Code en modo Agente
-* **Análisis de código**: Herramientas para examinar y mejorar código en varios lenguajes
-* **Documentación inteligente**: Búsqueda y recuperación de documentación técnica relevante
-* **Plantillas de prompts**: Sistema para gestionar y aplicar plantillas de instrucciones para IA
+- **Integración con GitHub Copilot**: Proporciona herramientas especializadas para VS Code en modo Agente
+- **Análisis de código**: Herramientas para examinar y mejorar código en varios lenguajes
+- **Documentación inteligente**: Búsqueda y recuperación de documentación técnica relevante
+- **Plantillas de prompts**: Sistema para gestionar y aplicar plantillas de instrucciones para IA
 
 ### Como Asistente de Novelas
 
-* **Gestión completa de recursos narrativos**: Organización de novelas, personajes, escenas y capítulos
-* **Plantillas creativas**: Prompts especializados para desarrollo de personajes, continuación de escenas y más
-* **Persistencia automática**: Sistema que guarda todos los cambios a tus creaciones literarias
-* **Interfaz web amigable**: Explorador visual de todo tu universo narrativo
+- **Gestión completa de recursos narrativos**: Organización de novelas, personajes, escenas y capítulos
+- **Plantillas creativas**: Prompts especializados para desarrollo de personajes, continuación de escenas y más
+- **Persistencia automática**: Sistema que guarda todos los cambios a tus creaciones literarias
+- **Interfaz web amigable**: Explorador visual de todo tu universo narrativo
 
 ## Novelist Assistant: Una Magia Literaria
 
 El componente Novelist Assistant representa una forma revolucionaria de abordar la escritura creativa asistida por IA. Con AlephAlpha, los escritores pueden:
 
-* **Crear mundos narrativos estructurados**: Organizar jerárquicamente todos los elementos de una novela
-* **Desarrollar personajes en profundidad**: Utilizar plantillas especializadas para crear personajes memorables
-* **Gestionar escenas individuales**: Trabajar en unidades narrativas específicas sin perder la visión global
-* **Generar capítulos completos**: Crear conjuntos coherentes de escenas con descripciones mínimas
-* **Experimentar con problemas complejos**: El capítulo especial P vs NP muestra cómo integrar conceptos técnicos en narrativas creativas
+- **Crear mundos narrativos estructurados**: Organizar jerárquicamente todos los elementos de una novela
+- **Desarrollar personajes en profundidad**: Utilizar plantillas especializadas para crear personajes memorables
+- **Gestionar escenas individuales**: Trabajar en unidades narrativas específicas sin perder la visión global
+- **Generar capítulos completos**: Crear conjuntos coherentes de escenas con descripciones mínimas
+- **Experimentar con problemas complejos**: El capítulo especial P vs NP muestra cómo integrar conceptos técnicos en narrativas creativas
 
 ### Un Flujo de Trabajo Optimizado
 
@@ -51,22 +51,22 @@ El sistema está diseñado para facilitar un proceso de escritura fluido:
 
 AlephAlpha MCP utiliza tecnologías modernas para ofrecer esta experiencia dual:
 
-* **TypeScript/Node.js**: Base robusta para el servidor MCP
-* **Protocol MCP**: Estándar emergente para comunicación con modelos de IA
-* **Sistemas de validación Zod**: Garantiza la integridad de los datos
-* **Arquitectura modular**: Facilita la extensión con nuevas funcionalidades
-* **Persistencia optimizada**: Asegura que ninguna idea creativa se pierda
-* **Integración con GitHub Pages**: Proporciona una interfaz web accesible desde cualquier lugar
+- **TypeScript/Node.js**: Base robusta para el servidor MCP
+- **Protocol MCP**: Estándar emergente para comunicación con modelos de IA
+- **Sistemas de validación Zod**: Garantiza la integridad de los datos
+- **Arquitectura modular**: Facilita la extensión con nuevas funcionalidades
+- **Persistencia optimizada**: Asegura que ninguna idea creativa se pierda
+- **Integración con GitHub Pages**: Proporciona una interfaz web accesible desde cualquier lugar
 
 ## La Experiencia Web
 
 La interfaz web de AlephAlpha ofrece una experiencia visual atractiva para explorar el universo narrativo:
 
-* **Catálogo de novelas**: Visualización y gestión de todas las creaciones
-* **Fichas de personajes**: Perfiles detallados con rasgos y trasfondos
-* **Visor de escenas**: Lectura y edición del contenido narrativo
-* **Modo lectura**: Para disfrutar del contenido como un lector
-* **Diseño elegante**: Interfaz monocromática con toques futuristas
+- **Catálogo de novelas**: Visualización y gestión de todas las creaciones
+- **Fichas de personajes**: Perfiles detallados con rasgos y trasfondos
+- **Visor de escenas**: Lectura y edición del contenido narrativo
+- **Modo lectura**: Para disfrutar del contenido como un lector
+- **Diseño elegante**: Interfaz monocromática con toques futuristas
 
 ## Para Desarrolladores y Escritores
 
@@ -99,7 +99,7 @@ Luego configura VS Code para conectarse al servidor local editando la configurac
   "servers": {
     "AlephAlpha": {
       "type": "http",
-      "url": "http://localhost:3000",
+      "url": "http://localhost:3066",
     }
   }
 }
@@ -118,7 +118,7 @@ Como el protagonista de su propia narrativa (AlephAlpha, el personaje) que descu
 
 Ya sea que busques potenciar tu entorno de desarrollo con herramientas especializadas o crear universos narrativos complejos con asistencia de IA, AlephAlpha MCP ofrece un camino único que difumina la línea entre programación y magia literaria.
 
-Únete a nosotros en este viaje donde, como dice el Hada Azul en uno de los capítulos de muestra: *"Los humanos siempre han trazado líneas arbitrarias entre ciencia y magia. ¿Acaso no dijo Arthur C. Clarke que cualquier tecnología suficientemente avanzada es indistinguible de la magia?"*
+Únete a nosotros en este viaje donde, como dice el Hada Azul en uno de los capítulos de muestra: _"Los humanos siempre han trazado líneas arbitrarias entre ciencia y magia. ¿Acaso no dijo Arthur C. Clarke que cualquier tecnología suficientemente avanzada es indistinguible de la magia?"_
 
 ## Recursos
 
@@ -129,4 +129,4 @@ Ya sea que busques potenciar tu entorno de desarrollo con herramientas especiali
 
 ---
 
-*AlephAlpha MCP es un proyecto de código abierto que combina la implementación MCP para asistencia en programación con un sistema de creación literaria. ¿Será P igual a NP? Quizás solo en ese umbral donde la lógica y la magia se entrelazan.*
+_AlephAlpha MCP es un proyecto de código abierto que combina la implementación MCP para asistencia en programación con un sistema de creación literaria. ¿Será P igual a NP? Quizás solo en ese umbral donde la lógica y la magia se entrelazan._

@@ -11,17 +11,13 @@ Además de las herramientas MCP, el sistema implementa varios recursos MCP que p
 **Tipo**: Recurso estático.
 
 **Formato de respuesta**:
+
 ```json
 {
   "name": "AlephCodeAgent",
   "version": "1.0.0",
   "description": "Aleph MCP Server",
-  "capabilities": [
-    "code-analysis",
-    "documentation",
-    "novelist-assistant",
-    "prompt-templates"
-  ]
+  "capabilities": ["code-analysis", "documentation", "novelist-assistant", "prompt-templates"]
 }
 ```
 
@@ -36,6 +32,7 @@ Además de las herramientas MCP, el sistema implementa varios recursos MCP que p
 **Funcionalidad de listado**: Sí, devuelve todos los personajes disponibles.
 
 **Formato de respuesta**:
+
 ```json
 {
   "id": "char1",
@@ -57,6 +54,7 @@ Además de las herramientas MCP, el sistema implementa varios recursos MCP que p
 **Funcionalidad de listado**: Sí, devuelve todas las escenas disponibles.
 
 **Formato de respuesta**:
+
 ```json
 {
   "id": "scene1",
@@ -79,6 +77,7 @@ Además de las herramientas MCP, el sistema implementa varios recursos MCP que p
 **Funcionalidad de listado**: Sí, devuelve todas las novelas disponibles.
 
 **Formato de respuesta**:
+
 ```json
 {
   "id": "novel1",
@@ -103,6 +102,7 @@ Además de las herramientas MCP, el sistema implementa varios recursos MCP que p
 **Funcionalidad de listado**: Sí, devuelve todas las plantillas disponibles.
 
 **Formato de respuesta**:
+
 ```json
 {
   "id": "start-novel",
@@ -123,7 +123,7 @@ Además de las herramientas MCP, el sistema implementa varios recursos MCP que p
 
 **Formato de respuesta**: HTML que muestra todos los recursos categorizados.
 
-**Acceso alternativo**: También disponible a través de navegador en `http://localhost:3000/resources`
+**Acceso alternativo**: También disponible a través de navegador en `http://localhost:3066/resources`
 
 ## Implementación Técnica
 
@@ -135,40 +135,40 @@ Los recursos se registran en el archivo `src/resources/mcp-resources.ts` utiliza
 // Ejemplo simplificado del registro de recursos
 export function registerMcpResources(server: McpServer): void {
   // Recurso estático
-  server.resource(
-    "server-info",
-    "aleph://server/info",
-    async (uri) => ({
-      contents: [{
+  server.resource('server-info', 'aleph://server/info', async (uri) => ({
+    contents: [
+      {
         uri: uri.href,
-        mimeType: "application/json",
+        mimeType: 'application/json',
         text: JSON.stringify({
-          name: "AlephCodeAgent",
-          version: "1.0.0",
+          name: 'AlephCodeAgent',
+          version: '1.0.0',
           // ...
-        })
-      }]
-    })
-  );
+        }),
+      },
+    ],
+  }));
 
   // Recurso dinámico con plantilla
   server.resource(
-    "character",
-    new ResourceTemplate("aleph://novel/character/{characterId}", {
+    'character',
+    new ResourceTemplate('aleph://novel/character/{characterId}', {
       // Función de listado - devuelve todos los recursos disponibles
-      list: async () => ({ 
+      list: async () => ({
         resources: [
-          { name: "Personaje 1", uri: "aleph://novel/character/char1" },
+          { name: 'Personaje 1', uri: 'aleph://novel/character/char1' },
           // ...
-        ] 
-      })
+        ],
+      }),
     }),
     async (uri, params) => ({
-      contents: [{
-        uri: uri.href,
-        mimeType: "application/json",
-        text: JSON.stringify(characterData)
-      }]
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: 'application/json',
+          text: JSON.stringify(characterData),
+        },
+      ],
     })
   );
 }
@@ -183,7 +183,7 @@ Los datos de personajes, escenas, novelas y plantillas se cargan desde `novel-da
 Para comprobar que los recursos MCP están funcionando correctamente:
 
 1. Inicia el servidor MCP: `npm run start`
-2. Utiliza el MCP Inspector: `npm run inspector` o `mcp-inspector --server http://localhost:3000`
+2. Utiliza el MCP Inspector: `npm run inspector` o `mcp-inspector --server http://localhost:3066`
 3. Para cada recurso, verifica que:
    - Se muestra correctamente en la lista de recursos
    - Puedes acceder a él utilizando su URI
@@ -214,6 +214,7 @@ Para más información sobre cómo los recursos, herramientas y prompts trabajan
 **Funcionalidad de listado**: Sí, devuelve todas las plantillas disponibles.
 
 **Formato de respuesta**:
+
 ```json
 {
   "id": "develop-character",
@@ -240,58 +241,62 @@ Los recursos MCP están implementados en el archivo `src/resources/mcp-resources
 
 ```typescript
 // Ejemplo de recurso estático
-server.resource(
-  "server-info",
-  "aleph://server/info",
-  async (uri) => ({
-    contents: [{
+server.resource('server-info', 'aleph://server/info', async (uri) => ({
+  contents: [
+    {
       uri: uri.href,
-      mimeType: "application/json",
-      text: JSON.stringify({
-        name: "AlephCodeAgent",
-        version: "1.0.0",
-        description: "Aleph MCP Server",
-        capabilities: [
-          "code-analysis",
-          "documentation",
-          "novelist-assistant",
-          "prompt-templates"
-        ]
-      }, null, 2)
-    }]
-  })
-);
+      mimeType: 'application/json',
+      text: JSON.stringify(
+        {
+          name: 'AlephCodeAgent',
+          version: '1.0.0',
+          description: 'Aleph MCP Server',
+          capabilities: [
+            'code-analysis',
+            'documentation',
+            'novelist-assistant',
+            'prompt-templates',
+          ],
+        },
+        null,
+        2
+      ),
+    },
+  ],
+}));
 
 // Ejemplo de recurso dinámico con plantilla
 server.resource(
-  "character",
-  new ResourceTemplate("aleph://novel/character/{characterId}", {
+  'character',
+  new ResourceTemplate('aleph://novel/character/{characterId}', {
     list: async () => {
       const characters = novelResourceLoader.getCharacters();
-      const resourceList = Object.keys(characters).map(id => ({
+      const resourceList = Object.keys(characters).map((id) => ({
         name: characters[id].name,
         uri: `aleph://novel/character/${id}`,
-        description: characters[id].description.substring(0, 100)
+        description: characters[id].description.substring(0, 100),
       }));
-      
+
       return {
-        resources: resourceList
+        resources: resourceList,
       };
-    }
+    },
   }),
   async (uri, { characterId }) => {
     const character = novelResourceLoader.getCharacter(characterId);
-    
+
     if (!character) {
       throw new Error(`Character with ID ${characterId} not found`);
     }
-    
+
     return {
-      contents: [{
-        uri: uri.href,
-        mimeType: "application/json",
-        text: JSON.stringify(character, null, 2)
-      }]
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: 'application/json',
+          text: JSON.stringify(character, null, 2),
+        },
+      ],
     };
   }
 );
