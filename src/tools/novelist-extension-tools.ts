@@ -11,11 +11,6 @@ import {
 import { PersistenceManager } from '../resources/persistence-manager.js';
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-// Obtener el directorio actual
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 /**
  * Registra herramientas extendidas para el asistente de novelista en el servidor MCP

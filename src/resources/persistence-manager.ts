@@ -1,11 +1,6 @@
 import { writeFileSync, readFileSync } from 'fs';
 import { NovelResources, NovelPromptTemplate } from './novel-resources.js';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-// Obtener el directorio actual
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 /**
  * Clase para gestionar la persistencia de recursos de novela

@@ -9,12 +9,9 @@ import {
 } from './novel-resources.js';
 import { PersistenceManager } from './persistence-manager.js';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
-// Obtener el directorio actual
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Obtener el directorio actual usando CommonJS pattern
 const projectRoot = path.resolve(__dirname, '..', '..');
 
 // Clase para cargar y gestionar recursos de novela
