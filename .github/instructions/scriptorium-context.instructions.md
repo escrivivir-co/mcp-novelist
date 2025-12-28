@@ -10,6 +10,22 @@ applyTo: "**/*.md, **/*.json, src/**/*.ts"
 
 ---
 
+## ⚠️ IMPORTANTE: Acceso a Carpetas Externas
+
+Las carpetas del Scriptorium padre están **FUERA del workspace** de NovelistEditor.
+
+| Herramienta | ¿Funciona fuera del workspace? |
+|-------------|-------------------------------|
+| `read_file` | ❌ NO |
+| `list_dir` | ❌ NO |
+| `run_in_terminal` | ✅ SÍ |
+
+**SIEMPRE usar `run_in_terminal` con `cat`, `ls`, etc.** para acceder a:
+- Carpeta de obras: `/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/`
+- Fuente remota: `/Users/morente/Desktop/THEIA_PATH/NOVELA/`
+
+---
+
 ## Detección de Contexto
 
 Al iniciar una sesión, el agente debe verificar:
@@ -241,3 +257,70 @@ He detectado tu conexión con Aleph Scriptorium.
 
 ¿En qué capítulo te gustaría trabajar hoy?
 ```
+
+---
+
+## 🔧 Comandos de Verificación Rápida
+
+### Verificar las 3 Conexiones (ejecutar en cada sesión)
+
+```bash
+# 1. Verificar Servidor MCP
+curl -s http://localhost:3066/health 2>/dev/null && echo "✅ MCP" || echo "❌ MCP"
+
+# 2. Verificar Carpeta Scriptorium
+ls "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital" 2>/dev/null && echo "✅ Scriptorium" || echo "❌ Scriptorium"
+
+# 3. Verificar Fuente Remota
+ls "/Users/morente/Desktop/THEIA_PATH/NOVELA/" 2>/dev/null && echo "✅ Fuente" || echo "❌ Fuente"
+```
+
+### Leer Estructura de Capítulos
+
+```bash
+cat "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital/estructura.json"
+```
+
+### Leer Fuente Original de un Capítulo
+
+```bash
+# Capítulo 1
+cat "/Users/morente/Desktop/THEIA_PATH/NOVELA/Abstract_Portada.md"
+
+# Capítulo 2
+cat "/Users/morente/Desktop/THEIA_PATH/NOVELA/Apertura_Ulises_y_Penelope.md"
+```
+
+### Sincronizar con Servidor MCP
+
+```javascript
+// Listar novelas disponibles
+alephAlpha_listNovels()
+
+// Obtener detalles de Ítaca Digital
+alephAlpha_getNovelDetails("novel3")
+
+// Listar escenas del capítulo 1
+alephAlpha_listScenesByChapter("chap6")
+```
+
+---
+
+## 📊 Estado Actual de Ítaca Digital (actualizado 2025-12-28)
+
+| Elemento | ID MCP | Estado |
+|----------|--------|--------|
+| Novela | `novel3` | ✅ Creada |
+| Capítulo 1 | `chap6` | ✅ Completado |
+| Escenas Cap 1 | `scene11-14` | ✅ 4 escenas con contenido |
+| Personajes | `char8-12` | ✅ 5 personajes |
+
+### Personajes Sincronizados
+
+| ID | Nombre | Rol |
+|----|--------|-----|
+| char8 | El Cronista | Narrador omnisciente |
+| char9 | Penélope Digital | Tejedora de código |
+| char10 | Ulises el Navegante | Viajero digital |
+| char11 | El Autor-Narrador | Voz autobiográfica |
+| char12 | Adam | Interlocutor simbólico |

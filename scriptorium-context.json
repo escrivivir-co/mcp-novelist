@@ -4,6 +4,7 @@
   "scriptorium": {
     "root": "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH",
     "detected": true,
+    "verified": true,
     "plugins": {
       "novelist": ".github/plugins/novelist",
       "teatro": ".github/plugins/teatro",
@@ -36,6 +37,7 @@
   },
   "obras": {
     "path": "ARCHIVO/PLUGINS/NOVELIST/obras",
+    "fullPath": "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras",
     "disponibles": [
       {
         "id": "itaca-digital",
@@ -43,9 +45,11 @@
         "estado": "borrador",
         "capitulos": 12,
         "ruta_local": "ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital",
+        "ruta_completa": "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital",
         "estructura": "monomito-12",
         "personajeGuia": "penelope",
         "fechaCreacion": "2025-12-28",
+        "novelIdMcp": "novel3",
         "sincronizacion": {
           "teatro": "ARCHIVO/PLUGINS/TEATRO/obras/itaca-digital.yaml",
           "taller": "ARCHIVO/DISCO/TALLER/NOVELA_TRANSMEDIA",
@@ -55,16 +59,32 @@
       }
     ]
   },
+  "fuentesRemotas": {
+    "theia_path": {
+      "ruta": "/Users/morente/Desktop/THEIA_PATH/NOVELA",
+      "verificada": true,
+      "ultimaVerificacion": "2025-12-28T22:00:00Z"
+    }
+  },
   "mcp": {
     "servidor": "http://localhost:3066",
-    "activo": false,
-    "ultimaVerificacion": null
+    "activo": true,
+    "ultimaVerificacion": "2025-12-28T22:00:00Z"
   },
   "sesion": {
-    "obra_activa": null,
-    "capitulo_actual": null,
-    "modo": "ligero",
-    "ultima_sincronizacion": null
+    "obra_activa": "itaca-digital",
+    "capitulo_actual": 1,
+    "modo": "completo",
+    "ultima_sincronizacion": "2025-12-28T22:00:00Z"
+  },
+  "acceso": {
+    "nota": "Las carpetas del Scriptorium están FUERA del workspace. Usar run_in_terminal para leer/escribir.",
+    "metodo": "terminal",
+    "ejemplos": {
+      "listar_obras": "ls /Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/",
+      "leer_capitulo": "cat /Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital/capitulos/01-mundo-ordinario.md",
+      "leer_fuente": "cat /Users/morente/Desktop/THEIA_PATH/NOVELA/Abstract_Portada.md"
+    }
   },
   "rutas_busqueda": [
     "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH",
@@ -81,6 +101,7 @@
   },
   "meta": {
     "creado": "2025-12-28T21:18:54.334Z",
+    "actualizado": "2025-12-28T22:00:00Z",
     "descripcion": "Contexto de conexión NovelistEditor ↔ Aleph Scriptorium",
     "generado_por": "scripts/init-scriptorium-context.js"
   }
