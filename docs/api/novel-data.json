@@ -83,6 +83,23 @@
         }
       ],
       "setting": "Un mundo donde la tecnología y la fantasía se entrelazan, en un futuro cercano donde la inteligencia artificial avanzada coexiste con elementos mágicos"
+    },
+    {
+      "id": "novel3",
+      "title": "Ítaca Digital: El Retorno del Navegante",
+      "author": "Escritores del Scriptorium",
+      "genre": [
+        "mitología",
+        "filosofía",
+        "crítica social",
+        "transmedia"
+      ],
+      "summary": "Una odisea contemporánea que reimagina mitos clásicos (Onán y Tamar, Orfeo y Eurídice, Edipo y Electra, la Caverna de Platón) a través del prisma de la era digital. Cada capítulo explora niveles de significado literal, psicológico, social, filosófico y simbólico, tejiendo una crítica a las ideologías TESCREAL (Transhumanismo, Extropianismo, Singularitarianismo, Cosmismo, Racionalismo, Altruismo efectivo y Longtermismo) mientras traza el camino de retorno a Ítaca: la búsqueda del sentido en un mundo hiperconectado.",
+      "setting": "Un mundo entre la Grecia clásica y la era digital contemporánea, donde los mitos se reinterpretan como episodios nacionales al estilo de Galdós, y las voces de Homero y Joyce resuenan en la búsqueda del navegante digital.",
+      "characters": [
+        "char8"
+      ],
+      "chapters": []
     }
   ],
   "characters": [
@@ -169,6 +186,19 @@
         "visionaria"
       ],
       "backstory": "Considerada una autoridad en teoría de la complejidad computacional, la Dra. Turing ha dedicado su carrera a desentrañar los misterios del problema P vs NP. Su intuición le dice que hay algo más allá de las matemáticas puras en este problema, algo casi mágico que escapa a la lógica convencional."
+    },
+    {
+      "id": "char8",
+      "name": "El Cronista",
+      "description": "Narrador omnisciente que documenta la odisea digital con ecos de Galdós y Joyce",
+      "traits": [
+        "observador",
+        "erudito",
+        "irónico",
+        "polifónico",
+        "metanarrativo"
+      ],
+      "backstory": "El Cronista es el narrador que observa y documenta la odisea desde su escritorio, un moderno Homero que escribe en markdown en lugar de hexámetros. Su voz fusiona el estilo de los Episodios Nacionales de Galdós con la experimentación de Joyce. Tiene la capacidad de ver los múltiples niveles de significado en cada mito y de traducirlos para la audiencia contemporánea."
     }
   ],
   "scenes": [
