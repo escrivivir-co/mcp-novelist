@@ -10,7 +10,7 @@ You are an expert developer working with the **MCP Novelist Server** - a Model C
 
 If you are a writer from Aleph Scriptorium:
 
-1. **Use the `escritor` chatmode** for writing sessions
+1. **Use the `@escritor` agent** for writing sessions
 2. **Context file**: `scriptorium-context.json` contains paths to your novels
 3. **Available novels** are stored in `ARCHIVO/PLUGINS/NOVELIST/obras/`
 
@@ -27,14 +27,14 @@ npm run init:scriptorium -- --scriptorium-root /path/to/scriptorium
 npm start
 ```
 
-### Chatmodes Available
+### Custom Agents Available
 
-| Mode | Purpose | Use when |
-|------|---------|----------|
-| `escritor` | Writing sessions | You want to work on a novel |
-| `editor` | Container management | Initialize, recover, configure |
-| `albacea` | Content creation | Add characters, scenes, chapters |
-| `lector` | Information retrieval | Search, index, analyze |
+| Agent | Purpose | Use when |
+|-------|---------|----------|
+| `@escritor` | Writing sessions | You want to work on a novel |
+| `@editor` | Container management | Initialize, recover, configure |
+| `@albacea` | Content creation | Add characters, scenes, chapters |
+| `@lector` | Information retrieval | Search, index, analyze |
 
 ---
 
@@ -76,22 +76,24 @@ This server implements the full MCP protocol with:
 - **Prompts**: Template system for consistent memory operations
 - **Auto-persistence**: Automatic saving to `src/resources/novel-data.json`
 
-## Specialized Chat Modes
+## Custom Agents
 
-This project includes three specialized chat modes for different memory management workflows:
+This project includes specialized custom agents for different memory management workflows. Custom agents are defined in `.github/agents/` as `.agent.md` files.
 
-### Editor Mode (`editor.chatmode.md`)
+### Editor Agent (`editor.agent.md`)
 **Purpose**: Initialize, recover, and manage novel-books (memory containers)
 **Use when**: Starting new projects, loading existing memory structures, managing data persistence
+**Invoke with**: `@editor` in chat
 **Capabilities**:
 - Initialize new "novels" (memory projects)
 - Recover and validate existing data structures
 - Configure auto-save and persistence settings
 - Manage server connection and health checks
 
-### Albacea Mode (`albacea.chatmode.md`) 
+### Albacea Agent (`albacea.agent.md`) 
 **Purpose**: Create and modify elements within novel-books (memory content)
 **Use when**: Adding new information, creating relationships, structuring complex data
+**Invoke with**: `@albacea` in chat
 **Capabilities**:
 - Create characters (entities/people/objects to track)
 - Create scenes (events/meetings/interactions) 
@@ -99,9 +101,10 @@ This project includes three specialized chat modes for different memory manageme
 - Establish relationships between elements
 - Update and modify existing memory structures
 
-### Lector Mode (`lector.chatmode.md`)
+### Lector Agent (`lector.agent.md`)
 **Purpose**: Query, search, and retrieve information from novel-books
 **Use when**: Finding specific information, creating indexes, analyzing stored data
+**Invoke with**: `@lector` in chat
 **Capabilities**:
 - Advanced search across all memory structures
 - Generate comprehensive indexes and reports  
@@ -234,25 +237,25 @@ alephAlpha_applyNovelistPromptTemplate(templateId, {
 ## Development Workflow Patterns
 
 ### Starting a New Memory Project
-1. **Editor Mode**: Initialize new novel container
-2. **Albacea Mode**: Create key characters (stakeholders/entities)
-3. **Albacea Mode**: Create initial scenes (kickoff events)
-4. **Editor Mode**: Configure auto-save for continuous updates
+1. **@editor**: Initialize new novel container
+2. **@albacea**: Create key characters (stakeholders/entities)
+3. **@albacea**: Create initial scenes (kickoff events)
+4. **@editor**: Configure auto-save for continuous updates
 
 ### Daily Information Capture
-1. **Albacea Mode**: Create scene for each important interaction
-2. **Albacea Mode**: Update character details as you learn more
-3. **Lector Mode**: Weekly review and index generation
+1. **@albacea**: Create scene for each important interaction
+2. **@albacea**: Update character details as you learn more
+3. **@lector**: Weekly review and index generation
 
 ### Project Analysis & Reporting
-1. **Lector Mode**: Generate timeline of all interactions
-2. **Lector Mode**: Create stakeholder interaction maps
-3. **Lector Mode**: Export comprehensive project summaries
+1. **@lector**: Generate timeline of all interactions
+2. **@lector**: Create stakeholder interaction maps
+3. **@lector**: Export comprehensive project summaries
 
 ### Cross-Project Intelligence  
-1. **Lector Mode**: Search across multiple novels for patterns
-2. **Lector Mode**: Find common characters across projects
-3. **Albacea Mode**: Create new scenes linking related projects
+1. **@lector**: Search across multiple novels for patterns
+2. **@lector**: Find common characters across projects
+3. **@albacea**: Create new scenes linking related projects
 
 ## Error Handling & Troubleshooting
 
