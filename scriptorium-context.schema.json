@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "scriptorium-context.schema.json",
+  "title": "Scriptorium Context",
+  "description": "Configuración de conexión entre NovelistEditor y Aleph Scriptorium",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Versión del esquema de contexto"
+    },
+    "scriptorium": {
+      "type": "object",
+      "description": "Configuración del Scriptorium padre",
+      "properties": {
+        "root": {
+          "type": "string",
+          "description": "Ruta absoluta al directorio raíz del Scriptorium"
+        },
+        "detected": {
+          "type": "boolean",
+          "description": "Si el Scriptorium fue detectado automáticamente"
+        },
+        "plugins": {
+          "type": "object",
+          "description": "Rutas relativas a plugins del Scriptorium",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "agentes": {
+          "type": "object",
+          "description": "Agentes disponibles por categoría",
+          "properties": {
+            "core": { "type": "array", "items": { "type": "string" } },
+            "banderas": { "type": "array", "items": { "type": "string" } },
+            "sistema": { "type": "array", "items": { "type": "string" } },
+            "meta": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "required": ["root", "detected"]
+    },
+    "obras": {
+      "type": "object",
+      "description": "Obras narrativas disponibles",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Ruta relativa al directorio de obras"
+        },
+        "disponibles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "titulo": { "type": "string" },
+              "estado": { "type": "string", "enum": ["borrador", "revision", "publicado"] },
+              "capitulos": { "type": "integer" },
+              "ruta_local": { "type": "string" },
+              "estructura": { "type": "string" },
+              "personajeGuia": { "type": "string" },
+              "fechaCreacion": { "type": "string", "format": "date" },
+              "sincronizacion": {
+                "type": "object",
+                "properties": {
+                  "teatro": { "type": "string" },
+                  "taller": { "type": "string" },
+                  "fuenteRemota": { "type": "string" }
+                }
+              }
+            },
+            "required": ["id", "titulo", "estado"]
+          }
+        }
+      },
+      "required": ["path"]
+    },
+    "mcp": {
+      "type": "object",
+      "description": "Configuración del servidor MCP",
+      "properties": {
+        "servidor": { "type": "string", "format": "uri" },
+        "activo": { "type": "boolean" },
+        "ultimaVerificacion": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "sesion": {
+      "type": "object",
+      "description": "Estado de la sesión actual",
+      "properties": {
+        "obra_activa": { "type": ["string", "null"] },
+        "capitulo_actual": { "type": ["integer", "null"] },
+        "modo": { "type": "string", "enum": ["completo", "ligero"] },
+        "ultima_sincronizacion": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "rutas_busqueda": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Rutas donde buscar el Scriptorium si no está configurado"
+    },
+    "validacion_scriptorium": {
+      "type": "object",
+      "properties": {
+        "archivos_requeridos": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["version", "scriptorium", "obras"]
+}

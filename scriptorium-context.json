@@ -1,0 +1,87 @@
+{
+  "$schema": "./scriptorium-context.schema.json",
+  "version": "1.0.0",
+  "scriptorium": {
+    "root": "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH",
+    "detected": true,
+    "plugins": {
+      "novelist": ".github/plugins/novelist",
+      "teatro": ".github/plugins/teatro",
+      "agent_creator": ".github/plugins/agent-creator",
+      "enciclopedia": ".github/plugins/enciclopedia"
+    },
+    "agentes": {
+      "core": [
+        "@aleph",
+        "@revisor",
+        "@periodico"
+      ],
+      "banderas": [
+        "@blueflag",
+        "@blackflag",
+        "@redflag",
+        "@yellowflag",
+        "@orangeflag"
+      ],
+      "sistema": [
+        "@vestibulo",
+        "@cartaspuerta"
+      ],
+      "meta": [
+        "@ox",
+        "@pluginmanager",
+        "@indice"
+      ]
+    }
+  },
+  "obras": {
+    "path": "ARCHIVO/PLUGINS/NOVELIST/obras",
+    "disponibles": [
+      {
+        "id": "itaca-digital",
+        "titulo": "Ítaca Digital: El Retorno del Navegante",
+        "estado": "borrador",
+        "capitulos": 12,
+        "ruta_local": "ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital",
+        "estructura": "monomito-12",
+        "personajeGuia": "penelope",
+        "fechaCreacion": "2025-12-28",
+        "sincronizacion": {
+          "teatro": "ARCHIVO/PLUGINS/TEATRO/obras/itaca-digital.yaml",
+          "taller": "ARCHIVO/DISCO/TALLER/NOVELA_TRANSMEDIA",
+          "fuenteRemota": "/Users/morente/Desktop/THEIA_PATH/NOVELA",
+          "ultimaSync": "2025-12-28T12:00:00Z"
+        }
+      }
+    ]
+  },
+  "mcp": {
+    "servidor": "http://localhost:3066",
+    "activo": false,
+    "ultimaVerificacion": null
+  },
+  "sesion": {
+    "obra_activa": null,
+    "capitulo_actual": null,
+    "modo": "ligero",
+    "ultima_sincronizacion": null
+  },
+  "rutas_busqueda": [
+    "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH",
+    "/Users/morente/SCRIPTORIUM/ALEPH",
+    "/Users/morente/Desktop/SCRIPTORIUM/ALEPH",
+    "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH"
+  ],
+  "validacion_scriptorium": {
+    "archivos_requeridos": [
+      ".github/copilot-instructions.md",
+      ".github/PLUGINS.md",
+      "ARCHIVO/PLUGINS/NOVELIST/obras"
+    ]
+  },
+  "meta": {
+    "creado": "2025-12-28T21:18:54.334Z",
+    "descripcion": "Contexto de conexión NovelistEditor ↔ Aleph Scriptorium",
+    "generado_por": "scripts/init-scriptorium-context.js"
+  }
+}

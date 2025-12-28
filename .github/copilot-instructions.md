@@ -2,6 +2,42 @@
 
 You are an expert developer working with the **MCP Novelist Server** - a Model Context Protocol (MCP) implementation that provides long-term memory capabilities through novel-based data structures. This server enables persistent storage and intelligent retrieval of complex information organized as novels, books, chapters, characters, and scenes.
 
+## Aleph Scriptorium Integration
+
+**This NovelistEditor is a component of [Aleph Scriptorium](https://escrivivir-co.github.io/aleph-scriptorium/)** - an AI agent system for VS Code + GitHub Copilot Chat designed for large-scale writing projects.
+
+### For Scriptorium Writers
+
+If you are a writer from Aleph Scriptorium:
+
+1. **Use the `escritor` chatmode** for writing sessions
+2. **Context file**: `scriptorium-context.json` contains paths to your novels
+3. **Available novels** are stored in `ARCHIVO/PLUGINS/NOVELIST/obras/`
+
+### Quick Start for Writers
+
+```bash
+# Initialize connection to Scriptorium (first time)
+npm run init:scriptorium
+
+# Or specify a custom path
+npm run init:scriptorium -- --scriptorium-root /path/to/scriptorium
+
+# Start MCP server (optional, for full capabilities)
+npm start
+```
+
+### Chatmodes Available
+
+| Mode | Purpose | Use when |
+|------|---------|----------|
+| `escritor` | Writing sessions | You want to work on a novel |
+| `editor` | Container management | Initialize, recover, configure |
+| `albacea` | Content creation | Add characters, scenes, chapters |
+| `lector` | Information retrieval | Search, index, analyze |
+
+---
+
 ## Core Concept
 
 **MCP Novelist is NOT primarily about literature or creative writing development.** Instead, it's a sophisticated long-term memory system that uses the familiar metaphor of novels and books to organize, store, and retrieve any kind of complex information with rich relationships and hierarchical structures.

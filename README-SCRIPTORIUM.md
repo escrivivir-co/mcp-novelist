@@ -1,9 +1,47 @@
 # MCP Novelist — Integración con ALEPH Scriptorium
 
-**Submódulo**: `mcp-novelist`  
+**Submódulo**: `NovelistEditor`  
 **Rama de integración**: `integration/beta/scriptorium`  
 **Plugin destino**: `novelist`  
-**Fecha**: 2025-12-24
+**Fecha**: 2025-12-28
+
+---
+
+## Uso Standalone (Escritores)
+
+Si abres VS Code directamente en este directorio (`NovelistEditor/`), puedes trabajar con las novelas del Scriptorium padre:
+
+### Primera Vez
+
+```bash
+# 1. Inicializar conexión al Scriptorium
+npm run init:scriptorium
+
+# 2. (Opcional) Iniciar servidor MCP para capacidades completas
+npm start
+```
+
+### Iniciar Sesión de Escritura
+
+1. Abre GitHub Copilot Chat
+2. Selecciona el chatmode **"escritor"**
+3. Escribe algo como:
+
+```
+Hola. Soy un usuario de Aleph Scriptorium. Es la primera vez que 
+abro este NovelistEditor. Soy uno de los escritores de la novela 
+"Ítaca digital". Necesito hacer una sesión de escritura. 
+¿Puedes ayudarme?
+```
+
+### Archivos de Contexto
+
+| Archivo | Propósito |
+|---------|-----------|
+| `scriptorium-context.json` | Rutas al Scriptorium padre y obras |
+| `scriptorium-context.schema.json` | Validación del contexto |
+| `.github/chatmodes/escritor.chatmode.md` | Modo de bienvenida para escritores |
+| `.github/instructions/scriptorium-context.instructions.md` | Reglas de carga |
 
 ---
 

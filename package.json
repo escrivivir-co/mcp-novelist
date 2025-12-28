@@ -30,7 +30,9 @@
     "update-changelog": "node scripts/update-changelog.js",
     "update-catalog": "node scripts/update-catalog.js",
     "manage-catalog": "node scripts/manage-catalog.js",
-    "precommit": "npm run lint && npm run format && npm test"
+    "precommit": "npm run lint && npm run format && npm test",
+    "init:scriptorium": "node scripts/init-scriptorium-context.js",
+    "init:scriptorium:force": "node scripts/init-scriptorium-context.js --force"
   },
   "dependencies": {
     "@alephscript/mcp-core-sdk": "file:../mcp-core-sdk",
