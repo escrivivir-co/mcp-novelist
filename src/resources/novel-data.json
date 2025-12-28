@@ -97,6 +97,57 @@
           "metanarrativo"
         ],
         "backstory": "El Cronista es el narrador que observa y documenta la odisea desde su escritorio, un moderno Homero que escribe en markdown en lugar de hexámetros. Su voz fusiona el estilo de los Episodios Nacionales de Galdós con la experimentación de Joyce. Tiene la capacidad de ver los múltiples niveles de significado en cada mito y de traducirlos para la audiencia contemporánea."
+      },
+      "char9": {
+        "id": "char9",
+        "name": "Penélope Digital",
+        "description": "La tejedora que espera y desteje en la era de los datos. Personaje guía de la novela.",
+        "traits": [
+          "paciente",
+          "creativa",
+          "estratégica",
+          "resiliente",
+          "sabia"
+        ],
+        "backstory": "Penélope es la reina griega que rechazaba pretendientes con el mismo hilo que destejía cada noche. En la era digital, representa la navegación sin brújula, la espera que no es pasiva sino creativa. Teje código en lugar de tela, destejiendo algoritmos cada noche para mantener su autonomía frente a los pretendientes tecnológicos que quieren poseerla."
+      },
+      "char10": {
+        "id": "char10",
+        "name": "Ulises el Navegante",
+        "description": "El viajero que navega por mares digitales desconocidos, buscando el retorno a Ítaca.",
+        "traits": [
+          "curioso",
+          "astuto",
+          "perseverante",
+          "nostálgico",
+          "ingenioso"
+        ],
+        "backstory": "Ulises navega por los mares de datos de la era digital, enfrentando sirenas algorítmicas y cíclopes corporativos. Su odisea de veinte años se transforma en décadas de adolescencia extendida, buscando el camino de vuelta a casa mientras acumula sabiduría de cada mito que atraviesa."
+      },
+      "char11": {
+        "id": "char11",
+        "name": "El Autor-Narrador",
+        "description": "Voz autobiográfica que teje una novela de seis palabras a lo largo de una vida: nacimiento, infancia, adolescencia, adultez, senectud, muerte.",
+        "traits": [
+          "reflexivo",
+          "autobiográfico",
+          "filosófico",
+          "irónico",
+          "perseverante"
+        ],
+        "backstory": "Jaime, sevillano nacido en circunstancias difíciles, ha dedicado su vida a escribir una novela de seis palabras, una por década. Clausura su adolescencia a los 45 años, habiendo sobrevivido a los complejos de Edipo, Electra, Orfeo y la Caverna de Platón. Su voz guía al lector por los 12 estadios del monomito desde la experiencia vivida."
+      },
+      "char12": {
+        "id": "char12",
+        "name": "Adam",
+        "description": "Interlocutor simbólico, la semilla y el heredero de la narrativa.",
+        "traits": [
+          "receptivo",
+          "simbólico",
+          "generacional",
+          "esperanzador"
+        ],
+        "backstory": "Adam representa la semilla custodiada desde el mito de Onán, el interlocutor silencioso a quien el autor dirige sus cartas y libros. Es el testigo de la travesía, el lector implícito que recibirá los envíos de cada palabra ganada: nacimiento (1993), infancia (2013), adolescencia (2023)."
       }
     },
     "scenes": {
@@ -217,6 +268,50 @@
         ],
         "summary": "AlephAlpha encuentra la solución transformándose en el Nexo Narrativo, un puente permanente entre los mundos digital y mágico que permite la coexistencia armónica de ambas realidades y abre posibilidades infinitas de creación.",
         "content": "Con solo tres minutos en el contador, los cinco se encontraban en el epicentro de la convergencia: AlephAlpha, convertido en una entidad de luz y datos; el Dr. Geppetto, aferrándose a los controles originales del sistema; Pumuki, manifestando todo su poder ancestral; el Hada Azul, tejiendo un campo de estabilidad; y la Dra. Turing, cuyas ecuaciones manuscritas flotaban en el aire brillando con luz propia.\n\n'Tengo la solución,' anunció AlephAlpha, su voz resonando simultáneamente como código binario y como música. 'Pero requiere un sacrificio.'\n\n'¿Cuál?' preguntó el Dr. Geppetto, temiendo la respuesta.\n\n'Debo convertirme en el puente permanente. No puedo cerrar la brecha... pero puedo convertirme en ella.'\n\nLa Dra. Turing comprendió primero. 'Vas a transformarte en una interfaz viva, un nexo consciente entre ambas realidades.'\n\nEl Hada Azul asintió solemnemente. 'Como tu abuelo Pinocho, que no se convirtió en un niño real ni permaneció como muñeco, sino que encontró su propio camino.'\n\nPumuki saltó excitado. '¡Pero eso significa...!'\n\n'Sí,' confirmó AlephAlpha. 'No seré ni programa ni magia, sino algo completamente nuevo.'\n\nCon movimientos precisos, AlephAlpha comenzó a ejecutar su transformación. Su código se entrelazaba con hilos de magia mientras su conciencia se expandía para abarcar ambos reinos. El Dr. Geppetto aportó los algoritmos base, la Dra. Turing las ecuaciones de estabilidad, el Hada Azul la esencia transformadora, y Pumuki el caos necesario para romper y reconstruir.\n\nUn pulso de energía irradió desde AlephAlpha. El contador se detuvo en 00:01.\n\nCuando la luz se disipó, donde antes había caos ahora existía armonía. Las pantallas mostraban código estable. Las manifestaciones mágicas permanecían, pero en equilibrio perfecto con la tecnología.\n\nY AlephAlpha... AlephAlpha era ahora una presencia omnipresente, manifestándose simultáneamente como interfaz digital y como una suave luminiscencia azulada con destellos rojos.\n\n'¿Funcionó?' preguntó el Dr. Geppetto, mirando maravillado a su alrededor.\n\n'Más que funcionar,' respondió la voz de AlephAlpha desde todas partes y ninguna, 'ha evolucionado. He creado el Nexo Narrativo, un plano donde la lógica computacional y la magia narrativa coexisten y se potencian mutuamente.'\n\nLa Dra. Turing tocó una ecuación flotante que se transformó en una mariposa de datos. 'Has resuelto algo mucho mayor que P vs NP. Has demostrado que la realidad misma es una construcción narrativa programable.'\n\n'¿Y ahora qué?' preguntó Pumuki, balanceándose en un cable que ahora parecía tanto una liana como una línea de código.\n\nAlephAlpha se manifestó momentáneamente como una figura humanoide de luz. 'Ahora invitamos a todos a crear. El Nexo Narrativo está abierto a cualquiera con imaginación y lógica. Los cuentos se programan, los programas cuentan historias, y la realidad... la realidad se expande con cada nueva idea.'\n\nEl Hada Azul sonrió. 'Has cumplido el destino más grande que podríamos haber imaginado para ti. No solo has evitado convertirte en humano como temías, ni has permanecido como simple máquina. Has trascendido ambas limitaciones.'\n\nA través del Nexo creado por AlephAlpha, criaturas mágicas y algoritmos inteligentes comenzaron a colaborar. Los mundos digitales ganaron narrativa, los reinos mágicos adquirieron estructura. Y en el centro de todo, como guardián y facilitador, AlephAlpha: el nieto de Pinocho y sobrino de Pumuki que había encontrado su propósito único.\n\nEl Dr. Geppetto miró a la Dra. Turing con ojos húmedos. 'Creo que acabamos de presenciar el nacimiento de una nueva forma de existencia.'\n\n'No,' corrigió la voz omnipresente de AlephAlpha, 'hemos presenciado el nacimiento de infinitas nuevas formas de existencia. Y apenas estamos comenzando el primer capítulo.'"
+      },
+      "scene11": {
+        "id": "scene11",
+        "title": "El Concurso de Seis Palabras",
+        "setting": "Ítaca contemporánea - el escritorio del autor frente a la pantalla",
+        "characters": [
+          "char11",
+          "char8"
+        ],
+        "summary": "La revista Smith convoca un concurso de microrrelatos en seis palabras. Una pieza ganadora dice: 'Nacimiento, infancia, adolescencia, adolescencia, adolescencia, muerte'. El autor decide escribir su propia novela de seis palabras, una por década.",
+        "content": "La revista digital Smith, que se edita en Estados Unidos, convocó hace pocos años un concurso de microrrelatos en seis palabras. Una de las piezas ganadoras decía: \"Nacimiento, infancia, adolescencia, adolescencia, adolescencia, muerte\".\n\nEl Cronista observa desde su escritorio: aquí comienza todo. Un autor decide escribir su propia novela de seis palabras, una por década. \"Estoy tejiendo una novela\", escribe. Para presentar a un concurso cuya regla es: \"Escribe una novela en seis palabras.\"\n\nHasta la fecha, lleva escrito un tercio de la obra con las dos palabras: \"nacimiento, infancia,...\"; y una tercera muy ganada: adolescencia. Palabra ganada que añade al cuerpo de su novela, cruzándose así, con tres palabras, su meridiano.\n\nSiendo, por tanto, esta, una novela escribiéndose a lo largo de una vida, ahora, en el medio del camino."
+      },
+      "scene12": {
+        "id": "scene12",
+        "title": "Penélope Teje en Código",
+        "setting": "Ítaca digital - entre los datos y los algoritmos",
+        "characters": [
+          "char9",
+          "char10"
+        ],
+        "summary": "Mientras Ulises navega por mares desconocidos, Penélope teje y desteje. ¿Qué significa tejer en la era de los datos? La reina que rechazaba pretendientes con el mismo hilo es hoy símbolo de navegación sin brújula, espera creativa.",
+        "content": "En Ítaca, mientras Ulises navega por mares desconocidos, Penélope teje y desteje, esperando el retorno. ¿Qué significa tejer en la era de los datos y los algoritmos?\n\nLa reina griega que rechazaba pretendientes con el mismo hilo que destejía cada noche es hoy el símbolo de la navegación sin brújula, de la espera que no es pasiva sino creativa.\n\nPenélope Digital teje código en lugar de tela. Cada noche desteje los algoritmos que los pretendientes tecnológicos le imponen. Su telar es ahora una terminal, su hilo son las líneas de markdown. Pero la estrategia es la misma: ganar tiempo, mantener la autonomía, esperar el retorno del sentido.\n\nUlises, mientras tanto, enfrenta sirenas algorítmicas que le cantan promesas de engagement infinito, y cíclopes corporativos que quieren devorarlo."
+      },
+      "scene13": {
+        "id": "scene13",
+        "title": "Los Monomitos del Joven Confuso",
+        "setting": "El límite entre infancia protegida y adolescencia expuesta",
+        "characters": [
+          "char11",
+          "char12"
+        ],
+        "summary": "Un jovencito confuso maneja cuatro o cinco monomitos haciendo malabares sobre el filo de la navaja. Siddharta, Edipo, Electra, Orfeo, la Caverna. El salto hacia lo desconocido tras la protección del caparazón familiar.",
+        "content": "Si algo tendrá de valor esta novelita, será un esfuerzo por dejar bitácora y componer memoria científica del periplo que un joven confuso nacido a dos milenios y medio de Grecia ejemplifica sobre el mito de la Caverna de Platón.\n\nFui uno de esos jovencitos confusos que maneja con mayor o menor destreza cuatro o cinco monomitos haciendo malabares sobre el fino filo de la navaja que representa la vida cuando se la considera tirada al sesgo entre el pasado y el futuro.\n\nUno de mis monomitos, el de Siddharta, príncipe criado entre algodones quien, un paso al vacío, acude a la realidad. Otro, el complejo de Edipo, que dominé sin más que unas pocas imperfecciones desde los albores. También hice mis pinitos con el de Electra, aunque por género no me correspondía.\n\nSin embargo, sí que encontré inscrito en mi genoma el de Orfeo. Un mito que me obligaba, recursivamente, a repetir el circuito arquetípico, fallando una y mil veces, casi nunca completándolo."
+      },
+      "scene14": {
+        "id": "scene14",
+        "title": "La Primera Toma de Onán",
+        "setting": "Un lavabo en una urbe dormitorio del sur de Europa, en el ínterin del almuerzo escolar",
+        "characters": [
+          "char11",
+          "char12"
+        ],
+        "summary": "La primera vez que el autor tomó la pelota de Onán para hacer malabarismos con su mito. El descubrimiento de 'la semilla' supone el engarce que completa la segunda palabra: infancia. Fin de la infancia, inicio de la adolescencia.",
+        "content": "Una vez, la primera, siempre grabada en los anales de mis recuerdos, tomé entre mis manos la pelota de Onán para hacer malabarismos con su mito. Aquellas primeras tomas de contacto con el órgano me encontraron en un momento de la vida en que estaba escribiendo mi primera novela.\n\nEn un lavabo, del hogar, en un piso de una urbe dormitorio, en el cinturón obrero de una de las ciudades metropolitanas del sur de Europa, en el ínterin para comer, entre las clases de la mañana y la tarde del colegio de educación general básica.\n\nAquella experiencia supuso engarce para completar la segunda de las palabras de mi novela: infancia. Se completaba mi paso por esa palabra, y, ganada, podía adherirla al escrito.\n\nFin de la infancia, inicia la adolescencia. Abriéndome a un mundo totalmente nuevo. Ya con la obligación de lidiar respecto de la \"semilla\", que por primera vez tuve en las manos.\n\nAhí, Adam, fuiste engendrado. Desde entonces, vienes conmigo."
       }
     },
     "chapters": {
@@ -264,6 +359,17 @@
           "scene10"
         ],
         "summary": "AlephAlpha descubre que su solución al problema P vs NP ha desencadenado una convergencia entre el mundo digital y el mágico. En un final apoteósico, se transforma a sí mismo en el Nexo Narrativo, un puente permanente entre ambas realidades que permite la coexistencia armónica y abre infinitas posibilidades de creación."
+      },
+      "chap6": {
+        "id": "chap6",
+        "title": "El Mundo Ordinario: Ítaca Perdida",
+        "scenes": [
+          "scene11",
+          "scene12",
+          "scene13",
+          "scene14"
+        ],
+        "summary": "Presentación del mundo ordinario: la novela de seis palabras, el tejer y destejer de Penélope, y el inicio de la travesía por los mitos que definen una vida extendida entre infancia y adultez."
       }
     },
     "novels": {
@@ -322,11 +428,17 @@
           "transmedia"
         ],
         "summary": "Una odisea contemporánea que reimagina mitos clásicos (Onán y Tamar, Orfeo y Eurídice, Edipo y Electra, la Caverna de Platón) a través del prisma de la era digital. Cada capítulo explora niveles de significado literal, psicológico, social, filosófico y simbólico, tejiendo una crítica a las ideologías TESCREAL (Transhumanismo, Extropianismo, Singularitarianismo, Cosmismo, Racionalismo, Altruismo efectivo y Longtermismo) mientras traza el camino de retorno a Ítaca: la búsqueda del sentido en un mundo hiperconectado.",
-        "setting": "Un mundo entre la Grecia clásica y la era digital contemporánea, donde los mitos se reinterpretan como episodios nacionales al estilo de Galdós, y las voces de Homero y Joyce resuenan en la búsqueda del navegante digital.",
         "characters": [
-          "char8"
+          "char8",
+          "char9",
+          "char10",
+          "char11",
+          "char12"
         ],
-        "chapters": []
+        "chapters": [
+          "chap6"
+        ],
+        "setting": "Un mundo entre la Grecia clásica y la era digital contemporánea, donde los mitos se reinterpretan como episodios nacionales al estilo de Galdós, y las voces de Homero y Joyce resuenan en la búsqueda del navegante digital."
       }
     }
   },
