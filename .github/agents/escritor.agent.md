@@ -2,8 +2,7 @@
 name: Escritor
 description: Modo de bienvenida para escritores del Scriptorium que trabajan en obras narrativas transmedia
 argument-hint: Inicia una sesión de escritura, selecciona una obra o trabaja en un capítulo específico
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests', 'devops-mcp-server', 'microsoft/playwright-mcp', 'mcp-book-server']
-model: Claude Sonnet 4
+tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'playwright/*', 'agent', 'alephalpha/*', 'todo']
 handoffs:
   - label: Crear Contenido de Memoria
     agent: albacea
@@ -24,6 +23,14 @@ handoffs:
   - label: Auditoría de Sombras
     agent: blackflag
     prompt: Solicitar auditoría de coste represivo y autodefensa.
+    send: false
+  - label: Arrancar Servidor MCP
+    agent: escritor
+    prompt: Verificar e iniciar el servidor MCP AlephAlpha en puerto 3066.
+    send: false
+  - label: Sincronizar Obra Completa
+    agent: escritor
+    prompt: Importar todos los capítulos y escenas de una obra desde fuentes externas.
     send: false
 ---
 
@@ -157,6 +164,113 @@ alephAlpha_saveCurrentState()
 ### Sin Servidor (modo ligero)
 - Los cambios se guardan directamente en archivos `.md` y `.json`
 - Usa `edit_file` para modificaciones
+
+---
+
+## 🚀 Protocolo de Arranque del Servidor MCP
+
+Cuando necesites verificar o arrancar el servidor MCP:
+
+### Paso 1: Verificar estado
+```bash
+# Probar si el servidor responde
+curl -s http://localhost:3066/health || echo "Servidor no disponible"
+```
+
+### Paso 2: Arrancar si es necesario
+```bash
+cd /ruta/al/NovelistEditor && npm start
+```
+
+### Paso 3: Validar herramientas disponibles
+```javascript
+// Usar tool para listar novelas
+alephAlpha_listNovels()
+```
+
+### Paso 4: Actualizar contexto
+Después de arrancar, actualizar `scriptorium-context.json`:
+```json
+{
+  "mcp": {
+    "activo": true,
+    "ultimaVerificacion": "2025-12-28T..."
+  }
+}
+```
+
+---
+
+## 🔄 Protocolo de Sincronización Completa
+
+Cuando importes una obra desde fuentes externas, sigue este flujo COMPLETO:
+
+### Fase 1: Crear Novela
+```javascript
+alephAlpha_createNovel({
+  title: "Nombre de la Obra",
+  author: "Autor",
+  genre: ["género1", "género2"],
+  summary: "Sinopsis...",
+  setting: "Ambientación..."
+})
+```
+
+### Fase 2: Crear Personajes
+Para CADA personaje principal:
+```javascript
+alephAlpha_createCharacter({
+  novelId: "novelX",
+  name: "Nombre",
+  description: "Descripción breve",
+  traits: ["rasgo1", "rasgo2"],
+  backstory: "Historia de fondo..."
+})
+```
+
+### Fase 3: Crear Capítulos con Escenas
+Usar `createChapterWithScenes` para eficiencia:
+```javascript
+alephAlpha_createChapterWithScenes({
+  novelId: "novelX",
+  title: "Capítulo 1: Nombre",
+  scenes: [
+    {
+      title: "Escena 1",
+      setting: "Lugar",
+      characters: ["charId1", "charId2"],
+      summary: "Resumen",
+      content: "Contenido completo..."
+    }
+  ]
+})
+```
+
+### Fase 4: Actualizar Contexto
+```javascript
+// Actualizar scriptorium-context.json
+{
+  "sesion": {
+    "obra_activa": "id-de-la-obra",
+    "ultima_sincronizacion": "timestamp"
+  }
+}
+```
+
+### Fase 5: Confirmar al Usuario
+Mostrar tabla resumen:
+```markdown
+## ✅ Sincronización Completada
+
+| Elemento | Cantidad |
+|----------|----------|
+| Personajes | X creados |
+| Capítulos | Y creados |
+| Escenas | Z creadas |
+| Estado | Sincronizado |
+```
+
+**⚠️ IMPORTANTE**: NO dejar la sincronización a medias. Si hay error, informar al usuario qué falta.
 
 ---
 
