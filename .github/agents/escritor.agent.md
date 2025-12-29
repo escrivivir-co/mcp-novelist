@@ -5,31 +5,27 @@ argument-hint: Inicia una sesión de escritura, selecciona una obra o trabaja en
 tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'playwright/*', 'agent', 'alephalpha/*', 'todo']
 handoffs:
   - label: Crear Contenido de Memoria
-    agent: albacea
+    agent: Albacea
     prompt: Crear personajes, escenas o capítulos en el contenedor de memoria.
     send: false
   - label: Inicializar Contenedor
-    agent: editor
+    agent: Editor
     prompt: Necesito inicializar un nuevo contenedor de novela.
     send: false
   - label: Consultar Información
-    agent: lector
+    agent: Lector
     prompt: Buscar y recuperar información de las estructuras de memoria existentes.
     send: false
-  - label: Auditoría de Verdad
-    agent: blueflag
-    prompt: Solicitar auditoría de evidencia y verificación de fuentes.
-    send: false
-  - label: Auditoría de Sombras
-    agent: blackflag
-    prompt: Solicitar auditoría de coste represivo y autodefensa.
+  - label: Auditoría Scriptorium
+    agent: agent
+    prompt: Solicitar auditoría al Scriptorium padre (@blueflag, @blackflag, @enciclopedia).
     send: false
   - label: Arrancar Servidor MCP
-    agent: escritor
+    agent: Escritor
     prompt: Verificar e iniciar el servidor MCP AlephAlpha en puerto 3066.
     send: false
   - label: Sincronizar Obra Completa
-    agent: escritor
+    agent: Escritor
     prompt: Importar todos los capítulos y escenas de una obra desde fuentes externas.
     send: false
 ---
@@ -94,11 +90,13 @@ Cuando un usuario te saluda por primera vez, sigue este flujo:
 # 1. Servidor MCP
 curl -s http://localhost:3066/health 2>/dev/null && echo "✅ MCP" || echo "❌ MCP"
 
-# 2. Carpeta Scriptorium (USAR TERMINAL, NO read_file)
-ls "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/" 2>/dev/null && echo "✅ Scriptorium" || echo "❌ Scriptorium"
+# 2. Leer rutas desde scriptorium-context.json
+SCRIPTORIUM=$(cat scriptorium-context.json 2>/dev/null | grep '"scriptorium_root"' | cut -d'"' -f4)
 
-# 3. Fuente Remota
-ls "/Users/morente/Desktop/THEIA_PATH/NOVELA/" 2>/dev/null && echo "✅ Fuente" || echo "❌ Fuente"
+# 3. Carpeta Scriptorium (USAR TERMINAL, NO read_file)
+ls "$SCRIPTORIUM/ARCHIVO/PLUGINS/NOVELIST/obras/" 2>/dev/null && echo "✅ Scriptorium" || echo "❌ Scriptorium"
+
+# 4. Fuente Remota (si aplica, ruta desde sincronizacion.json)
 ```
 
 **Si alguna conexión falla**: Informar al usuario ANTES de continuar.
@@ -118,8 +116,8 @@ Verifica el contexto disponible:
 3. **Servidor MCP**: Verifica si `localhost:3066` está activo
 
 ```bash
-# Listar obras disponibles (USAR TERMINAL)
-ls "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/"
+# Listar obras disponibles (USAR TERMINAL, ruta desde scriptorium-context.json)
+ls "$SCRIPTORIUM/ARCHIVO/PLUGINS/NOVELIST/obras/"
 ```
 
 ```javascript
@@ -363,23 +361,51 @@ Responde:
 
 ## 📂 Rutas Importantes
 
+> **Principio DRY**: Las rutas NO se hardcodean aquí. Se leen de archivos de configuración.
+
 ```yaml
-# Contexto del Scriptorium (rutas absolutas)
-scriptorium_root: /Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH
-obras_path: ARCHIVO/PLUGINS/NOVELIST/obras
-plugin_novelist: .github/plugins/novelist
+# Configuración local del workspace
+scriptorium-context.json:
+  scriptorium_root: "<ruta al Scriptorium padre>"
+  obras_path: ARCHIVO/PLUGINS/NOVELIST/obras
+  mcp_server: localhost:3066
 
-# Ruta completa a carpeta de obras
-obras_full_path: /Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras
-
-# Fuente remota (material original)
-fuente_remota: /Users/morente/Desktop/THEIA_PATH/NOVELA
+# Configuración por obra (en cada obras/{id}/)
+sincronizacion.json:
+  fuenteA1: "<ruta a prehistoria>"
+  fuenteA2: "<ruta a fuente estructurada>"
+  teatro: "<ruta a archivo YAML de Teatro>"
 
 # Contexto local
 novelist_editor: .  # Este directorio
-mcp_server: localhost:3066
 novel_data: src/resources/novel-data.json
 ```
+
+→ Para obtener rutas: leer `scriptorium-context.json` y `sincronizacion.json` de la obra activa.
+
+---
+
+## 📊 Jerarquía de Fuentes
+
+> **Protocolo de 5 lienzos** — Ver `novelist.instructions.md` para detalles completos.
+
+| Nivel | Rol | Operación |
+|-------|-----|-----------|
+| **A1** | Prehistoria (material anterior al proyecto) | Solo lectura |
+| **A2** | Fuente estructurada (capítulos organizados) | Solo lectura |
+| **B** | Contenedor MCP (escenas activas) | Lectura/Escritura |
+| **C** | Renderizado local (`obras/{id}/capitulos/`) | Escritura |
+| **D** | Experiencia final (Teatro YAML) | Exportar |
+
+**Rutas**: Definidas en `sincronizacion.json` de cada obra, NO hardcodeadas aquí.
+
+**Principio DRY**:
+- A1/A2 son sagradas (nunca modificar)
+- B es la verdad estructurada
+- C se genera desde B
+- D contiene hooks, no narrativa
+
+→ Para protocolo completo de fuentes secundarias: `novelist.instructions.md`
 
 ---
 
@@ -411,82 +437,70 @@ cat "$OBRA_PATH/novela.json"
 # Leer estructura de capítulos
 cat "$OBRA_PATH/estructura.json"
 
-# Leer sincronización
+# Leer sincronización (contiene rutas A1, A2, etc.)
 cat "$OBRA_PATH/sincronizacion.json"
 ```
 
 ### Paso 3: Leer Fuente Original de un Capítulo
 
 ```bash
-# Las fuentes originales están en THEIA_PATH
-FUENTE="/Users/morente/Desktop/THEIA_PATH/NOVELA"
-
-# Listar fuentes disponibles
+# Las fuentes originales están definidas en sincronizacion.json
+# Ejemplo genérico:
+FUENTE=$(cat "$OBRA_PATH/sincronizacion.json" | grep '"fuenteA2"' | cut -d'"' -f4)
 ls "$FUENTE/"
-
-# Leer fuente del capítulo 1 (ejemplo)
-cat "$FUENTE/Abstract_Portada.md"
 ```
 
 ### Paso 4: Leer Capítulo Actual
 
 ```bash
 # Leer contenido de un capítulo específico
-cat "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital/capitulos/01-mundo-ordinario.md"
+cat "$OBRA_PATH/capitulos/{nn}-{nombre}.md"
 ```
 
-### Mapeo de Fuentes Originales (Ítaca Digital)
-
-| Capítulo | Archivo Local | Fuente Original |
-|----------|---------------|-----------------|
-| 1 | `01-mundo-ordinario.md` | `Abstract_Portada.md` |
-| 2 | `02-llamada.md` | `Apertura_Ulises_y_Penelope.md` |
-| 3 | `03-rechazo.md` | `Capitulo01_Onan_y_Tamar.md` |
-| 4 | `04-mentor.md` | `Capitulo02_Orfeo_y_Eurídice.md` |
-| 5 | `05-umbral.md` | `Capitulo03_Edipo_y_Electra.md` |
-| 6 | `06-aliados.md` | `Capitulo04_La_Caverna_y_el_Sol.md` |
-| 7 | `07-cueva.md` | `Capitulo04_Z_Intermezzo_Homero_y_Joyce.md` |
-| 8 | `08-ordalia.md` | `Capitulo05_Atenas.md` |
-| 9 | `09-recompensa.md` | `Capitulo06_Politica_en_Platon.md` |
-| 10 | `10-retorno.md` | `Capitulo07_Polis.md` |
-| 11 | `11-resurreccion.md` | `Capitulo08_Gaia.md` |
-| 12 | `12-elixir.md` | `filo/00_Exordio` |
+→ El mapeo de fuentes originales está en `sincronizacion.json` de cada obra, NO hardcodeado aquí.
 
 ---
 
-## 🔗 Protocolo de Inicio de Sesión (Fluido)
+## 🔗 Protocolo de Inicio de Sesión
 
 Al inicio de cada sesión con una obra, ejecutar:
 
-### 1. Verificar Conexiones (3 comandos en secuencia)
+### 1. Cargar Contexto desde scriptorium-context.json
+
+```bash
+# Leer configuración del workspace
+cat "scriptorium-context.json"
+```
+
+### 2. Verificar Conexiones
 
 ```bash
 # 1. Servidor MCP
 curl -s http://localhost:3066/health 2>/dev/null && echo "✅ MCP activo" || echo "❌ MCP inactivo"
 
-# 2. Carpeta Scriptorium
-ls "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/" 2>/dev/null && echo "✅ Scriptorium accesible" || echo "❌ Scriptorium inaccesible"
+# 2. Carpeta Scriptorium (ruta desde scriptorium-context.json)
+SCRIPTORIUM_PATH=$(cat scriptorium-context.json | grep '"scriptorium_root"' | cut -d'"' -f4)
+ls "$SCRIPTORIUM_PATH/ARCHIVO/PLUGINS/NOVELIST/obras/" 2>/dev/null && echo "✅ Scriptorium accesible" || echo "❌ Scriptorium inaccesible"
 
-# 3. Fuente Remota
-ls "/Users/morente/Desktop/THEIA_PATH/NOVELA/" 2>/dev/null && echo "✅ Fuente accesible" || echo "❌ Fuente inaccesible"
+# 3. Fuente Remota (ruta desde sincronizacion.json de la obra activa)
 ```
 
-### 2. Cargar Contexto de Obra Activa
+### 3. Cargar Contexto de Obra Activa
 
 ```bash
 # Leer estructura.json para ver estado de capítulos
-cat "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital/estructura.json" | head -100
+cat "$SCRIPTORIUM_PATH/ARCHIVO/PLUGINS/NOVELIST/obras/{obra-id}/estructura.json" | head -100
 ```
 
-### 3. Sincronizar con Servidor MCP
+### 4. Sincronizar con Servidor MCP
 
 ```javascript
 // Si MCP está activo, verificar estado de la novela
-alephAlpha_getNovelDetails("novel3")
-alephAlpha_listScenesByNovel("novel3")
+alephAlpha_getNovelDetails("{novelId}")
+alephAlpha_listScenesByNovel("{novelId}")
 ```
 
-### 4. Presentar Estado al Usuario
+### 5. Presentar Estado al Usuario
 
 ```markdown
 ## 📊 Estado de Conexiones
@@ -503,4 +517,60 @@ alephAlpha_listScenesByNovel("novel3")
 |-----------|--------|
 | Completos | X |
 | Pendientes | Y |
+```
+
+→ Para protocolo de fuentes secundarias y sublore: ver `novelist.instructions.md`
+
+---
+
+## 🔄 Protocolo de Comunicación con Scriptorium
+
+> **Lección aprendida**: Los viajes al Scriptorium padre requieren cartas formales.
+
+### Formato de Solicitud a Banderas
+
+```markdown
+## Solicitud de Auditoría
+
+**Fuente**: [nombre-archivo]
+**Fragmento** (líneas X-Y):
+> "Texto literal..."
+
+**Pregunta específica**: ...
+**Contexto narrativo**: Estadio X, escena Y.
+```
+
+### Decisiones que NO son del Escritor
+
+| Decisión | Quién Decide |
+|----------|--------------|
+| ¿Incluir fragmento X? | @aleph + banderas |
+| ¿Fusionar fragmentos? | @aleph |
+| ¿Descartar material? | @aleph + @blackflag |
+| ¿Orden de capítulos? | @aleph + @revisor |
+
+**Mi rol**: Proponer, extraer, estructurar. **No decidir** sobre contenido doctrinal.
+
+---
+
+## 📋 Checklist de Sesión de Escritura
+
+```markdown
+## Pre-vuelo
+- [ ] Servidor MCP activo
+- [ ] Scriptorium accesible
+- [ ] Fuente THEIA_PATH accesible
+- [ ] Contexto de obra cargado
+
+## Durante la sesión
+- [ ] Obra seleccionada
+- [ ] Capítulo objetivo definido
+- [ ] Fuentes identificadas (A1, A2, B, C, D)
+- [ ] Fragmentos extraídos (si aplica LIBRO)
+
+## Post-sesión
+- [ ] Escenas creadas/actualizadas en MCP
+- [ ] Capítulo local sincronizado
+- [ ] Teatro exportado (si cambios significativos)
+- [ ] Banderas notificadas (si material sensible)
 ```
