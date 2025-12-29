@@ -260,18 +260,60 @@ He detectado tu conexión con Aleph Scriptorium.
 
 ---
 
+## 🌐 Interfaz Web de Lectura
+
+El proyecto incluye una **web de catálogo y lectura** de novelas en `docs/`.
+
+### Scripts disponibles (package.json)
+
+| Script | Comando | Descripción |
+|--------|---------|-------------|
+| `docs:serve` | `npm run docs:serve` | Arranca servidor web en puerto 8080 |
+| `docs:open` | `npm run docs:open` | Abre el catálogo en el navegador |
+| `catalog` | `npm run catalog` | Arranca servidor + abre navegador automáticamente |
+
+### URLs de la Web
+
+| Página | URL | Contenido |
+|--------|-----|-----------|
+| **Catálogo** | http://localhost:8080/novel-catalog.html | Ver novelas, personajes, escenas |
+| **Inicio** | http://localhost:8080/index.html | Página principal Aleph MCP |
+| **API JSON** | http://localhost:8080/api/novel-data.json | Datos crudos para desarrollo |
+
+### Modo Lectura
+
+En el catálogo web:
+1. Click en una novela → Ver detalles
+2. Botón "📖 Modo Lectura" → Renderiza contenido narrativo
+3. Selector de capítulos → Navegar por la estructura
+
+### Para agentes: Arrancar web para el usuario
+
+```bash
+# Arrancar web y abrir navegador
+npm run catalog
+
+# Solo servidor (sin abrir navegador)
+npm run docs:serve
+```
+
+---
+
 ## 🔧 Comandos de Verificación Rápida
 
-### Verificar las 3 Conexiones (ejecutar en cada sesión)
+### Verificar las 4 Conexiones (ejecutar en cada sesión)
 
 ```bash
 # 1. Verificar Servidor MCP
 curl -s http://localhost:3066/health 2>/dev/null && echo "✅ MCP" || echo "❌ MCP"
 
-# 2. Verificar Carpeta Scriptorium
+# 2. Verificar Web Catálogo
+curl -s http://localhost:8080/novel-catalog.html 2>/dev/null | head -1 && echo "✅ Web" || echo "❌ Web (arrancar con: npm run docs:serve)"
+
+# 3. Verificar Carpeta Scriptorium
 ls "/Users/morente/Desktop/NUEVA_BASE/SCRIPTORIUM/ALEPH/ARCHIVO/PLUGINS/NOVELIST/obras/itaca-digital" 2>/dev/null && echo "✅ Scriptorium" || echo "❌ Scriptorium"
 
-# 3. Verificar Fuente Remota
+# 4. Verificar Fuente Remota
 ls "/Users/morente/Desktop/THEIA_PATH/NOVELA/" 2>/dev/null && echo "✅ Fuente" || echo "❌ Fuente"
 ```
 
