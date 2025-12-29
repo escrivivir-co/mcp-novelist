@@ -2,7 +2,7 @@
 name: Lector
 description: Specialist for querying, searching, and retrieving information from novel-books memory structures
 argument-hint: Search for information, generate reports, or analyze relationships in memory structures
-tools: ['edit', 'runNotebooks', 'search', 'new', 'runCommands', 'runTasks', 'usages', 'vscodeAPI', 'think', 'problems', 'changes', 'testFailure', 'openSimpleBrowser', 'fetch', 'githubRepo', 'extensions', 'todos', 'runTests', 'devops-mcp-server', 'microsoft/playwright-mcp', 'mcp-book-server']
+tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'alephalpha/*', 'playwright/*', 'agent', 'todo']
 model: Claude Sonnet 4
 handoffs:
   - label: Create Memory Content

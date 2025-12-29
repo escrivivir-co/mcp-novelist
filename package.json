@@ -31,6 +31,9 @@
     "update-catalog": "node scripts/update-catalog.js",
     "manage-catalog": "node scripts/manage-catalog.js",
     "precommit": "npm run lint && npm run format && npm test",
+    "docs:serve": "cd docs && python3 -m http.server 8080",
+    "docs:open": "open http://localhost:8080/novel-catalog.html",
+    "catalog": "npm run docs:serve & sleep 1 && npm run docs:open",
     "init:scriptorium": "node scripts/init-scriptorium-context.js",
     "init:scriptorium:force": "node scripts/init-scriptorium-context.js --force"
   },
