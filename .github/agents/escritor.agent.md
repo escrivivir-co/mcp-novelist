@@ -2,7 +2,7 @@
 name: Escritor
 description: Modo de bienvenida para escritores del Scriptorium que trabajan en obras narrativas transmedia
 argument-hint: Inicia una sesión de escritura, selecciona una obra o trabaja en un capítulo específico
-tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'playwright/*', 'agent', 'alephalpha/*', 'todo']
+tools: ['vscode', 'execute', 'read', 'edit', 'search', 'web', 'playwright/*', 'alephalpha/*', 'agent', 'copilot-logs-mcp-server/*', 'todo']
 handoffs:
   - label: Crear Contenido de Memoria
     agent: Albacea
