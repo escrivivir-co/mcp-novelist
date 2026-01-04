@@ -38,7 +38,7 @@
     "init:scriptorium:force": "node scripts/init-scriptorium-context.js --force"
   },
   "dependencies": {
-    "@alephscript/mcp-core-sdk": "file:./mcp-core-sdk",
+    "@alephscript/mcp-core-sdk": "file:mcp-core-sdk/alephscript-mcp-core-sdk-1.2.0.tgz",
     "@modelcontextprotocol/sdk": "^1.19.1",
     "dotenv": "^16.3.1",
     "express": "^5.1.0",
