@@ -30,6 +30,9 @@ const logger: MCPLogger = {
   error: (message: string, ...args: any[]): void => {
     console.error(`[ERROR] ${message}`, ...args);
   },
+  warn: (message: string, ...args: any[]): void => {
+    if (LOG_LEVEL !== 'error') console.warn(`[WARN] ${message}`, ...args);
+  },
   debug: (message: string, ...args: any[]): void => {
     if (LOG_LEVEL === 'debug') console.log(`[DEBUG] ${message}`, ...args);
   },
@@ -97,7 +100,7 @@ class NovelistMCPServer extends BaseMCPServer {
 
       this.logger.info("Novelist MCP Server specifics setup completed");
     } catch (error) {
-      this.logger.error("Failed to setup server specifics:", error);
+      this.logger.error("Failed to setup server specifics:", error as object);
       throw error;
     }
   }
@@ -112,7 +115,7 @@ class NovelistMCPServer extends BaseMCPServer {
       execSync(`node ${scriptPath}`, { stdio: 'inherit' });
       this.logger.info("Novel catalog updated successfully");
     } catch (error) {
-      this.logger.error("Error updating novel catalog:", error);
+      this.logger.error("Error updating novel catalog:", error as object);
     }
   }
 }

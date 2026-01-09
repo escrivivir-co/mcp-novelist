@@ -51,7 +51,7 @@ export class Server {
             
             // Send error response
             const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-            const id = ('id' in message) ? message.id : '';  // Use empty string instead of null
+            const id = ('id' in message) ? message.id + '' : '';  // Use empty string instead of null
             await this.sendError(id, -32603, errorMessage);
         }
     }
