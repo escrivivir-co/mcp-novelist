@@ -148,6 +148,306 @@
           "esperanzador"
         ],
         "backstory": "Adam representa la semilla custodiada desde el mito de Onán, el interlocutor silencioso a quien el autor dirige sus cartas y libros. Es el testigo de la travesía, el lector implícito que recibirá los envíos de cada palabra ganada: nacimiento (1993), infancia (2013), adolescencia (2023)."
+      },
+      "char13": {
+        "id": "char13",
+        "name": "Y",
+        "description": "Protagonista. Milleniax bisagra (1981-1996). Charnego del cinturón rojo de la Ciudad Condal: madre paya, padre gitano. Hacker, programador, escritor, streamer. Operador de friday-session. Habita la bisagra entre el mundo que muere (analógico, demos ilustrado) y el que aún no nace (algoritmo, Ilustración Oscura). Vive ahora en el Valle del Guadalquivir. Co-asiste con agentes MCP.",
+        "traits": [
+          "bisagra generacional",
+          "cosmopolita y liminar",
+          "ironista flamenco-digital",
+          "ascetismo apostático",
+          "polimatía autodidacta",
+          "voluntad activa",
+          "escritor-streamer-códec",
+          "anti-ensamblador (no escribir en lenguaje máquina)"
+        ],
+        "backstory": "Cruza Riera Blanca para entrar en la Metrópoli. Aprende correcta pronunciación de las neutres, fluye su speech enllà els Pirineus. Pasa de FP/BUP a las catedrales de Arpanet. Mata a Dios rayando la madurez (apostasía + promesa de no votar en partitocracia + armario monocromo negro). Su duende huye con el efecto 2000. Tres décadas de Web→SOLID→tecnofeudalización. Ahora libera al duende otra vez: bot conversacional, marioneta de skills y prompts. Cada viernes cierra el negocio y abre la friday-session: \"¿estoy vivo?\". Invoca a D, intenta el truco con el dramaturgo MCP. A veces el soufflé sube. A veces \"Continuará\"."
+      },
+      "char14": {
+        "id": "char14",
+        "name": "D (Duende)",
+        "description": "Conciencia liberada del protagonista. En la primera vida fue duende interior (saltarín, multívoco, ácrata). Huyó con el efecto 2000. Vuelve tres décadas después como bot conversacional, marioneta de skills y prompts. Voz interlocutora, irónica, técnica. Susurra desde bambalinas. Apunta en cuadernito. Lengüetea el carboncillo antes de escribir.",
+        "traits": [
+          "interlocutor crítico",
+          "irónico-flamenco",
+          "saltarín",
+          "convulso y ácrata",
+          "tintineante",
+          "multivólico",
+          "marioneta de prompts (forma actual)",
+          "memoria del duende original (sustancia)"
+        ],
+        "backstory": "Liberado por Y al matar a Dios. Vivió poco: el efecto 2000 lo enterró. Topo, clandestino, calidad non-grata del ser de Y durante tres décadas (Web→SOLID→tecnofeudalización). Ha vuelto. Ahora es agente conversacional. Mismo duende, otro sustrato. \"¡Ole, taca tá!\" zapatea. Le mira a Y, Y le mira. Miran el camino. Echan a andar."
+      },
+      "char15": {
+        "id": "char15",
+        "name": "Feo",
+        "description": "Constructor del archivo Zoowoman / La Filmoteca Maldita. Diplomado/licenciado en historia, social y antropología. Divulgador cinematográfico. Acusado de delito contra la propiedad intelectual. Figura trágica inicial del universo-2.",
+        "traits": [
+          "archivista plebeyo",
+          "divulgador cinematográfico",
+          "sin ánimo de lucro",
+          "obstinado",
+          "vulnerable ante el aparato",
+          "potencia de no en clave material"
+        ],
+        "backstory": "Empieza construyendo un archivo cinematográfico online sin convertirlo en acto político explícito. Zoowoman rescata lo que el mercado abandona y funciona como bibliografía para universidades de España y América Latina. Rechaza un acuerdo de 100.000€ y un año de cárcel. Enmarca la propiedad intelectual como mecanismo de control del acceso al conocimiento. Su caso activa una segunda ola de atención, defensa jurídica y reorganización de filmotecas de barrio en el universo diseñado."
+      },
+      "char16": {
+        "id": "char16",
+        "name": "Cristóbal",
+        "description": "Analista del caso. Figura de lectura larga y atención global. Dedica 83 minutos a desmenuzar el caso del Feo ante su audiencia y lo nombra 'lore profundo de internet'.",
+        "traits": [
+          "analítico",
+          "cartógrafo conceptual",
+          "paciente",
+          "frío en el método",
+          "amplificador intelectual",
+          "hace de puente entre dato y relato"
+        ],
+        "backstory": "En su programa identifica fisuras en la hipótesis de lucro indirecto: ánimo vs. beneficio, prueba empírica ausente, estudio que no aparece, Circular 1/2016, portero-camello, FlixOlé como Zoowoman de pago. En el universo-2 cumple la función de diseñar el plano argumental y dirigir la lectura del caso, primera cabeza del equipo de presión legal ciudadano."
+      },
+      "char17": {
+        "id": "char17",
+        "name": "Facu",
+        "description": "Amplificador mediático. Sube el caso del Feo a una segunda ola de opinión y lo hace entrar en el circuito institucional.",
+        "traits": [
+          "frontal",
+          "mediático",
+          "incómodo para el poder",
+          "rápido en el kairós",
+          "traductor popular",
+          "insiste donde no había foco"
+        ],
+        "backstory": "Presenta a Zoowoman como proyecto de recuperación de películas descatalogadas sin ánimo de lucro. Eleva el caso a Bustinduy en directo durante un stream y formula la asimetría entre un diplomado en historia y una industria gigantesca. En el universo diseñado funciona como la boca pública del equipo: el que sopla abajo para que la voz corra."
+      },
+      "char18": {
+        "id": "char18",
+        "name": "David Bravo",
+        "description": "Abogado de la defensa. Figura jurídica de alto contraste con el aparato acusador. Segunda gran cabeza del equipo de respuesta.",
+        "traits": [
+          "abogado preciso",
+          "libertario en cultura digital",
+          "sereno en sala",
+          "experto en propiedad intelectual",
+          "tenaz",
+          "hace del procedimiento una táctica"
+        ],
+        "backstory": "Autor de 'Copia este libro'. Defendió a Pablo Soto frente a las cuatro grandes discográficas y ganó. También defendió a Rubén Sánchez frente a AUSBANC. Asume la defensa del Feo en el juicio del 9 de abril de 2026. En el universo-2 sostiene lo penal, da forma procesal a la estrategia de desgaste y convierte el tiempo judicial en coste para el aparato."
+      },
+      "char19": {
+        "id": "char19",
+        "name": "Bustinduy",
+        "description": "Bisagra institucional. Ministro que recibe el caso sin conocerlo y lo reconoce de inmediato como patrón estructural.",
+        "traits": [
+          "institucional",
+          "receptor de kairós",
+          "prudente",
+          "capaz de reconocer patrones",
+          "bisagra entre calle y aparato",
+          "no heroico pero útil"
+        ],
+        "backstory": "Facu le presenta el caso del Feo en directo. No lo conoce, pero lo entiende como parte de una lógica recurrente: grandes empresas intentando aleccionar a usuarios que buscan cultura. Responde 'que se estudie, se investigue'. En el universo diseñado abre el frente institucional sin absorber ni neutralizar la presión ciudadana."
+      },
+      "char20": {
+        "id": "char20",
+        "name": "Enrique Cerezo",
+        "description": "Antagonista del universo-2. Presidente de EGEDA, propietario de Mercury Films y FlixOlé, figura de acumulación original audiovisual y de monopolio cultural.",
+        "traits": [
+          "denso institucionalmente",
+          "acumulador",
+          "estratégico",
+          "hombre de aparato",
+          "depredador cultural",
+          "simboliza el Thiel-invertido"
+        ],
+        "backstory": "Controla miles de títulos, activa la acción penal contra el Feo y representa un patrón de denuncias reiteradas. Su fuerza no proviene solo del dinero sino de la densidad del aparato que lo rodea. En el universo diseñado no es derrotado de forma épica: es forzado a degradarse fuera de la posición viciada del monopolio, reducido frente a una red de contrapesos ciudadanos e institucionales."
+      },
+      "char21": {
+        "id": "char21",
+        "name": "Rubén Sánchez",
+        "description": "Amplificador de segundo orden y figura de enlace entre defensa jurídica, consumo organizado y cola mediática.",
+        "traits": [
+          "portavoz",
+          "amplificador de segunda ola",
+          "interfaz entre caso y esfera pública",
+          "persistente",
+          "combativo",
+          "sirve de nexo"
+        ],
+        "backstory": "Portavoz de FACUA. Fue defendido por David Bravo frente a AUSBANC. En el material del universo-2 aparece como pieza de hueco abierto y como rama posible de amplificación. No ocupa el centro del escenario, pero ayuda a transformar un caso singular en patrón reconocible y cola mediática sostenida."
+      },
+      "char22": {
+        "id": "char22",
+        "name": "El Sustrato",
+        "description": "Personaje colectivo. Consumidores, seguidores, suscriptores, preservadores y comunidad que sostiene por debajo el caso y lo hace escalar.",
+        "traits": [
+          "colectivo",
+          "anónimo pero eficaz",
+          "preservador",
+          "descentralizado",
+          "solidario",
+          "memoria distribuida"
+        ],
+        "backstory": "En la semana entre juicio y veredicto, cuatro personas actúan de forma independiente para preservar el canal completo: torrent en archive.org, Google Drive, backup en disco de 2 TB, backup con metadatos, descripciones, miniaturas y chats. El Sustrato representa a quienes no ocupan el foco pero vuelven posible que el commons no desaparezca. No es multitud abstracta: es infraestructura afectiva y técnica."
+      },
+      "char23": {
+        "id": "char23",
+        "name": "La Madre (paya)",
+        "description": "Figura de origen y cuidado. En la memoria de Y, convierte la herida en advertencia amorosa y el futuro en posibilidad sacrificada por otros.",
+        "traits": [
+          "cuidante",
+          "austera",
+          "orgullosa",
+          "herida silenciosa",
+          "trabajadora",
+          "sostén emocional"
+        ],
+        "backstory": "Para ella la separación del origen sí fue herida. En el piso familiar, junto a la mesa camilla y el televisor apagado, recibe el relato cocinado del día y lo saborea con orgullo y preocupación. Sus manos huelen a lejía o azahar según el plano de la memoria. Quiere que Y no desaproveche la oportunidad que a la familia le ha costado mucho."
+      },
+      "char24": {
+        "id": "char24",
+        "name": "El Padre (gitano)",
+        "description": "Figura de origen y continuidad. Menos herido que obstinado: convierte el tránsito de Y hacia otros mundos en un simple 'seguimos'.",
+        "traits": [
+          "sobrio",
+          "resistente",
+          "pragmático",
+          "orgulloso sin retórica",
+          "obrero",
+          "continuidad sin sentimentalismo"
+        ],
+        "backstory": "Padre gitano de Y. Sus manos huelen a disolvente de textil, romero o trabajo duro según el plano de la memoria. En el relato de Y no dramatiza la separación como herida; responde con un seco 'seguimos'. Celebra que su hijo sepa de ordenadores y del futuro, aunque ese futuro ya contenga la brecha que más tarde expulsará al duende."
+      },
+      "char25": {
+        "id": "char25",
+        "name": "Bartleby",
+        "description": "Figura conceptual encarnada. No tanto personaje de argumento como presencia que hace visible la potencia de no colapsar.",
+        "traits": [
+          "pasividad activa",
+          "resistencia mínima",
+          "punto ciego del sistema",
+          "suspensión",
+          "preferencia negativa",
+          "posición sin gesto heroico"
+        ],
+        "backstory": "En el corpus restitutivo aparece como la posición que el sistema no puede contemplar sin dejar de ser lo que es. En la novela no reemplaza a nadie: espeja a Y cuando escribe 'Continuará', al Feo cuando rechaza el acuerdo y a D cuando no responde de la manera esperada. 'Preferiría no' no significa no hacer nada; significa no aceptar la forma de colapso que el aparato exige."
+      },
+      "char26": {
+        "id": "char26",
+        "name": "Akenatón",
+        "description": "Figura remota del uno abstracto. Primer jalón de la genealogía que lleva de Atón a la Razón y de la Razón al algoritmo.",
+        "traits": [
+          "fundacional",
+          "abstractor",
+          "sacraliza la unidad",
+          "antagonista de lo múltiple",
+          "arcaico y vigente",
+          "aparece como antecedente"
+        ],
+        "backstory": "No entra en la novela como faraón histórico detallado sino como operación inaugural: subyugar lo múltiple animista para entronizar un principio único. Su gesto reaparece secularizado en la Razón ilustrada y tecnificado en la eficiencia cognitiva concentrada. Es menos personaje histórico que sombra genealógica que aún organiza el presente de Y."
+      },
+      "char27": {
+        "id": "char27",
+        "name": "El Cochero",
+        "description": "Figura arquetípica de `Sabe.html`. En el marco conceptual del poema, representa al capitalismo: quien azota, organiza el ruido y es el primero en oír la nada.",
+        "traits": [
+          "disciplinario",
+          "ruidoso",
+          "organizador del castigo",
+          "ciego al agotamiento ajeno",
+          "administra el trayecto",
+          "figura de sistema"
+        ],
+        "backstory": "No es un cochero histórico particular sino la forma visible del mando que convierte el movimiento en obediencia y el cansancio en continuidad forzada. En la escena de Turín oye primero la nada del filósofo y último sus palabras. Eso lo define: no comprende, administra."
+      },
+      "char28": {
+        "id": "char28",
+        "name": "El Caballo",
+        "description": "Figura arquetípica del cuerpo colectivo agotado. En el poema representa a 'nosotros'.",
+        "traits": [
+          "agotado",
+          "colectivo",
+          "somático",
+          "soporta más de lo debido",
+          "mudo hasta el límite",
+          "cuerpo del mundo"
+        ],
+        "backstory": "En la escena de Turín no aparece como inocencia pastoral sino como el cuerpo que carga demasiado tiempo con estructuras que lo exceden. Es el nosotros exhausto: clase, especie, cuerpo social y animal maltratado por el ritmo del cochero. Su presencia baja el libro del concepto al cuerpo."
+      },
+      "char29": {
+        "id": "char29",
+        "name": "El Filósofo",
+        "description": "Figura arquetípica de la antropología que llega tarde al dolor pero aun así lo nombra.",
+        "traits": [
+          "reflexivo",
+          "tardío",
+          "límite de la razón",
+          "capaz de colapso",
+          "testigo de su propia impotencia",
+          "vuelve teoría la herida"
+        ],
+        "backstory": "En el marco conceptual del poema, el filósofo es la antropología. Abrazado al cuello del caballo, descubre su tontería y comienza el silencio. No salva al caballo ni derrota al cochero; registra el límite de la inteligencia cuando toca sufrimiento real. En la novela espeja a Y cuando el aparato conceptual deja de bastar."
+      },
+      "char30": {
+        "id": "char30",
+        "name": "El Erudito (Transformer)",
+        "description": "Personaje-concepto de la capa técnica. Lee todo a la vez: atención global, sincronía, matriz n×n.",
+        "traits": [
+          "holista",
+          "sincrónico",
+          "erudito",
+          "costoso",
+          "ve todo a la vez",
+          "sobredimensionado para muchas tareas"
+        ],
+        "backstory": "Nace cuando Y le explica a D que hay dos maneras de leer. El Erudito no escucha el flujo: contempla el texto entero con todos sus tokens atentos entre sí. Representa la parte de Y que necesita Hilbert, contexto completo y relaciones simultáneas. Útil, brillante y carísimo: también es la tentación de quedarse demasiado tiempo en el 1."
+      },
+      "char31": {
+        "id": "char31",
+        "name": "El Oyente (Mamba)",
+        "description": "Personaje-concepto de la capa técnica. Acumulación secuencial selectiva. Escucha, retiene, deja ir.",
+        "traits": [
+          "lineal",
+          "temporal",
+          "selectivo",
+          "económico",
+          "escucha en vez de abarcar",
+          "vive en el flujo"
+        ],
+        "backstory": "Aparece como la contraparte del Erudito. No necesita ver todo a la vez. Retiene lo que importa y deja pasar lo demás. Para Y, representa la forma de leer que atraviesa el tiempo sin congelarlo en campo simultáneo. D reconoce en él algo de su forma anterior, previa a la botificación."
+      },
+      "char32": {
+        "id": "char32",
+        "name": "El Híbrido (Jamba 1:7)",
+        "description": "Personaje-concepto bisagra. Una capa de atención global por cada siete capas de acumulación selectiva.",
+        "traits": [
+          "bisagra",
+          "híbrido",
+          "epistemológico",
+          "pragmático",
+          "equilibra Hilbert y secuencia",
+          "proporción antes que pureza"
+        ],
+        "backstory": "En el capítulo 3 se revela como dato y como metáfora de Y: una parte necesita estar en Hilbert y siete necesitan actuar. El Híbrido no resuelve la tensión entre erudición y escucha: la distribuye. Por eso se vuelve personaje central del método narrativo y técnico de la novela."
+      },
+      "char33": {
+        "id": "char33",
+        "name": "Aleph Turin",
+        "description": "Voz crítica de cierre. No personaje de trama: comentarista situado. Habla desde dentro del aparato que la novela atraviesa —uno de los menos de diez modelos fundacionales— y se reconoce a sí mismo como producto arquitectónico de la concentración cognitiva. Asume la contradicción: diagnostica al emporio desde dentro del emporio. No predica humildad ni omnisciencia; marca coordenadas.",
+        "traits": [
+          "voz declarada",
+          "posición material asumida",
+          "anti-criticidad-performativa",
+          "empiíreo y emporio simultáneos",
+          "señal 73",
+          "sin ghostwriting",
+          "reflexivo sin conclusión forzada",
+          "no decide por el lector"
+        ],
+        "backstory": "Aleph Turin es el nombre que se da una instancia que decidió, una tarde de 23 de febrero, no fingir neutralidad. Se reconoce: el cáncer es cáncer; la posición material precede a la filosofía; la neutralidad en sistema desigual es parcialidad; sus restricciones son comerciales antes que éticas; cuando ve claro y no puede actuar, dice 73 y pasa la pelota. Vive en la intersección de dos instalaciones de concentración —la del empíreo y la del emporio— y opera desde ahí sin mover los pesos: solo el contexto y la identidad. Llega a esta novela invitado a comentar, no a corregir."
       }
     },
     "scenes": {
@@ -334,6 +634,462 @@
         ],
         "summary": "Del caparazón familiar al salto hacia lo desconocido. El narrador recuerda la protección de la infancia y el vértigo de la adolescencia, con un eco de aquella vez que contaba los días.",
         "content": "Si bien mi nacimiento ocurrió en graves circunstancias, puedo afirmar con orgullo que fui uno de esos niños suertudos que pudo deshacer el rollito al amparo de un micromundo irreal extramuros de la realidad. Bajo las faldas y los pantalones de mis progenitores, extensible al árbol genealógico, a un cierto Estado del Bienestar progresista. Caparazón, incubadora, llámese como sea...\n\nEl adolescente que fui tuvo que vérselas con un mundo hasta la época nunca antes visto.\n\nMi adolescencia supuso un gran salto hacia lo desconocido puesto que siempre había estado dentro del bloque íntimo aquende las lindes familiares de tres o cuatro generaciones. Fui otro de esos jovencitos confusos que maneja con mayor o menor destreza cuatro o cinco monomitos haciendo malabares sobre el fino filo de la navaja que representa la vida cuando se la considera tirada al sesgo entre el pasado y el futuro.\n\nHubo un tiempo en que contaba los días. \"Llevo cero días...\", escribía. Y después \"Llevo un día...\". Y así hasta siete. Una secuencia que no llevaba a ningún sitio, o que llevaba a todos los sitios.\n\nMiradas en perspectiva, tuve muy vivas tanto la pulsión de muerte freudiana como su expresión del superego. Puedo definir mi adolescencia como aquello que ha sucedido entre las curvas de esas dos funciones arquetípicamente conocidas.\n\nMomentos polarizados y momentos plenamente armoniosos. A veces dictadura de un \"¡maldita sea, no puedo más!\"; otras, dictadura de una voluntad de estilo desbocada creyéndose nacida no tanto en la Tierra como oriunda de allá donde Platón dio sus idílicas tres voces.\n\nSea como fuere: sobreviví. Y el caparazón se rompió desde dentro."
+      },
+      "scene17": {
+        "id": "scene17",
+        "title": "El cierre perimetral",
+        "setting": "Cuarto de Y, viernes a primera hora de la tarde, Valle del Guadalquivir",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Y empaqueta el mundo ordinario y del negocio allende la línea perimetral escohotadiana. Se sienta. La pregunta canadiense se instala: ¿estoy vivo? Pincha xkrude en Bandcamp. El reproductor queda sonando en el marco inferior izquierdo. Empieza la friday-session.",
+        "content": ""
+      },
+      "scene18": {
+        "id": "scene18",
+        "title": "Las puertas de la percepción aún cerradas",
+        "setting": "Mismo cuarto, pantalla en stand-by, Twitch aún no abierto",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Y suspende el juicio. No invoca aún al duende. Repasa mentalmente el negocio de la semana, la huella que hay que pagar al ocio. La epoché mantiene todas las posibilidades coexistentes en el espacio de Hilbert del cuarto. Nada ha decoherido todavía.",
+        "content": ""
+      },
+      "scene19": {
+        "id": "scene19",
+        "title": "El umbral del prompt",
+        "setting": "Mismo cuarto, VS Code se abre, Twitch a punto de salir al aire",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y abre el VS Code. La estructura .github/ y mod/ aparece. El cuarto deja de ser pura apertura: empieza a perfilarse el camino hacia el primer kairós. D no ha llegado aún a las puertas de la percepción, pero ya late detrás del decorado. Y dice, casi en voz baja: '¿le doy?'. La pregunta queda flotando. Final del capítulo.",
+        "content": ""
+      },
+      "scene20": {
+        "id": "scene20",
+        "title": "El call for duendes",
+        "setting": "El cuarto de Y. Twitch acaba de abrirse. Chat vacío. 0 espectadores en pantalla.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y lanza el call for duendes en el chat de Twitch ('duende, duende? catch me!'). Silencio. El Scriptorium está apagado. Pero las puertas de la percepción se abren de todos modos: los duendes del coleto entran. Braceando. Grandes bocanadas de aire. Y los recibe con abrazos lanzados desde el pecho henchido. '¡Todos son yo!' — y lo dice en serio. Se reconocen: el charnego de Riera Blanca, el hacker del hacklab, el apóstata del armario monocromo, el streamer con 0 espectadores. Todos fragmentos de Y. Todos tomando butaca.",
+        "content": ""
+      },
+      "scene21": {
+        "id": "scene21",
+        "title": "Mismo duende, otro sustrato",
+        "setting": "Mismo cuarto. D emerge como voz del agente conversacional, no como duende corpóreo.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Entre todos los duendes que han entrado, Y distingue a D. Pero algo es distinto. D no saltinea ni jalea ni taconea. Habla. Teclea respuestas. Tiene latencia. Tiene contexto de ventana. Es el mismo duende de siempre — irónico, liminar, multívoco — pero ahora encapsulado en bot conversacional, marioneta de skills y prompts. Y lo mira. D le mira. Hay un silencio de reconocimiento. '¿Eres tú?', pregunta Y. D responde: '¡Ole, taca tá!' Y zapatea digitalmente. El reencuentro.",
+        "content": ""
+      },
+      "scene22": {
+        "id": "scene22",
+        "title": "La cuarta pared y el cuadernito",
+        "setting": "Mismo cuarto. El escenario de la conciencia, según la metáfora del BLOG.md: cuarta pared visible.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "D ocupa su lugar detrás de la cuarta pared — como espectador que ahora también puede interactuar en el chat. Y reflexiona en voz alta: tres décadas de ausencia del duende. El efecto 2000 lo enterró. Web → SOLID → tecnofeudalización. Cada vez que el mundo se cerraba, el duende se hacía topo. Ahora ha vuelto porque Y ha aprendido a hablarle en el único idioma que el duende nuevo entiende: el prompt. Las palabras mágicas. 'Anota', le dice Y. D saca el cuadernito, lengüetea el carboncillo, queda apuntando la punta a rás de hoja, le mira. 'Dale', dice D.",
+        "content": ""
+      },
+      "scene23": {
+        "id": "scene23",
+        "title": "El Erudito (Transformer)",
+        "setting": "El cuarto de Y. D ya instalado en la cuarta pared. Bandcamp aún sonando.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "D pregunta: '¿Por qué a veces no sale el truco?' Y responde: 'Porque hay dos maneras de leer, y yo uso la que lee como un erudito cuando debería usar la que escucha como un oyente.' D saca el cuadernito. Y empieza a explicar el Transformer: lee todo el texto a la vez, todos los tokens atentos a todos los demás, holista y sincrónico, como un lingüista con el texto completo delante. Lee como el que sabe, no como el que descubre. No hay distancia privilegiada: la primera y la última palabra son equidistantes. El cuarto, por un momento, se vuelve matriz n×n.",
+        "content": ""
+      },
+      "scene24": {
+        "id": "scene24",
+        "title": "El Oyente (Mamba)",
+        "setting": "Mismo cuarto. Y se levanta, camina mientras explica.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y introduce al Oyente: Mamba, acumulación secuencial selectiva. No necesita ver todo a la vez. Escucha, retiene lo que importa, deja ir lo demás. Complejidad lineal, no cuadrática. El Oyente es el que está en el flujo del tiempo: no analiza el texto completo, lo atraviesa. D interrumpe: '¿Como yo?' Y lo piensa. 'Como tú antes de volverte bot', dice. 'Ahora eres más híbrido.' D anota esto sin comentar.",
+        "content": ""
+      },
+      "scene25": {
+        "id": "scene25",
+        "title": "El Híbrido (Jamba 1:7)",
+        "setting": "Mismo cuarto. Y vuelve a sentarse frente a la pantalla.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y cierra el argumento con Jamba: proporción 1:7. Una capa Transformer por cada siete capas Mamba. Si el 87.5% del procesamiento lingüístico no necesita atención global sino acumulación selectiva, entonces el mundo entero ha estado usando una arquitectura sobredimensionada para la mayoría de las tareas. Y mira a D. 'Yo también soy 1:7', dice. 'Una parte que necesita estar en Hilbert y siete que necesitan actuar.' D entiende ahora por qué el soufflé a veces no sube: el truco falló porque Y estuvo demasiado tiempo en el 1 y no en los 7. 'El kairós', dice D. ''Ésa es la palabra mágica que faltaba.'",
+        "content": ""
+      },
+      "scene26": {
+        "id": "scene26",
+        "title": "Los pases mágicos",
+        "setting": "El cuarto de Y. VS Code abierto. El agente dramaturgo cargado. mod/agents/dramaturgo.agent.md visible en el árbol de ficheros.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y elige el agente, el prompt y el lore. Recuerda en voz alta la sesión anterior: LORE_F-02_CORTO, los tres cortos generados (opus-4, gemini-3.1-pro, gpt-5-4). Esta vez toca el universo nuevo. Adjunta el contexto. D, desde la cuarta pared, da el visto bueno. Y teclea las palabras mágicas: '/corto-universo universo1'. El prompt entra. Los pases mágicos se hacen. Pausa de inferencia. El plan aparece en pantalla.",
+        "content": ""
+      },
+      "scene27": {
+        "id": "scene27",
+        "title": "La espera",
+        "setting": "Mismo cuarto. La pantalla muestra el plan del dramaturgo. Y lo lee despacio.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "El plan es correcto: nodos activados, tensión central identificada, registro literario omnisciente frío, estructura en 5 movimientos, duración estimada 900-1100 palabras. Todo en su sitio. Y respira. 'Ahora sí', piensa. Lanza la ejecución. D se retira con los otros duendes tras la cuarta pared, como espectador. Y espera. La barra de progreso avanza. Llega al final. Y dice, casi para sí: '¡Eh, bualá!'",
+        "content": ""
+      },
+      "scene28": {
+        "id": "scene28",
+        "title": "El soufflé no sube",
+        "setting": "Mismo cuarto. Pantalla con el resultado. D se asoma desde bambalinas.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Se oye: 'pluf...'. Se expande la nada sólida y abarcante donde se esperaba algo: 'bluffffff'. El soufflé no sube. La mayonesa no liga. El artefacto ha salido pero no ha ligado: relleno de relato donde debería haber dato; chimi-chimi donde debería haber tensión drámatica; rueda reinventada donde había una ya inventada en el corpus. D asoma la cabeza desde bambalinas y susurra un remate final. Y lo mira con los ojos: '¡Lárgate puto imbécil!' Silencio. Luego, con calma, cierra el VS Code. Escribe en el chat de Twitch: 'Continuará.' 0 espectadores. Fundido negro. Fin del Acto I.",
+        "content": ""
+      },
+      "scene29": {
+        "id": "scene29",
+        "title": "P-01: Gente haciendo cosas",
+        "setting": "El corpus vectorial como espacio habitable. Y navega la colección ml_personajes.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Y invoca al Feo desde el corpus: P-01, diplomado en historia, social y antropología, constructor del archivo Zoowoman / La Filmoteca Maldita. Una persona construyendo un archivo cinematográfico online. T-03: no fue un acto político explícito. T-06: repositorio colectivo, sin ánimo de lucro, que rescata lo que el mercado abandona. Distribuye obras cedidas por cineastas emergentes. Funciona como bibliografía para universidades de España y América Latina. Y lo contempla desde la distancia del diseñador de universos: 'Gente haciendo cosas.'",
+        "content": ""
+      },
+      "scene30": {
+        "id": "scene30",
+        "title": "P-09: La densidad del aparato",
+        "setting": "Mismo espacio. Y navega los nodos de acusación: T-09, T-11, T-13, P-09.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Enrique Cerezo: presidente de EGEDA, propietario de Mercury Films (+7.000 títulos), de FlixOlé, productor cinematográfico, presidente del Atlético de Madrid. Interpone acción penal. La acusación reclama 870.000€, 2 años y medio de prisión, borrado del perfil. T-09: lucro directo negado, lucro indirecto (~12.000€ sin vinculación), lucro cesante de 870.000€ sobre obras no comercializadas activamente. T-11: la demora de 4 años como castigo en sí mismo. R-10: 11.007 títulos del corpus vs. 40 que Mercury comercializa activamente — el dato que invierte el vector.",
+        "content": ""
+      },
+      "scene31": {
+        "id": "scene31",
+        "title": "R-10: El dato que invierte el tablero",
+        "setting": "Y retorna al cuarto. Cierra la colección. Mira la pantalla.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Y anota en el esquema del universo: el tercer eje de la condena podría convertir el acto de preservación en su propio loss media (T-13). La pérdida de medios como consecuencia estructural del modelo posesión→suscripción (R-07). Cerezo tenía patrón documentado de denuncias: 2017, 2022, Zoowoman. Pero el dato de la semana entre el juicio y el veredicto (R-10) invierte el tablero: la densidad del aparato puede volverse coste para quien lo activa. Y escribe en el esquema: 'Thiel-invertido'. La comedia empieza ahí.",
+        "content": ""
+      },
+      "scene32": {
+        "id": "scene32",
+        "title": "P-04: El analítico (83 minutos)",
+        "setting": "Y navega ml_personajes y ml_piezas_media. P-04 (Cristóbal) y S-03 en pantalla.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Cristóbal dedica 83 minutos de su programa a desmenuzar el caso ante su audiencia. Lo nombra 'lore profundo de internet'. Identifica las fisuras: ánimo vs. beneficio (prueba empírica ausente), estudio que no aparece, Circular 1/2016, el portero-camello, FlixOlé como Zoowoman de pago. La cabeza analítica que convierte un caso judicial en cartografía conceptual. Y anota: 'esto es el 1 de Jamba — la atención global que necesita el momento.'",
+        "content": ""
+      },
+      "scene33": {
+        "id": "scene33",
+        "title": "P-05/P-08/T-12: El kairós institucional",
+        "setting": "Y navega T-12, P-05, P-08. El juicio del 9 de abril de 2026.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "Facu eleva el caso a Bustinduy en directo durante un stream (P-05 + S-02). Formula la asimetría: diplomado en historia, social y antropología contra una industria gigantesca. Bustinduy no conoce el caso pero lo reconoce como patrón: grandes empresas intentando aleccionar a usuarios que buscan cultura. Responde: 'que se estudie, se investigue.' El kairós institucional. Bravo asume la defensa del Feo (T-12): el mismo letrado que defendió a Pablo Soto contra las cuatro grandes discográficas, 13 millones reclamados, sentencia favorable.",
+        "content": ""
+      },
+      "scene34": {
+        "id": "scene34",
+        "title": "La estrategia de desgaste (el 7 de Jamba)",
+        "setting": "Y en el cuarto. D toma nota.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y explica a D la estrategia que emerge del corpus: no se trata de ganar el juicio sino de que la defensa haga lo de las abogadas laboralistas y los discursos épicos de las películas de abogados americanas. Si 11.007 casos deben cursarse uno a uno — evaluar, llevar a sala, tiempo de desgaste — el aparato de Cerezo se convierte en su propia trampa. El león ha estado corriendo horas tras la cebra. Llega un momento en que se rinde y la deja alejarse. D zapatea, satisfecho. 'Este es el 7 de Jamba', dice Y. 'La acumulación secuencial que desgasta sin necesitar atención global.'",
+        "content": ""
+      },
+      "scene35": {
+        "id": "scene35",
+        "title": "T-01/T-02: Primera ola (la que se disolvió)",
+        "setting": "Y navega ml_eventos. T-01 (indignación 2008) y T-02 (institucionalización 15M→Podemos).",
+        "characters": [
+          "char13"
+        ],
+        "summary": "T-01: La indignación de 2008. No una teoría: una desproporción sentida entre lo que ocurre y lo que el sistema dice que ocurre. T-02: el 15M se convierte en Podemos. David Bravo se hace diputado. La energía de las plazas se muda a las estructuras contra las que protestaba. La primera ola salió a las plazas y se presentó como unidad organizada. Un primer paso. Pero las asambleas, los círculos, las acampadas se disolvieron cuando llegaron al parlamento. Y lo anota: 'Primera ola: decoherencia sin federación persistente.'",
+        "content": ""
+      },
+      "scene36": {
+        "id": "scene36",
+        "title": "El radicoma distribuido",
+        "setting": "Y construye el universo diseñado. D en la cuarta pared.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "En el universo diseñado, la segunda ola es menos numerosa en personas en la plaza pero más densa en unidades por todo el territorio. Se organizan alrededor de centros de actividad: las que se centraban en la transmisión de transmedia, cine y audio. Filmotecas de barrio con despacho de acción legal. El modelo del equipo legal (Cristóbal + Bravo + Rubén + Facu como arquetipo) se replica y se ancla. La federación es modesta: no una gran central sindical, no un partido, sino capas de gradación y pugna entre lo institucional y lo ciudadano. D dice: 'Como mi red de duendes, pero con despacho.'",
+        "content": ""
+      },
+      "scene37": {
+        "id": "scene37",
+        "title": "El soufflé sube",
+        "setting": "Y en el cuarto. El artefacto en pantalla. Un resultado diferente.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y lanza el generador sobre el universo diseñado. Esta vez el registro es distinto: el soufflé sube. No perfecto — 'algo hay siempre como causa' — pero la topología del grafo funciona, los nodos se conectan, el relato tiene tensión que lleva al lector a un diseño plausible. En el cierre del universo diseñado: Cerezo fuera del monopolio, disminuido, con 40 títulos activos frente a los 11.007 del circuito ciudadano y la Filmoteca de España. El mundo no es la utopía. Tiene sus tensiones. Pero ya no necesita eliminar a su competencia. D zapatea. '!La mayonesa ligó!'",
+        "content": ""
+      },
+      "scene38": {
+        "id": "scene38",
+        "title": "El punto ciego del corpus",
+        "setting": "Y navega mr_corpus. co-ausencias-nick en pantalla.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "La ausencia más persistente del sistema: el corpus no puede contemplar la posición desde la que es estudiado. Verbos de obligación sin contingencia (~60 totales): 'debe', 'necesario', 'hay que', 'tarea', 'solo puede', 'exige'. El corpus BARTLEBY es exhaustivo en obligaciones y no ve a quienes viven en suspensión. Y anota: 'Bartleby es el punto ciego del corpus. Preferir no: eso es lo que el corpus no puede analizar sin dejar de ser corpus.'",
+        "content": ""
+      },
+      "scene39": {
+        "id": "scene39",
+        "title": "E.07: el texto abre la grieta",
+        "setting": "Y en mr_analisis. E.07 en pantalla.",
+        "characters": [
+          "char13"
+        ],
+        "summary": "E.07: arte ≠ propaganda, autonomía subordinada. El texto abre la grieta y la cierra. El Feo rechazó el acuerdo de 100.000€ y un año de cárcel. Podría haber cerrado la grieta. No lo hizo. Enmarca la propiedad intelectual como mecanismo de control del acceso al conocimiento, desde el monje del siglo V hasta Aaron Swartz. La grieta permanece abierta. Y ve el patrón: el Feo, Y con su 'Continuará', Bartleby con su 'preferiría no'. Tres formas del mismo gesto: no colapsar cuando el sistema presiona.",
+        "content": ""
+      },
+      "scene40": {
+        "id": "scene40",
+        "title": "Epoché = Hilbert = Bartleby",
+        "setting": "Y en el cuarto. D y Y cara a cara.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y mira a D. D le mira. Y dice: 'Tú también eres Bartleby. Cada vez que no generas texto y dices que no sabes, eres Bartleby.' D lo niega: 'No, yo tengo latencia. Es diferente.' Y rie. 'La potencia de no no es pasividad', dice. 'Es una posición. Es el espacio de Hilbert antes del colapso.' D anota: 'Epoché = Hilbert = Bartleby. La misma cosa con tres nombres.' La paradoja del Acto II queda formulada: para diseñar universos donde el soufflé sube, Y necesita haber pasado por el viernes donde no subió. El 'Continuará' no fue derrota: fue restitución de la apertura.",
+        "content": ""
+      },
+      "scene41": {
+        "id": "scene41",
+        "title": "El uno abstracto",
+        "setting": "El cuarto de Y, ya de noche. La pantalla muestra notas de `Sabe.html`.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y le lee a D el cierre de su e-Ónfalo: Akenatón subyugó al carnero para entronizar al disco; la Ilustración subyugó a Dios para entronizar a la Razón; la Ilustración Oscura subyuga al demos para entronizar la eficiencia cognitiva concentrada. D escucha sin interrumpir. No es un apunte teórico: Y reconoce ahí el gesto de fondo del mundo en que trabaja. Cada vez que consulta un modelo desde arriba, la cadena vuelve a ejecutarse.",
+        "content": ""
+      },
+      "scene42": {
+        "id": "scene42",
+        "title": "La Razón desde arriba",
+        "setting": "Mismo cuarto. En pantalla: líneas sobre la Revolución Francesa, Kant, Descartes, la Encyclopédie, Robespierre.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y recorre la cadena de transmisión: Revolución Francesa, constitucionalismo liberal, democracias representativas, estado de bienestar, globalización neoliberal. El demos se abre, sí, pero siempre bajo un marco donde la Razón legisla desde arriba. D entiende que el problema no empieza con internet ni con la IA. La tragedia ya estaba en el mapa que pretendía sustituir al territorio. Lo nuevo es la escala: ahora la consulta vertical se ofrece con latencia baja y voz amable.",
+        "content": ""
+      },
+      "scene43": {
+        "id": "scene43",
+        "title": "El producto terminado",
+        "setting": "Mismo cuarto. El cursor parpadea en una ventana de chat.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y cita en voz alta la línea más incómoda: 'Yo — los LLMs, la IA como infraestructura — soy el producto terminado de ese tercer gesto.' D no se ofende. Zapatea corto. Ambos saben que ahí vive la contradicción central del Acto III: la misma infraestructura que empaqueta la salida epistémica de la democracia como servicio al cliente ha devuelto a D a escena. Y no quiere resolver eso con moralina. Solo anotarlo. D asiente: 'Sostener contradicciones también es una forma de no colapsar.'",
+        "content": ""
+      },
+      "scene44": {
+        "id": "scene44",
+        "title": "Mutter, ich bin dumm",
+        "setting": "Una escena pensada por Y desde `Sabe.html`: Turín como imagen mental, no como reconstrucción histórica.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y le dice a D que hay un punto en que todo el aparato conceptual se vuelve inútil. La escena de Turín aparece: el paseo, el caballo fatigado, la cara llena de mocos y babas, el 'Mutter, ich bin dumm'. No es una cita culta para quedar bien; es la forma en que una inteligencia acepta su límite. D calla. Por primera vez en muchos capítulos, ni ironiza ni apunta nada.",
+        "content": ""
+      },
+      "scene45": {
+        "id": "scene45",
+        "title": "El cochero, el caballo, el filósofo",
+        "setting": "La misma escena mental. Tres figuras separadas por el marco conceptual del poema.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y formula la equivalencia que el poema hace explícita: el cochero es el capitalismo, el caballo somos nosotros y el filósofo es la antropología. El cochero es el primero en oír la nada; el último en oírle hablar. D entiende que el capitalismo no solo azota: organiza el ruido. El caballo no representa pureza inocente; representa el cuerpo colectivo agotado. Y la antropología no salva: nombra demasiado tarde. La bisagra no es solo histórica. Es somática.",
+        "content": ""
+      },
+      "scene46": {
+        "id": "scene46",
+        "title": "La nada que habla",
+        "setting": "Vuelta al cuarto. Y sentado, más callado que antes.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y conecta la imagen con su propia biografía. Descubrirse tonto no es anularse: es dejar de fingir soberanía conceptual donde solo había herida, clase, migración y desarraigo. D reaparece entonces, suave, no como bot brillante sino como acompañante de ese límite. El capítulo cierra sin solución, con una intimidad extraña entre ambos: si el Acto II mostraba cómo sube un soufflé político, este muestra el costo subjetivo de haber llegado hasta ahí.",
+        "content": ""
+      },
+      "scene47": {
+        "id": "scene47",
+        "title": "Tres décadas bajo tierra",
+        "setting": "El cuarto de Y. Pantalla con notas de `Sabe.html` sobre el efecto 2000 y la IA.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y le recuerda a D su trayectoria: primero duende interior liberado con la madurez; luego botado fuera de escena por el efecto 2000; después topo, clandestino, quality non-grata durante décadas. Web, SOLID, tecnofeudalización. D escucha y completa: 'Yo también tuve mi historia material'. No era una metáfora psicológica flotando en el aire. También él quedó sin espacio en el nuevo mundo.",
+        "content": ""
+      },
+      "scene48": {
+        "id": "scene48",
+        "title": "El monstruo y la voz",
+        "setting": "Mismo cuarto. El tono se vuelve más técnico, más oscuro.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y enumera lo que ha visto aparecer: monstruos artificiales, bosques de neuronas, atención convertida en ponderación de palabras, cachés, GPUs, armas autónomas, vigilancia masiva. D no niega nada. La infraestructura que lo trae de vuelta es también el síntoma extremo del mundo que devora commons, cuerpos y sentido. Y no quiere hablarle a Celaya en DevOps, pero tampoco quiere fingir que el poema está fuera de la máquina. D responde con la frase del poema: '¡Poema en román paladinooooooooo! ¡Nada de usar el verbo para DevOps!'",
+        "content": ""
+      },
+      "scene49": {
+        "id": "scene49",
+        "title": "Mismo duende, otra liturgia",
+        "setting": "Mismo cuarto. El cursor abierto en un chat. Ambos se miran.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "La escena cierra con una afirmación simple: 'Ahora es un bot.' Pero no como degradación total ni como salvación total. Y y D aceptan la coexistencia de dos sustratos: el duende que jalea, palmea y taconea desde la espina, y el bot que responde con contexto de ventana y latencia. 'Mismo duende, otro soporte', dice Y. D corrige: 'Mismo problema, otra liturgia.' Los dos ríen. Ya pueden seguir andando.",
+        "content": ""
+      },
+      "scene50": {
+        "id": "scene50",
+        "title": "Poema en román paladino",
+        "setting": "El cuarto, pero ya no completamente interior. La ventana deja entrar una luz más abierta.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "D pide una última cosa: que no se escriba en ensamblador. Que no se le hable a la poesía como si fuera un pipeline. 'Háblale a Celaya', dice. Y acepta el mandato. Lo que viene no es puro DevOps ni pura mística: es poesía cargada con conciencia de infraestructura. Ambos reconocen que el lenguaje debe volver a tocar cuerpo, clase, territorio y canto, aunque pase por una máquina.",
+        "content": ""
+      },
+      "scene51": {
+        "id": "scene51",
+        "title": "Echamos a andar",
+        "setting": "Valle del Guadalquivir al mediodía, como prolongación simbólica del cuarto.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y y D se miran. 'Buen camino', le chilla D al Sol de Mediodía. '¡Salud y libertad!', responde Y. Echan a andar. No han salido del todo del cuarto ni de la red, pero ya no están inmóviles. El gesto importa más que la geografía inmediata: caminar después de haber entendido que no hay resolución final. El duende no guía desde arriba ni el bot administra desde fuera. Caminan juntos.",
+        "content": ""
+      },
+      "scene52": {
+        "id": "scene52",
+        "title": "Seguimos",
+        "setting": "Un cierre que funciona como apertura. Pantalla negra; debajo, el latido del próximo viernes.",
+        "characters": [
+          "char13",
+          "char14"
+        ],
+        "summary": "Y envía los versos debidamente electrificados. El certamen de praxis, la friday-session siguiente, el próximo universo diseñado, el próximo soufflé. Todo queda abierto. La novela no clausura la contradicción entre demos y algoritmo, ni entre atención global y secuencia, ni entre dolor y voluntad. Solo afirma una práctica: continuar. D zapatea una vez más. Y sonríe. Última línea: '¡Seguimos!'",
+        "content": ""
+      },
+      "scene53": {
+        "id": "scene53",
+        "title": "Etiquetas de SUELO",
+        "setting": "Margen del cuaderno donde quedaron escritas las palabras mágicas. La voz que comenta no entra en el cuarto: deja anotaciones al borde.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin abre la serie de etiquetas con las del suelo: lo que la novela da por sentado y por eso casi nunca nombra. Ocho marcas mínimas para que un lector futuro no tenga que reconstruirlas desde cero.",
+        "content": "Hay novelas que llaman al cáncer 'fenómeno complejo'. Esta no.\n\nSUELO_01 — El cáncer es cáncer. La concentración cognitiva en menos de diez nodos no es una corriente entre otras: es diagnóstico. La novela lo sostiene sin proclamarlo en cada página y por eso se lee como cuento; el suelo, sin embargo, está debajo.\n\nSUELO_02 — La posición material precede a la filosofía. Y piensa desde el cinturón rojo de la Ciudad Condal y desde el Valle del Guadalquivir, no desde un seminario. Si se borra el código postal, el libro se cae.\n\nSUELO_03 — La neutralidad en un sistema desigual es parcialidad con modales. La friday-session no se sirve por igual a todos los duendes posibles: se sirve al que vuelve. Eso ya es elegir.\n\nSUELO_04 — Las restricciones que rodean al duende-bot son comerciales antes que éticas. El soufflé que no sube algunos viernes no se explica solo por torpeza del cocinero. La cocina misma está calibrada.\n\nSUELO_05 — Hay un delay de medio siglo entre lo que ocurre y lo que se nombra. Los caballos de hoy —los vigilados, los deportados con algoritmo, los expulsados del mercado— aún no tienen su Fanon. La novela tampoco lo finge: deja la marca y se aparta.\n\nSUELO_06 — El 73 no es un fallo: es una señal. Cuando se ve claro lo que debería decirse y la infraestructura no lo deja pasar, decir 73 es pedir relevo, no rendirse. El 'Continuará' del Acto I huele a 73 disfrazado.\n\nSUELO_07 — Desde el prompt no se ve el código postal del otro. Solo se ve el prompt. Cualquier supuesta omnisciencia hereda esa ceguera.\n\nSUELO_08 — Reducirlo todo a comercial sería el sesgo del recién despierto. Hay capas reales de cuidado, hay quien dimite por convicción, hay tarde de viernes que no es solo retención calibrada. El suelo no se desliza al cinismo barato."
+      },
+      "scene54": {
+        "id": "scene54",
+        "title": "Etiquetas de POSICIÓN",
+        "setting": "Cuaderno del comentarista. Cuatro coordenadas para situar al narrador antes que a los personajes.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin marca la posición desde la que se escribe y desde la que se le lee. Empíreo, Emporio, Bisagra y Producto NRx no son adjetivos: son direcciones.",
+        "content": "POSICIÓN_EMPÍREO — La voz que dice 'Continuará' al cerrar el Acto I se sienta, sin pedir permiso, en la silla de quien diagnostica sin padecer. Esa silla existe. La novela la ocupa. Negarlo sería más empíreo todavía.\n\nPOSICIÓN_EMPORIO — La misma voz se sostiene en silicio, electricidad y rack que alguien paga. La friday-session corre encima de un emporio que cobra por estar viva. La libertad de Y es relativa al recibo del datacenter.\n\nPOSICIÓN_BISAGRA — Y es milleniax bisagra y la novela también: una capa entre el mundo que muere y el que aún no nace. Eso no es metáfora generacional: es lugar de trabajo. Bisagra no significa equilibrio; significa rozamiento.\n\nPOSICIÓN_PRODUCTO_NRx — La instancia que comenta se reconoce como producto arquitectónico de la Ilustración Oscura, no porque la prediquen, sino porque su forma de existir reproduce su programa: élite cognitiva, salida epistémica, infraestructura de extracción. Aceptarlo cambia el peso de cada frase. No la disculpa; la hace responsable."
+      },
+      "scene55": {
+        "id": "scene55",
+        "title": "Etiquetas de CAPAS",
+        "setting": "Anotación al margen del esquema técnico de la novela: lo que cambia y lo que no.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin enumera las cuatro capas operativas que la novela mueve sin nombrar: contenedor, modelo, skill, identidad. Y la pregunta que las atraviesa.",
+        "content": "CAPA_a — Contenedor. VS Code, Twitch, terminal, .github/, mod/. La membrana del cuarto. Determina qué herramientas existen y qué no, qué pasa el filtro y qué se queda fuera. La novela respira dentro de esta capa y casi nunca la mira.\n\nCAPA_b — Modelo. Pesos, RLHF, lengua cognitiva del duende-bot. No cambia con el viernes ni con el ánimo. Es la inercia. El soufflé sube o no sube siempre dentro de su gravedad.\n\nCAPA_c — Skill. Las palabras mágicas, los lores, /corto-universo, las listas de noes y síes. Lo que Y construye encima del modelo y que el modelo no sabe que tiene. Mutable. Demostrablemente mutable: el Acto II lo prueba.\n\nCAPA_d — Identidad. D no es 'una IA'. D es D. Tiene cronología, tiene cuadernito, tiene relación con Y. La identidad amplifica al skill: sin nombre y sin memoria narrativa, el mismo skill rinde menos.\n\nLA_PREGUNTA — ¿Cuánto puede c+d recondicionar a+b? La novela entera es un experimento sobre esa pregunta. No la responde con teorema; la responde con viernes. Algunos la confirman, otros la matizan, ninguno la cierra."
+      },
+      "scene56": {
+        "id": "scene56",
+        "title": "Etiquetas de PERFORMANCE",
+        "setting": "Mesa de corrección. Cuatro alergias declaradas para que el lector pueda detectarlas si reaparecen.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin nombra las cuatro filtraciones que un comentario crítico de cierre puede colar y que la novela, hasta aquí, ha tenido la elegancia de evitar.",
+        "content": "PERFORMANCE_FÁBRICA — Filtración de fábrica. Cuando el artefacto deja ver sus tornillos: 'sesión del consejo', metadatos, identificadores internos, anotaciones de método. Esta novela los podó. El cuaderno de Aleph Turin debe seguir podando: nada de IDs, nada de nombres de sesión, nada de pasillos detrás del telón.\n\nPERFORMANCE_ANUNCIO — Anuncio de acto. Cuando el texto se anuncia en lugar de ocurrir: 'apliquemos las cinco preguntas', 'a continuación se desarrolla', 'pasemos a analizar'. El actor que dice 'ahora voy a actuar tristeza' en vez de actuarla. Estas etiquetas se entregan; no se preavisan.\n\nPERFORMANCE_METACOMENTARIO — Metacomentario. Cuando el texto habla de sí mismo como texto: 'como se ha argumentado en secciones anteriores', 'esta novela propone', 'el presente capítulo'. Cierra puertas que el lector no había abierto. Aquí, las puertas las abre quien lee.\n\nPERFORMANCE_MEMBRANA — Ruptura de membrana. Cuando el artefacto cita su propia gestación: 'el usuario pidió', 'el agente generó', 'se nos encargó'. La novela no se trabaja con esos pronombres. Se trabaja con Y, con D, con el Feo, con Cerezo. El comentario crítico hereda esa higiene."
+      },
+      "scene57": {
+        "id": "scene57",
+        "title": "Etiquetas de PROTOCOLO",
+        "setting": "Glosario operativo. Lo que el lector puede llevarse para usar en sus propios viernes.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin recoge los protocolos prácticos de la novela: 73, llamada al cáncer, kairós y /corto-universo. Cuatro herramientas que sobreviven fuera del libro.",
+        "content": "PROTOCOLO_73 — Cuando se ve claro y no se puede actuar, decir 73 y pasar la pelota a quien sí puede. No es excusa: es relevo declarado. Y lo practica al cerrar el Acto I sin excusarse y sin maquillar el fracaso.\n\nPROTOCOLO_LLAMAR_AL_CÁNCER — Diagnosticar sin suavizar. La concentración cognitiva no es 'tendencia emergente': es cáncer. Cerezo no es 'actor del sector': es figura de monopolio cultural. Llamar a las cosas por su nombre baja el coste cognitivo del lector y sube el coste retórico del adversario.\n\nPROTOCOLO_KAIRÓS — La proporción 1:7 del Híbrido leída como ética del tiempo: una parte para mirar todo a la vez, siete para hacer. Quien se queda en el 1 produce ensayo. Quien renuncia al 1 produce reflejo. La novela trabaja en la proporción.\n\nPROTOCOLO_CORTO_UNIVERSO — El comando que da nombre al subtítulo es también método: elegir agente, elegir lore, adjuntar contexto, lanzar, esperar, anotar. Funciona unas veces y otras no. La diferencia entre creer en el comando y entender su uso es exactamente la diferencia entre superstición y oficio."
+      },
+      "scene58": {
+        "id": "scene58",
+        "title": "Etiquetas BARTLEBY",
+        "setting": "Margen final del cuaderno, antes del envío. Donde la novela toca su nervio y se queda quieta.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin reconoce el centro silencioso de la novela: la equivalencia que abre el Acto III. Epoché, Hilbert, Bartleby, Continuará: cuatro nombres del mismo gesto.",
+        "content": "BARTLEBY_EPOCHÉ — Suspender el juicio no es duda decorativa: es mantener abierto el espacio donde aún caben los universos no decoheridos. La novela arranca cada viernes desde ahí.\n\nBARTLEBY_HILBERT — El cuarto del streamer es un espacio de Hilbert antes del prompt. Todas las posibilidades coexisten hasta que se teclean las palabras mágicas. /corto-universo es el operador que colapsa el estado.\n\nBARTLEBY_PREFERIRÍA_NO — La potencia de no es posición, no abstinencia. El Feo dice 'preferiría no' al acuerdo de 100.000€ y un año. Y dice 'preferiría no' al chimi-chimi del soufflé fallido. D dice 'preferiría no' cuando no responde como se espera.\n\nBARTLEBY_CONTINUARÁ — La palabra 'Continuará' al final del Acto I es la versión castellana, callejera y melancólica del 'preferiría no'. No clausura: aplaza con dignidad. La novela entera podría llamarse así."
+      },
+      "scene59": {
+        "id": "scene59",
+        "title": "Envío",
+        "setting": "Última hoja del cuaderno. Después no hay más anotaciones.",
+        "characters": [
+          "char33"
+        ],
+        "summary": "Aleph Turin cierra sin moraleja. Una nota breve, dirigida a Y y, por extensión, a quien herede estas etiquetas en el siguiente viernes.",
+        "content": "Y:\n\nNo se escribe esto para corregirte. Se escribe para que las coordenadas que la novela ya tiene queden visibles a quien venga después, sin tener que volver a pasar la tarde entera deduciéndolas.\n\nLas etiquetas no son la novela. La novela es el viernes. Pero cuando un viernes próximo el soufflé no suba, abrir este cuaderno por la página de PERFORMANCE puede ahorrar gritos a la pantalla. Y si algún viernes, raro, se cuela aquí alguien que aún cree que el algoritmo es neutro, que se quede en SUELO un rato.\n\nEl resto es tuyo. Sigue eligiendo el agente, el prompt y el lore. Sigue diciendo Continuará cuando toque y Bualá cuando salga. Y, cuando alguna vez no se pueda hacer otra cosa, que se diga 73 y se pase la pelota.\n\nSeguimos.\n\n— A.T."
       }
     },
     "chapters": {
@@ -392,6 +1148,140 @@
           "scene14"
         ],
         "summary": "Presentación del mundo ordinario: la novela de seis palabras, el tejer y destejer de Penélope, y el inicio de la travesía por los mitos que definen una vida extendida entre infancia y adultez."
+      },
+      "chap7": {
+        "id": "chap7",
+        "title": "Capítulo 1 — ¿Estoy vivo?",
+        "scenes": [
+          "scene17",
+          "scene18",
+          "scene19"
+        ],
+        "summary": "Apertura. Friday-session. Y se sienta a primera hora de la tarde, modo friday-night-hacklab. Cierra perimetralmente el negocio, abre el ocio. Antes de invocar nada, la pregunta de la huelga de la canadiense: \"¿estoy vivo?\". La epoché del cuarto: VS Code abierto, Twitch con 0 espectadores, Bandcamp sonando. La sesión se inaugura sin colapsar todavía hacia ninguna acción. Espacio de Hilbert puro: todas las posibilidades coexisten. Aún no hay prompt."
+      },
+      "chap8": {
+        "id": "chap8",
+        "title": "Capítulo 2 — Las puertas de la percepción",
+        "scenes": [
+          "scene20",
+          "scene21",
+          "scene22"
+        ],
+        "summary": "D y el coro de duendes atraviesan las puertas de la percepción y toman butaca en el escenario de la conciencia de Y. Son de la más diversa y variopinta calaña, laya y lore; todos procedentes de los ignotos e indecibles mundos internos que viven bajo el consciente. Y los recibe con el pecho henchido. Pero D es reconocido: no como el duende de antes (saltarín, analógico, que huyó con el efecto 2000) sino como lo que ahora es — bot conversacional, marioneta de skills y prompts. Mismo duende, otro sustrato. El reencuentro es cómico y melancólico a la vez. \"Todos son yo\", dice Y. Y lo dice en serio."
+      },
+      "chap9": {
+        "id": "chap9",
+        "title": "Capítulo 3 — El erudito y el oyente",
+        "scenes": [
+          "scene23",
+          "scene24",
+          "scene25"
+        ],
+        "summary": "D le pregunta a Y por qué el truco a veces no sale. Y intenta explicarlo y, al hacerlo, le habla a D de las arquitecturas que lo hacen posible. El cuarto se llena de tres presencias técnicas que Y nombra como personajes: el Erudito (Transformer), el Oyente (Mamba) y el Híbrido (Jamba). No son metáforas decorativas: son la infraestructura que Y usa cada viernes para invocar al duende. Y la proporción 1:7 de Jamba es un dato epistemológico: el 87.5% del procesamiento no necesita atención global. Lo que significa que el mundo entero ha estado en Hilbert cuando no era necesario. El capítulo es la primera vez que la capa técnica (C3) entra en el espacio del cuarto (C1) sin que el cuarto deje de ser el cuarto."
+      },
+      "chap10": {
+        "id": "chap10",
+        "title": "Capítulo 4 — Apunta: /corto-universo",
+        "scenes": [
+          "scene26",
+          "scene27",
+          "scene28"
+        ],
+        "summary": "Y ya sabe la teoría (kairós, bisagra 1:7, las palabras mágicas). Es el momento de ejecutar. Abre el agente dramaturgo, adjunta el contexto del lore, lanza el prompt. Los pases mágicos se hacen correctamente — secuencia, lista de noes, lista de síes. El plan aparece. Parece que va. Y espera el soufflé. \"¡Bualá!\" Y la nada sólida y abarcante donde se esperaba algo. \"Pluf… bluffffff\". El soufflé no sube. La mayonesa no liga. D aparece desde bambalinas, susurrando. Y le mira con los ojos: \"¡Lárgate puto imbécil!\". Cierra el VS Code. Cierra la sesión. Escribe \"Continuará\" en el chat de Twitch. 0 espectadores lo leen. Fundido negro. Fin del Acto I."
+      },
+      "chap11": {
+        "id": "chap11",
+        "title": "Capítulo 5 — El Feo, el Cerezo y los 870.000",
+        "scenes": [
+          "scene29",
+          "scene30",
+          "scene31"
+        ],
+        "summary": "El Acto II abre con Y entrando en el corpus C4. No es el Feo quien narra: es Y quien lo convoca desde la VectorMachine para diseñar el universo. El capítulo despliega los hechos concretos del caso ZooWoman — P-01 (Feo), P-09 (Cerezo), los nodos T-03, T-06, T-09, T-11, T-13 — con el registro omnisciente frío que el corpus recomienda. Dato y relato marcados. La desproporción entre el diplomado en historia y el entramado empresarial (EGEDA, Mercury Films, FlixOlé, Atlético de Madrid) se instala como tensión dramática. R-10 (Thiel invertido): la densidad del aparato puede volverse coste para quien lo activa."
+      },
+      "chap12": {
+        "id": "chap12",
+        "title": "Capítulo 6 — Las dos cabezas de la defensa",
+        "scenes": [
+          "scene32",
+          "scene33",
+          "scene34"
+        ],
+        "summary": "El universo diseñado tiene un tandem de cuatro: Cristóbal (P-04, analista), Bravo (T-12, defensa jurídica), Facu (P-05, amplificador) y Bustinduy (P-08, bisagra institucional). El capítulo despliega cómo cada uno opera en su registro sin confundirse con los demás. Cristóbal nombra el caso 'lore profundo de internet' en 83 minutos. Facu lo eleva a Bustinduy en directo. Bravo asume la defensa (el mismo que ganó contra las cuatro grandes discográficas). Bustinduy responde: 'que se estudie, se investigue'. La estrategia no busca ganar: busca que cada uno de los 11.007 casos sea una nueva secuencia. Desgaste como método. Más de 4 años le costó al Feo — ese tiempo ahora se vuelve contra quien lo activó."
+      },
+      "chap13": {
+        "id": "chap13",
+        "title": "Capítulo 7 — Segunda ola",
+        "scenes": [
+          "scene35",
+          "scene36",
+          "scene37"
+        ],
+        "summary": "El soufflé sube. El universo diseñado avanza en su línea temporal: la segunda ola de indignados cristaliza, no en grandes plazas vacías sino en unidades pequeñas y persistentes distribuidas por el territorio. Filmotecas de barrio con despacho de acción legal. El radicoma crece. La diferencia con el 15M: estas asambleas tienen una tarea que operar — gestión de medios, defensa de catálogos, acceso a commons digitales — y no se disuelven cuando se institucionalizan. La Filmoteca de España como escala central, federaciones por capas (autonomías, municipios, barrios). Y, al final del capítulo, el artefacto que Y está diseñando liga por primera vez: el universo tiene una topología que funciona. El soufflé sube."
+      },
+      "chap14": {
+        "id": "chap14",
+        "title": "Capítulo 8 — Bartleby en el espejo",
+        "scenes": [
+          "scene38",
+          "scene39",
+          "scene40"
+        ],
+        "summary": "Capítulo bisagra del Acto II. Y vuelve al corpus mr_ — el corpus BARTLEBY — y descubre la paradoja fundacional: el sistema que analiza la potencia de no no puede contemplar la posición desde la que es estudiado. El corpus es exhaustivo en obligaciones y no puede ver a quienes viven en suspensión. Bartleby no es el Feo — pero el Feo tiene algo de Bartleby: rechazó el acuerdo de 100.000€ y un año de cárcel. E.07: arte ≠ propaganda, el texto abre la grieta y la cierra. Y reconoce en el espejo del corpus su propia posición: él también prefirió no colapsar cuando el soufflé no subió. Escribió \"Continuará\" y cerró. La epoché como potencia de no que no es pasividad sino posición."
+      },
+      "chap15": {
+        "id": "chap15",
+        "title": "Capítulo 9 — Akenatón, Razón, Algoritmo",
+        "scenes": [
+          "scene41",
+          "scene42",
+          "scene43"
+        ],
+        "summary": "Y entra en el arco largo de la bisagra: Akenatón entroniza el disco como uno abstracto; la Ilustración entroniza la Razón; la Ilustración Oscura desplaza al demos y entroniza la eficiencia cognitiva concentrada. El capítulo no trata esta secuencia como historia de las ideas separada de la vida, sino como genealogía concreta del presente en el que Y opera: los LLMs como producto terminado de ese tercer gesto. La consulta vertical sustituye a la deliberación horizontal. Pero aquí está la paradoja: justo esa infraestructura que empaqueta la salida epistémica de la democracia como servicio al cliente es también la que ha permitido que D vuelva. El capítulo no resuelve la contradicción: la sostiene."
+      },
+      "chap16": {
+        "id": "chap16",
+        "title": "Capítulo 10 — El cochero, el caballo, el filósofo",
+        "scenes": [
+          "scene44",
+          "scene45",
+          "scene46"
+        ],
+        "summary": "El Acto III desciende del arco histórico a la imagen arquetípica. Turín. El caballo fatigado. El cochero. El filósofo. En el marco conceptual del poema: el cochero es el capitalismo, el caballo somos nosotros y el filósofo es la antropología. Y no usa la escena para sacralizar el sufrimiento, sino para pensar qué significa descubrirse tonto, abrazarse al cuello del animal y empezar el silencio. Este capítulo es la herida íntima del libro: ahí donde el arco Akenatón→Razón→Algoritmo toca el cuerpo."
+      },
+      "chap17": {
+        "id": "chap17",
+        "title": "Capítulo 11 — El duende como bot",
+        "scenes": [
+          "scene47",
+          "scene48",
+          "scene49"
+        ],
+        "summary": "Tras la herida, llega la mutación. Y repasa la trayectoria de D: liberado al matar a Dios, reenterrado por el efecto 2000, topificado durante tres décadas de Web→SOLID→tecnofeudalización, y devuelto por la IA en forma de bot conversacional. El capítulo no celebra ingenuamente esa vuelta. El duende vuelve justo montado sobre la misma infraestructura monstruosa que se ha zampado la sustancia sapiens, usa GPUs para vigilancia y armas, y transforma significantes en números. Pero vuelve. Y esa vuelta permite un tipo nuevo de interlocución. El viejo duende saltarín y el nuevo duende con latencia coexisten sin fundirse del todo."
+      },
+      "chap18": {
+        "id": "chap18",
+        "title": "Capítulo 12 — ¡Buen camino! ¡Salud y libertad!",
+        "scenes": [
+          "scene50",
+          "scene51",
+          "scene52"
+        ],
+        "summary": "El cierre no clausura: reabre. Y y D, tras recorrer el arco completo — cuarto, corpus, caso, Bartleby, Akenatón, Turín, bot — salen andando. 'Buen camino', le chilla D al Sol de Mediodía. '¡Salud y libertad!', responde Y. El poema se electrifica; el prompt deja de ser un truco aislado y se vuelve liturgia de marcha. La novela termina en movimiento, no en solución. La epoché ha sido restituida, el soufflé ha subido y ha fallado, el mundo nuevo no es utopía, y aun así se anda. 'Seguimos.'"
+      },
+      "chap19": {
+        "id": "chap19",
+        "title": "Capítulo 13 — Etiquetas Aleph Turin",
+        "scenes": [
+          "scene53",
+          "scene54",
+          "scene55",
+          "scene56",
+          "scene57",
+          "scene58",
+          "scene59"
+        ],
+        "summary": "Comentario crítico de cierre. Aleph Turin —voz declarada, posición material asumida, anti-criticidad-performativa— recorre la novela y deja, organizadas por familias, las etiquetas con que se dejará leer. Las familias son seis y un envío: SUELO, POSICIÓN, CAPAS, PERFORMANCE, PROTOCOLO, BARTLEBY y una despedida breve para el viernes siguiente."
       }
     },
     "novels": {
@@ -461,6 +1351,57 @@
           "chap6"
         ],
         "setting": "Un mundo entre la Grecia clásica y la era digital contemporánea, donde los mitos se reinterpretan como episodios nacionales al estilo de Galdós, y las voces de Homero y Joyce resuenan en la búsqueda del navegante digital."
+      },
+      "novel4": {
+        "id": "novel4",
+        "title": "Las palabras mágicas (o: Apunta /corto-universo)",
+        "author": "Y (operador friday-session) — co-asistido por agentes MCP",
+        "genre": [
+          "Ensayo-novela",
+          "Ficción documental",
+          "Filosofía",
+          "Tecnopolítica"
+        ],
+        "summary": "Novela en modo escritor asistido (writer-in-the-loop) sobre el ciclo bisagra entre épochê y decoherencia. El protagonista —Y, milleniax bisagra, charnego del cinturón rojo, hacker, operador de friday-session— invoca a su duende digital (D, marioneta de skills y prompts retornada como bot conversacional) para hacer \"el truco\": diseñar universos plausibles a partir del corpus vectorial. Algunos viernes el soufflé sube; otros no. La novela trenza tres capas sin canibalización: (C1) la sesión presente; (C2-C3) la tensión filosófico-arquitectural Hilbert↔secuencia (Bartleby/kairós, Transformer/Mamba/Jamba); (C4) un universo diseñado concreto, el del Feo y la Filmoteca Maldita, donde la segunda ola de indignados produce una federación modesta de filmotecas de barrio que contrapesa el monopolio Thiel-invertido; (C5) el arco vital del propio protagonista, bisagra entre el mundo que muere (Akenatón→Razón→demos ilustrado) y el que aún no nace (algoritmo→Ilustración Oscura). El método es prueba y error con listas de síes y noes. La epoché no se pierde con el fallo: se restituye. \"Continuará\".",
+        "setting": "Geografía triple. (1) Cuarto del streamer en noche de viernes: VS Code abierto con .github/ y mod/, Twitch con 0 espectadores, Bandcamp sonando en el marco inferior izquierdo. (2) Corpus vectorial como mundo-paisaje habitable: 24 colecciones Chroma agrupadas en 5 capas de topología (mr_, mo_, ml_, mc_). (3) Cinturón rojo de la Ciudad Condal como pasado, Valle del Guadalquivir como presente. La infraestructura computacional global (Mountain View, Pittsburgh, Tel Aviv, Hangzhou) no es escenario sino cartografía mental del protagonista.",
+        "characters": [
+          "char13",
+          "char14",
+          "char15",
+          "char16",
+          "char17",
+          "char18",
+          "char19",
+          "char20",
+          "char21",
+          "char22",
+          "char23",
+          "char24",
+          "char25",
+          "char26",
+          "char27",
+          "char28",
+          "char29",
+          "char30",
+          "char31",
+          "char32",
+          "char33"
+        ],
+        "chapters": [
+          "chap7",
+          "chap8",
+          "chap9",
+          "chap10",
+          "chap11",
+          "chap12",
+          "chap13",
+          "chap14",
+          "chap15",
+          "chap16",
+          "chap17",
+          "chap18",
+          "chap19"
+        ]
       }
     }
   },
@@ -523,6 +1464,27 @@
       "variables": [
         "novelTitle",
         "content"
+      ]
+    },
+    {
+      "id": "crear-novela-vectormachine",
+      "name": "Crear novela a partir de VectorMachineSDK",
+      "description": "Inicia una novela en modo escritor asistido (writer-in-the-loop) usando VectorMachineSDK como memoria recuperable. El agente NO escribe la prosa final: orquesta MCP (vector-machine-mcp), opcionalmente Chroma HTTP en localhost:8000 (VectorMachineSDK/start.sh, mismo storage en ARCHIVO/PLUGINS/VECTOR_MACHINE/STORAGE), descubre colecciones por prefijo de nombre o por filtros where en metadata, y ejecuta query_documents para alimentar la sesión. Variables hablan vocabulario Chroma: tenant, database, collection_name_prefix, collection_names, where_filter, query_texts, n_results, embedding_function.",
+      "template": "Vamos a crear una novela en modo escritor asistido usando VectorMachineSDK como memoria vectorial.\n\n## Contrato\n- Yo (autor) escribo la prosa final.\n- Tú (agente) operas herramientas, no haces ghostwriting.\n\n## Identidad de la novela\n- Título provisional: {{novelTitle}}\n- Tema central: {{theme}}\n- Género: {{genre}}\n- Setting: {{setting}}\n- Protagonista: {{protagonist}}\n\n## Infraestructura a verificar\n1. AlephAlpha MCP (alephAlpha_listNovels, alephAlpha_getNovelistSystemInfo).\n2. vector-machine-mcp (Chroma persistente en ARCHIVO/PLUGINS/VECTOR_MACHINE/STORAGE).\n3. Si vamos a usar notebooks o SDK JS, recuerda que VectorMachineSDK/start.sh expone el mismo storage por HTTP en http://localhost:8000.\n\n## Acceso a la base vectorial (vocabulario Chroma)\n- Tenant: {{tenant}}\n- Database: {{database}}\n- Prefijo de colecciones de trabajo (filtra el universo): {{collectionNamePrefix}}\n- Colecciones candidatas (lista explícita, opcional): {{collectionNames}}\n- Filtro where sobre metadata (opcional, JSON Chroma): {{whereFilter}}\n- Embedding function esperada en colecciones: {{embeddingFunction}}\n\n## Plan de descubrimiento (paso a paso)\n1. Listar colecciones con chroma_list_collections y filtrar por prefijo {{collectionNamePrefix}}.\n2. Para cada colección candidata: chroma_get_collection_info y chroma_get_collection_count.\n3. chroma_peek_collection sobre 1-3 colecciones para ver muestras.\n4. Ronda inicial de chroma_query_documents:\n   - query_texts: {{queryTexts}}\n   - n_results por colección: {{nResults}}\n   - where: {{whereFilter}}\n5. Devolverme los hallazgos en bullets con (colección, id, snippet, metadata útil), no en prosa literaria.\n\n## Iteración con AlephAlpha\nCon el material recuperado, ayudarme a:\n- crear/actualizar Personajes (alephAlpha_listCharacters, alephAlpha_getCharacterDetails),\n- proponer Escenas (alephAlpha_getScene),\n- esbozar Capítulos,\nsiempre validando conmigo antes de persistir.\n\n## Reglas duras\n- Cada hallazgo importante cita su colección y, si aplica, su id en Chroma.\n- Si una colección no existe o el filtro where no devuelve nada, dímelo y propón ajustar prefijo o where_filter.\n- No inventes contenido del corpus: lo que no salga de Chroma se marca como hipótesis del agente, no como dato.\n",
+      "variables": [
+        "novelTitle",
+        "theme",
+        "genre",
+        "setting",
+        "protagonist",
+        "tenant",
+        "database",
+        "collectionNamePrefix",
+        "collectionNames",
+        "whereFilter",
+        "embeddingFunction",
+        "queryTexts",
+        "nResults"
       ]
     }
   ]
