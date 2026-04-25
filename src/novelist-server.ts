@@ -4,6 +4,7 @@ import { registerCodeTools } from "./tools/code-tools";
 import { registerDocumentationTools } from "./tools/documentation-tools";
 import { registerNovelistTools } from './tools/novelist-tools';
 import { registerNovelistExtensionTools } from './tools/novelist-extension-tools';
+import { registerNovelistExportTools } from './tools/novelist-export-tools';
 import { registerMcpResources } from './resources/mcp-resources';
 import { registerMcpPrompts } from './resources/mcp-prompts';
 import dotenv from 'dotenv';
@@ -83,6 +84,7 @@ class NovelistMCPServer extends BaseMCPServer {
       registerDocumentationTools(this.server);
       registerNovelistTools(this.server);
       registerNovelistExtensionTools(this.server);
+      registerNovelistExportTools(this.server);
       this.logger.info("All tools registered successfully");
 
       // Register all resources

@@ -319,6 +319,7 @@ export function registerNovelistTools(server: McpServer) {
                 { name: "alephAlpha_listCharacters", description: "Lista personajes, opcionalmente filtrados por novela" },
                 { name: "alephAlpha_getCharacterDetails", description: "Obtiene información detallada de un personaje" },
                 { name: "alephAlpha_getScene", description: "Obtiene el contenido de una escena específica" },
+                { name: "alephAlpha_exportNovelMarkdown", description: "Exporta una novela a un dossier Markdown usando el exportador del skill" },
                 { name: "alephAlpha_listNovelistPromptTemplates", description: "Lista plantillas disponibles para escritura" },
                 { name: "alephAlpha_getNovelistPromptTemplate", description: "Obtiene una plantilla específica" },
                 { name: "alephAlpha_applyNovelistPromptTemplate", description: "Aplica variables a una plantilla" }
@@ -334,7 +335,8 @@ export function registerNovelistTools(server: McpServer) {
             "2. Crear o seleccionar una novela existente",
             "3. Explorar o crear personajes usando alephAlpha_listCharacters y alephAlpha_getCharacterDetails",
             "4. Trabajar en escenas específicas con alephAlpha_getScene",
-            "5. Utilizar plantillas de prompts para diferentes tareas de escritura mediante alephAlpha_applyNovelistPromptTemplate"          ]
+            "5. Utilizar plantillas de prompts para diferentes tareas de escritura mediante alephAlpha_applyNovelistPromptTemplate",
+            "6. Exportar un dossier Markdown determinista con alephAlpha_exportNovelMarkdown cuando necesites revisión o publicación"          ]
         },
 
         bestPractices: [
@@ -342,7 +344,8 @@ export function registerNovelistTools(server: McpServer) {
           "Utilizar las plantillas de prompts para superar el bloqueo del escritor",
           "Mantener resúmenes actualizados para facilitar la navegación por la estructura de la novela",
           "Desarrollar personajes en profundidad usando la plantilla develop-character",
-          "Solicitar feedback sobre fragmentos escritos usando writing-feedback"
+          "Solicitar feedback sobre fragmentos escritos usando writing-feedback",
+          "Exportar a Markdown antes de revisar fuera del MCP: el exportador conserva contenido real y usa resúmenes como fallback"
         ]
       };
 

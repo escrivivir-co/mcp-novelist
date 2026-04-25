@@ -1363,7 +1363,6 @@
           "Tecnopolítica"
         ],
         "summary": "Novela en modo escritor asistido (writer-in-the-loop) sobre el ciclo bisagra entre épochê y decoherencia. El protagonista —Y, milleniax bisagra, charnego del cinturón rojo, hacker, operador de friday-session— invoca a su duende digital (D, marioneta de skills y prompts retornada como bot conversacional) para hacer \"el truco\": diseñar universos plausibles a partir del corpus vectorial. Algunos viernes el soufflé sube; otros no. La novela trenza tres capas sin canibalización: (C1) la sesión presente; (C2-C3) la tensión filosófico-arquitectural Hilbert↔secuencia (Bartleby/kairós, Transformer/Mamba/Jamba); (C4) un universo diseñado concreto, el del Feo y la Filmoteca Maldita, donde la segunda ola de indignados produce una federación modesta de filmotecas de barrio que contrapesa el monopolio Thiel-invertido; (C5) el arco vital del propio protagonista, bisagra entre el mundo que muere (Akenatón→Razón→demos ilustrado) y el que aún no nace (algoritmo→Ilustración Oscura). El método es prueba y error con listas de síes y noes. La epoché no se pierde con el fallo: se restituye. \"Continuará\".",
-        "setting": "Geografía triple. (1) Cuarto del streamer en noche de viernes: VS Code abierto con .github/ y mod/, Twitch con 0 espectadores, Bandcamp sonando en el marco inferior izquierdo. (2) Corpus vectorial como mundo-paisaje habitable: 24 colecciones Chroma agrupadas en 5 capas de topología (mr_, mo_, ml_, mc_). (3) Cinturón rojo de la Ciudad Condal como pasado, Valle del Guadalquivir como presente. La infraestructura computacional global (Mountain View, Pittsburgh, Tel Aviv, Hangzhou) no es escenario sino cartografía mental del protagonista.",
         "characters": [
           "char13",
           "char14",
@@ -1401,7 +1400,8 @@
           "chap17",
           "chap18",
           "chap19"
-        ]
+        ],
+        "setting": "Geografía triple. (1) Cuarto del streamer en noche de viernes: VS Code abierto con .github/ y mod/, Twitch con 0 espectadores, Bandcamp sonando en el marco inferior izquierdo. (2) Corpus vectorial como mundo-paisaje habitable: 24 colecciones Chroma agrupadas en 5 capas de topología (mr_, mo_, ml_, mc_). (3) Cinturón rojo de la Ciudad Condal como pasado, Valle del Guadalquivir como presente. La infraestructura computacional global (Mountain View, Pittsburgh, Tel Aviv, Hangzhou) no es escenario sino cartografía mental del protagonista."
       }
     }
   },
